@@ -22,6 +22,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="src/css/slick.css">
+    <link rel="stylesheet" href="src/css/slick-theme.css.css">
     <link rel="stylesheet" href="dist/main.min.css">
     <title>Хлебушек</title>
 </head>
@@ -72,7 +74,7 @@
 
             </div>
             <div id="main-info-action">
-                <button class="btn">
+                <button id="main-btn">
                     Перейти в каталог
                 </button>
             </div>
@@ -85,11 +87,13 @@
 
 <div id="priority">
     <div id="priority-container">
+        <img id="priority-bg" src="images/priority-bg.png" alt="">
         <h2 class="block-title">
             Для нас главное
         </h2>
 
         <div id="priority-items">
+
             <div class="priority-item">
                 <div class="priority-item-title">
                     <img src="images/bread1.png" alt="">
@@ -133,6 +137,235 @@
     </div>
 </div>
 
+<div id="products">
+    <div id="products-container">
+        <h2 class="block-title">Наша продукция</h2>
+        <div id="products-items">
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread1.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Батон Венский
+                </div>
+                <div class="product-item-weight">
+                    320 г
+                </div>
+                <div class="product-item-description">
+                    Нежный пшеничный батон
+                </div>
+                <div class="product-item-price">
+                    60 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread2.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Пшеничный
+                </div>
+                <div class="product-item-weight">
+                    320 г
+                </div>
+                <div class="product-item-description">
+                    Классически вкус из дества
+                </div>
+                <div class="product-item-price">
+                    70 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread3.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Чиабатта
+                </div>
+                <div class="product-item-weight">
+                    320 г
+                </div>
+                <div class="product-item-description">
+                    Итальянский хлеб из воздушного теста
+                </div>
+                <div class="product-item-price">
+                    96 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread4.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Кампань
+                </div>
+                <div class="product-item-weight">
+                    450 г
+                </div>
+                <div class="product-item-description">
+                    Пшенично-ржаной хлеб «холодного брожения»
+                </div>
+                <div class="product-item-price">
+                    110 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread5.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Ржаной
+                </div>
+                <div class="product-item-weight">
+                    400 г
+                </div>
+                <div class="product-item-description">
+                    Нежный ржаной хлеб»
+                </div>
+                <div class="product-item-price">
+                    55 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread6.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Бездрожжевой
+                </div>
+                <div class="product-item-weight">
+                    440г
+                </div>
+                <div class="product-item-description">
+                    Классически вкус из дества
+                </div>
+                <div class="product-item-price">
+                    110 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread7.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    Тыквенный
+                </div>
+                <div class="product-item-weight">
+                   320г
+                </div>
+                <div class="product-item-description">
+                    Вкусный хлеб из воздушного теста
+                </div>
+                <div class="product-item-price">
+                    87 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item-image">
+                    <img src="images/fresh-bread8.png" alt="">
+                </div>
+                <div class="product-item-title">
+                    На закваске
+                </div>
+                <div class="product-item-weight">
+                   335 г
+                </div>
+                <div class="product-item-description">
+                    Пшенично-ржаной хлеб на закваске
+                </div>
+                <div class="product-item-price">
+                    98 руб.
+                </div>
+                <div class="product-item-action">
+                    <button class="btn">
+                        <img src="images/food-basket.png" alt="">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+                <div class="product-item-details">
+                    <span>Подробнее</span>
+                    <img src="images/arrowSmall.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

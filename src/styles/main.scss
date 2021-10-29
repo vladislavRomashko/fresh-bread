@@ -33,6 +33,7 @@
 $Gabriela: "Gabriela", sans-serif;
 $LatoLight: "LatoLight", sans-serif;
 $Lato: "LatoRegular", sans-serif;
+$LatoBold: 'LatoBold', sans-serif;
 
 
 //--- MIXINS ---
@@ -123,7 +124,7 @@ $Lato: "LatoRegular", sans-serif;
 
     #main-info {
       width: 605px;
-      margin-top: 137px;
+      margin-top: 177px;
       margin-bottom: 147px;
 
       #main-info-title {
@@ -141,7 +142,7 @@ $Lato: "LatoRegular", sans-serif;
       }
 
       #main-info-action {
-        .btn {
+        #main-btn {
           background-color: rgb(247, 195, 94);
           width: 282px;
           font-size: 20px;
@@ -168,68 +169,191 @@ $Lato: "LatoRegular", sans-serif;
   color: rgb(175, 95, 17);
 }
 
-#priority {
-  background-image: url("../../images/priority-bg.png");
-  background-position: left;
-  background-repeat: no-repeat;
-  padding:120px 0 ;
+#priority-container {
+  @include container;
+  position: relative;
+  padding: 120px 0;
 
-  #priority-container {
+  #priority-bg {
+    position: absolute;
+    left: -389px;
+    top: 0;
+    height: 100%;
+  }
+
+  h2.block-title {
+    text-align: center;
+
+  }
+
+  #priority-items {
+    margin-top: 78px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+
+    .priority-item {
+      width: 260px;
+
+      .priority-item-title {
+        font-size: 18px;
+        font-family: $Gabriela;
+        color: rgb(34, 34, 34);
+
+        span {
+          vertical-align: middle;
+        }
+
+        img {
+          vertical-align: middle;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .priority-item-text {
+      font-size: 14px;
+      font-family: $LatoLight;
+      color: rgb(34, 34, 34);
+      margin-top: 20px;
+      line-height: 21px;
+    }
+  }
+
+  #priority-proof {
+    background-image: url("../../images/rolling-pin.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 80px auto 0 auto;
+    width: 385px;
+    height: 151px;
+    padding: 28px 30px 30px 30px;
+
+    #priority-proof-text {
+      font-size: 16px;
+      font-family: $LatoLight;
+      color: rgb(34, 34, 34);
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}
+
+.btn {
+  font-size: 16px;
+  color: rgb(55, 29, 3);
+  background-color: rgb(247, 195, 94);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+}
+
+#products {
+  background-image: url("../../images/products-bg.png");
+  background-position: center;
+
+  #products-container {
     @include container;
+    padding: 120px 0 182px 0;
 
     h2.block-title {
       text-align: center;
+      margin-bottom: 79px;
     }
 
-    #priority-items {
-      margin-top: 78px;
+    #products-items {
       display: flex;
-      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 300px;
 
-      .priority-item {
-        width: 260px;
+      .product-item {
+        border-radius: 30px;
+        background-color: rgb(255, 255, 255);
+        width: 285px;
+        padding: 40px 50px;
+        margin: 12px;
 
-        .priority-item-title {
+        &:hover {
+          box-shadow: 0px 4px 10px 0.2px rgba(107, 77, 18, 0.3);
+        }
+
+        .product-item-title {
+          font-size: 24px;
+          font-family: $Gabriela;
+          color: rgb(67, 67, 67);
+          text-align: center;
+          margin-top: 25px;
+        }
+
+        .product-item-weight {
           font-size: 18px;
           font-family: $Gabriela;
+          color: rgb(67, 67, 67);
+          text-align: center;
+          margin-top: 15px;
+        }
+
+        .product-item-description {
+          font-size: 16px;
+          font-family: $LatoLight;
           color: rgb(34, 34, 34);
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .product-item-price {
+          font-size: 18px;
+          font-family: $LatoBold;
+          color: rgb(175, 96, 18);
+          text-align: center;
+          margin-top: 24px;
+        }
+
+        .btn {
+          padding: 12px;
+          text-align: center;
+          width: 180px;
+          font-family: $LatoBold;
+          margin-top: 12px;
+          
+
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+          }
 
           span {
             vertical-align: middle;
           }
 
-          img {
-            vertical-align: middle;
-            margin-right: 20px;
-          }
         }
-      }
 
-      .priority-item-text {
-        font-size: 14px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        margin-top: 20px;
-        line-height: 21px;
-      }
-    }
-    #priority-proof {
-      background-image: url("../../images/rolling-pin.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      margin: 0 auto;
-      width: 385px;
-      height: 151px;
-      padding: 28px 30px 30px 30px;
-      #priority-proof-text {
+        .product-item-details {
           font-size: 16px;
-          font-family: $LatoLight;
+          font-family: "Lato";
           color: rgb(34, 34, 34);
-          line-height: 24px;
           text-align: center;
-      }
-    }
-  }
+          margin-top: 30px;
+          cursor: pointer;
 
+          span {
+            margin-right: 10px;
+          }
+
+
+        }
+
+
+      }
+
+    }
+
+  }
 }
+
+
 
