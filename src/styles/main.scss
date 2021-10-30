@@ -154,7 +154,7 @@ $LatoBold: 'LatoBold', sans-serif;
           margin-top: 60px;
 
           &:hover {
-            box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
             cursor: pointer;
           }
         }
@@ -249,6 +249,7 @@ $LatoBold: 'LatoBold', sans-serif;
 
 }
 
+
 #products {
   background-image: url("../../images/products-bg.png");
   background-position: center;
@@ -263,20 +264,41 @@ $LatoBold: 'LatoBold', sans-serif;
     }
 
     #products-items {
-      display: flex;
-      flex-wrap: wrap;
+      //display: flex;
+      //align-items: center;
+      //justify-content: center;
+      //flex-wrap: wrap;
       margin: 0 auto;
-      width: 300px;
+      text-align: center;
+      width: 500px;
+
+      .product-cart {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
       .product-item {
         border-radius: 30px;
         background-color: rgb(255, 255, 255);
-        width: 285px;
+        width: 290px;
         padding: 40px 50px;
         margin: 12px;
 
         &:hover {
-          box-shadow: 0px 4px 10px 0.2px rgba(107, 77, 18, 0.3);
+          box-shadow: 0px 4px 10px 5px rgba(107, 77, 18, 0.3);
+        }
+
+        .product-item-image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          height: 151px;
+
+          img {
+            width: 100%;
+          }
         }
 
         .product-item-title {
@@ -301,6 +323,7 @@ $LatoBold: 'LatoBold', sans-serif;
           color: rgb(34, 34, 34);
           text-align: center;
           margin-top: 20px;
+          height: 40px;
         }
 
         .product-item-price {
@@ -317,7 +340,7 @@ $LatoBold: 'LatoBold', sans-serif;
           width: 180px;
           font-family: $LatoBold;
           margin-top: 12px;
-          
+
 
           img {
             width: 20px;
@@ -355,5 +378,63 @@ $LatoBold: 'LatoBold', sans-serif;
   }
 }
 
+.slick-slide img {
+  display: inline;
+}
 
+button.slick-next.slick-arrow {
+  position: absolute;
+  bottom: -77px;
+  right: 113px;
+  background: transparent;
+  width: 35px;
+  height: 48px;
+  border: 1px solid #cfc1b1;
+
+  border-radius: 0 25px 25px 0;
+
+  &::before {
+    content: url("../../images/next.png");
+  }
+}
+
+button.slick-prev.slick-arrow {
+  position: absolute;
+  bottom: -77px;
+  left: 113px;
+  background: transparent;
+  width: 35px;
+  height: 48px;
+  border: 1px solid #cfc1b1;
+  border-right: none;
+  border-radius: 25px 0 0 25px;
+
+  &::before {
+    content: url("../../images/prev.png");
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+ul.slick-dots {
+  display: inline-flex;
+  list-style: none;
+  border:1px solid #cfc1b1;
+  padding: 5px;
+  position: absolute;
+  bottom: -77px;
+  left: 147px;
+}
+
+ul li button {
+  margin: 10px 10px;
+  border: none;
+  background: transparent;
+  font-family: $LatoBold;
+  color: #434343;
+}
+
+ul li.slick-active button {
+  color: #af6012;
+}
 
