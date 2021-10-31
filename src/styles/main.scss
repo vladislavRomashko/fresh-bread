@@ -42,6 +42,14 @@ $LatoBold: 'LatoBold', sans-serif;
   margin: 0 auto;
 }
 
+@mixin infoText {
+  width: 590px;
+  font-size: 16px;
+  font-family: $LatoLight;
+  color: rgb(34, 34, 34);
+  line-height: 1.313;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -419,7 +427,7 @@ button.slick-prev.slick-arrow {
 ul.slick-dots {
   display: inline-flex;
   list-style: none;
-  border:1px solid #cfc1b1;
+  border: 1px solid #cfc1b1;
   padding: 5px;
   position: absolute;
   bottom: -77px;
@@ -437,4 +445,113 @@ ul li button {
 ul li.slick-active button {
   color: #af6012;
 }
+
+
+#healthy-container {
+  @include container;
+  position: relative;
+  padding: 120px 0;
+
+  h2.block-title {
+    text-align: center;
+  }
+
+  #healthy-bg {
+    position: absolute;
+    top: 0;
+    right: -360px;
+  }
+
+  #healthy-container-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 103px;
+
+    #healthy-container-info-left {
+      #txt-top {
+        margin-bottom: 20px;
+      }
+
+      .healthy-container-info-text {
+        @include infoText;
+      }
+    }
+  }
+
+
+  #healthy-container-info-right {
+    @include infoText;
+    margin-left: 25px;
+  }
+
+  #healthy-container-items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 87px;
+
+    .healthy-container-item {
+      width: 279px;
+      text-align: center;
+
+      .healthy-container-item-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .healthy-container-item-text {
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        line-height: 1.313;
+        text-align: center;
+      }
+    }
+  }
+
+  #healthy-container-production {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+
+    #healthy-container-production-image {
+      width: 487px;
+    }
+
+    #healthy-container-production-block {
+      background-image: url("../../images/rolling-p.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      width: 690px;
+      height: 245px;
+      padding: 68px 30px;
+      text-align: center;
+
+      #healthy-container-production-text1 {
+        width: 545px;
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        line-height: 1.313;
+        margin-bottom: 20px;
+      }
+
+      #healthy-container-production-text2 {
+        width: 595px;
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        line-height: 1.313;
+      }
+
+    }
+  }
+
+}
+
 
