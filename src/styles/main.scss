@@ -269,6 +269,7 @@ $LatoBold: 'LatoBold', sans-serif;
     h2.block-title {
       text-align: center;
       margin-bottom: 79px;
+      color: #af6012;
     }
 
     #products-items {
@@ -398,7 +399,7 @@ button.slick-next.slick-arrow {
   width: 35px;
   height: 48px;
   border: 1px solid #cfc1b1;
-
+  cursor: pointer;
   border-radius: 0 25px 25px 0;
 
   &::before {
@@ -416,6 +417,9 @@ button.slick-prev.slick-arrow {
   border: 1px solid #cfc1b1;
   border-right: none;
   border-radius: 25px 0 0 25px;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
 
   &::before {
     content: url("../../images/prev.png");
@@ -432,6 +436,7 @@ ul.slick-dots {
   position: absolute;
   bottom: -77px;
   left: 147px;
+
 }
 
 ul li button {
@@ -440,6 +445,7 @@ ul li button {
   background: transparent;
   font-family: $LatoBold;
   color: #434343;
+  cursor: pointer;
 }
 
 ul li.slick-active button {
@@ -454,6 +460,7 @@ ul li.slick-active button {
 
   h2.block-title {
     text-align: center;
+    color: #af6012;
   }
 
   #healthy-bg {
@@ -533,7 +540,6 @@ ul li.slick-active button {
       text-align: center;
 
       #healthy-container-production-text1 {
-        width: 545px;
         font-size: 16px;
         font-family: $LatoLight;
         color: rgb(34, 34, 34);
@@ -542,7 +548,6 @@ ul li.slick-active button {
       }
 
       #healthy-container-production-text2 {
-        width: 595px;
         font-size: 16px;
         font-family: $LatoLight;
         color: rgb(34, 34, 34);
@@ -551,7 +556,137 @@ ul li.slick-active button {
 
     }
   }
-
 }
+
+#about {
+  background: url("../../images/about-bg.png");
+
+  #about-container {
+    @include container;
+    padding: 120px 0 114px 0;
+    position: relative;
+
+    h2.block-title {
+      text-align: center;
+      color: #af6012;
+    }
+
+    #about-items-image {
+      position: absolute;
+      top: 399px;
+      left: 207px;
+      z-index: 0;
+    }
+
+    #about-items {
+      margin-top: 80px;
+      position: relative;
+
+      .about-item.right {
+        margin-left: auto;
+      }
+
+      .about-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 585px;
+        z-index: 2;
+
+        .about-item-text {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+          width: 232px;
+        }
+      }
+    }
+
+    #about-info {
+      margin: 80px auto 0 auto;
+      width: 1000px;
+      background-image: url("../../images/about-rolling-pin.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 50px 100px;
+      text-align: center;
+
+      .about-info-text {
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        line-height: 1.313;
+      }
+
+      #about-info-loz {
+        font-size: 18px;
+        font-family: $Lato;
+        color: rgb(175, 96, 18);
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+#recipe-container {
+  @include container;
+  position: relative;
+
+  #recipe-bg1 {
+    position: absolute;
+    top: -60px;
+    right: -160px;
+  }
+
+  #recipe-bg2 {
+    position: absolute;
+    bottom: 17px;
+    left: -310px;
+  }
+
+  h2.block-title {
+    color: #af6012;
+    text-align: center;
+    margin-top: 120px;
+  }
+
+  #recipe-items {
+    margin-top: 74px;
+    text-align: center;
+
+    .recipe-block-items {
+      .recipe-item {
+        display: flex;
+        flex-direction: column;
+        width: 575px;
+        height: 270px;
+        border-radius: 30px;
+        overflow: hidden;
+        margin: 25px auto 0 auto;
+
+        .recipe-text {
+          padding: 25px;
+          font-size: 18px;
+          font-family: $Lato;
+          color: rgb(55, 29, 3);
+          line-height: 1.333;
+          text-align: center;
+          background-color: #f7c35e;
+        }
+
+        .recipe-image {
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+
+        }
+      }
+    }
+
+  }
+}
+
 
 
