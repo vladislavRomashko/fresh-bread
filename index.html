@@ -23,13 +23,14 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="src/css/slick.css">
-    <link rel="stylesheet" href="src/css/slick-theme.css.css">
+    <link rel="stylesheet" href="src/css/animate.min.css">
+    <link rel="stylesheet" href="src/css/hover-min.css">
     <link rel="stylesheet" href="dist/main.min.css">
     <title>Хлебушек</title>
 </head>
 <body>
 
-<div id="header">
+<div id="header" class=" animate__animated wow animate__backInLeft">
     <div id="header-container">
         <div id="header-nav">
             <div id="header-logo">
@@ -38,14 +39,14 @@
                 </a>
             </div>
             <div id="header-menu">
-                <a href="#">Наша продукция</a>
-                <a href="#">О нас</a>
-                <a href="#">Контакты</a>
+                <a href="#products" class="hvr-grow">Наша продукция</a>
+                <a href="#about" class="hvr-grow">О нас</a>
+                <a href="#footer" class="hvr-grow">Контакты</a>
             </div>
         </div>
         <div id="header-info">
             <div id="header-phone">
-                <img src="images/telephone.png" alt="">
+                <img src="images/telephone.png" alt="" class="hvr-pulse">
                 <span>+7 (526) 987 00 88</span>
             </div>
             <div id="cart">
@@ -61,7 +62,7 @@
 
 <div id="main">
     <div id="main-container">
-        <div id="main-info">
+        <div id="main-info" class="animate__animated wow animate__backInRight">
             <div id="main-info-title">
                 Вкус настоящей
                 домашней выпечки
@@ -79,7 +80,7 @@
                 </button>
             </div>
         </div>
-        <div id="main-image">
+        <div id="main-image" class=" animate__animated wow animate__backInLeft">
             <img src="images/Big-bread.png" alt="">
         </div>
     </div>
@@ -88,11 +89,11 @@
 <div id="priority">
     <div id="priority-container">
         <img id="priority-bg" src="images/priority-bg.png" alt="">
-        <h2 class="block-title">
+        <h2 class="block-title animate__animated wow animate__backInDown">
             Для нас главное
         </h2>
 
-        <div id="priority-items">
+        <div id="priority-items" class="animate__animated wow animate__zoomIn">
 
             <div class="priority-item">
                 <div class="priority-item-title">
@@ -127,7 +128,7 @@
             </div>
         </div>
 
-        <div id="priority-proof">
+        <div id="priority-proof" class=" animate__animated wow animate__backInUp">
             <div id="priority-proof-text">
                 Мы доказали, что профессия пекаря, повара и кондитера – это ремесло на все времена.
                 Мы знаем все о хлебе, и с радостью делимся своими знаниями с вами.
@@ -139,8 +140,8 @@
 
 <div id="products">
     <div id="products-container">
-        <h2 class="block-title">Наша продукция</h2>
-        <div id="products-items">
+        <h2 class="block-title animate__animated wow animate__rotateIn">Наша продукция</h2>
+        <div id="products-items" class="animate__animated wow animate__jackInTheBox">
             <div class="product-cart">
                 <div class="product-item">
                     <div class="product-item-image">
@@ -159,12 +160,12 @@
                         60 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -187,13 +188,13 @@
                         70 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
 
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -217,12 +218,12 @@
                         96 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -245,12 +246,12 @@
                         110 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -274,12 +275,12 @@
                         55 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -302,12 +303,12 @@
                         110 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -331,12 +332,12 @@
                         87 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -359,12 +360,12 @@
                         98 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -389,12 +390,12 @@
                         100 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -417,12 +418,12 @@
                         54 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -445,8 +446,8 @@
                     <div class="product-item-price">
                         120 руб.
                     </div>
-                    <div class="product-item-action">
-                        <button class="btn">
+                    <div class="product-item-action hvr-bounce-in">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
@@ -474,12 +475,12 @@
                         30 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -503,12 +504,12 @@
                         78 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
                     </div>
@@ -531,14 +532,115 @@
                         15 руб.
                     </div>
                     <div class="product-item-action">
-                        <button class="btn">
+                        <button class="product-btn">
                             <img src="images/food-basket.png" alt="">
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details">
+                    <div class="product-item-details hvr-bounce-in">
                         <span>Подробнее</span>
                         <img src="images/arrowSmall.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-cards">
+            <div class="product-card">
+
+                <div class="product-card-image">
+                    <img src="images/fresh-bread1.png" alt="">
+                </div>
+
+                <div class="product-card-info">
+                    <div class="product-card-info-title">
+                        Батон Венский, 320 г
+                    </div>
+
+                    <div class="product-card-info-composition">
+
+                        <div class="product-card-info-composition-title">
+                            Состав:
+                        </div>
+                        <div class="product-card-info-composition-text">
+                            Мука пшеничная хлебопекарная в/с, дрожжи, вода, соль.
+                        </div>
+
+                    </div>
+                    <div class="product-card-info-actions">
+                        <div class="product-card-info-actions-count">
+                            <div class="product-card-info-actions-count-min">
+                                -
+                            </div>
+                            <div class="product-card-info-actions-count-menu">
+                                1
+                            </div>
+                            <div class="product-card-info-actions-count-pl">
+                                +
+                            </div>
+                        </div>
+                        <div class="product-card-info-actions-price">
+                            60 руб.
+                        </div>
+                        <div class="product-card-info-actions-btn">
+                            <button class="product-btn">
+                                <img src="images/food-basket.png" alt="">
+                                <span>В корзину</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-card-specifications">
+                    <div class="product-card-specifications-title">
+                        Характеристики:
+                    </div>
+                    <div class="product-card-specifications-table">
+                        <table>
+                            <tr>
+                                <th>Пищевая ценность, на 100 г</th>
+                            </tr>
+                            <tbody>
+                            <tr>
+                                <td>Белки</td>
+                                <td>8,6 г</td>
+                            </tr>
+                            <tr>
+                                <td>Жиры</td>
+                                <td>0,9 г</td>
+                            </tr>
+                            <tr>
+                                <td>Углеводы</td>
+                                <td>57,2 г</td>
+                            </tr>
+                            <tr>
+                                <td>Энергентическая ценность</td>
+                                <td>271 ккал/1335 кДж</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="product-card-specifications-title">
+                        Срок годности:
+                    </div>
+                    <div class="product-card-specifications-text">
+                        24 часа при температуре не ниже +6ºС
+                    </div>
+                </div>
+                <div class="product-card-delivery">
+                    <div class="product-card-delivery-text">
+                        <p>
+                            Доставка заказов производится с 10:00 до 21:00
+                            по городу.
+                        </p>
+                        <p>
+                            В отдаленные районы доставка оплачивается дополнительно (по согласованию с оператором).
+                        </p>
+                        <p class="product-card-delivery-text-min-time">
+                            Минимальное время доставки — 4 часа после успешного оформления заказа.
+                        </p>
+                        <p>
+                            Подробные условия в разделе Доставка и оплата.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -549,11 +651,11 @@
 <div id="healthy">
     <div id="healthy-container">
         <img id="healthy-bg" src="images/healthy-bg.png" alt="">
-        <h2 class="block-title">
+        <h2 class="block-title animate__animated wow animate__fadeInUp">
             Полезное о хлебе
         </h2>
         <div id="healthy-container-info">
-            <div id="healthy-container-info-left">
+            <div id="healthy-container-info-left" class="animate__animated wow animate__fadeInTopLeft">
                 <div class="healthy-container-info-text" id="txt-top">
                     Хлеб – популярное блюдо во всем мире. У многих народов с этим продуктом связаны традиции, пословицы,
                     поговорки и даже исторические события, ведь многие войны начинались из-за плодородных земель.
@@ -563,7 +665,7 @@
                     потому что хлеб – это сытно и полезно.
                 </div>
             </div>
-            <div id="healthy-container-info-right">
+            <div id="healthy-container-info-right" class="animate__animated wow animate__fadeInTopRight">
                 <div class="healthy-container-info-text">
                     В хлебе содержатся практически все необходимые для поддержки организма питательные вещества. Это
                     углеводы, растительный белок, клетчатка, жиры, витамины группы В, а также широкий спектр
@@ -577,7 +679,7 @@
 
         <div id="healthy-container-items">
 
-            <div class="healthy-container-item">
+            <div class="healthy-container-item animate__animated wow animate__fadeInBottomLeft">
                 <div class="healthy-container-item-image">
                     <img src="images/helthy1.png" alt="">
                 </div>
@@ -585,7 +687,7 @@
                     Хлеб с отрубями, такой хлеб «нейтрализует» аллергены и токсины, укрепляет иммунную систему.
                 </div>
             </div>
-            <div class="healthy-container-item">
+            <div class="healthy-container-item animate__animated wow  animate__fadeInUp">
                 <div class="healthy-container-item-image">
                     <img src="images/healthy2.png" alt="">
                 </div>
@@ -594,7 +696,7 @@
                     хлеба нормализует уровень холестерина и обмен веществ.
                 </div>
             </div>
-            <div class="healthy-container-item">
+            <div class="healthy-container-item animate__animated wow animate__fadeInBottomRight">
                 <div class="healthy-container-item-image">
                     <img src="images/healthy3.png" alt="">
                 </div>
@@ -605,7 +707,7 @@
         </div>
 
 
-        <div id="healthy-container-production">
+        <div id="healthy-container-production" class="animate__animated wow animate__flipInX">
             <div id="healthy-container-production-image">
                 <img src="images/hleb-semki.png" alt="">
             </div>
@@ -625,12 +727,12 @@
 
 <div id="about">
     <div id="about-container">
-        <h2 class="block-title"> О нас</h2>
+        <h2 class="block-title animate__animated wow animate__zoomIn"> О нас</h2>
         <div id="about-items-image">
             <img src="images/about-fig.png" alt="">
         </div>
         <div id="about-items">
-            <div class="about-item">
+            <div class="about-item animate__animated wow animate__fadeInRightBig">
                 <div class="about-item-image">
                     <img src="images/about1.png" alt="">
                 </div>
@@ -639,7 +741,7 @@
                     хлеба.
                 </div>
             </div>
-            <div class="about-item right">
+            <div class="about-item right animate__animated wow animate__fadeInLeftBig">
                 <div class="about-item-image ">
                     <img src="images/about2.png" alt="">
                 </div>
@@ -649,7 +751,7 @@
 
                 </div>
             </div>
-            <div class="about-item">
+            <div class="about-item animate__animated wow animate__fadeInRightBig">
                 <div class="about-item-image">
                     <img src="images/about3.png" alt="">
                 </div>
@@ -657,7 +759,7 @@
                     Жар и пар наших печей дарят хлебу твёрдую хрустящую корочку и нежную ароматную сердцевину.
                 </div>
             </div>
-            <div class="about-item right">
+            <div class="about-item right animate__animated wow animate__fadeInLeftBig">
                 <div class="about-item-image">
                     <img src="images/about4.png" alt="">
                 </div>
@@ -668,7 +770,7 @@
             </div>
 
         </div>
-        <div id="about-info">
+        <div id="about-info" class="animate__animated wow animate__jackInTheBox">
             <div class="about-info-text">
                 Мы выпекаем хлеб со всех уголков мира – итальянские чиабатты, французские багеты и нормандский хлеб,
                 традиционный русский бородинский и настоящие немецкие бретцели.
@@ -687,8 +789,9 @@
     <div id="recipe-container">
         <img id="recipe-bg1" src="images/recipe-bg.png" alt="">
         <img id="recipe-bg2" src="images/recipe-bg2.png" alt="">
-        <h2 class="block-title">Рецепты бутербродов с нашим хлебом</h2>
-        <div id="recipe-items">
+        <h2 class="block-title  animate__animated wow animate__lightSpeedInRight">Рецепты бутербродов с нашим
+            хлебом</h2>
+        <div id="recipe-items" class="animate__animated wow animate__lightSpeedInLeft">
             <div class="recipe-block-items">
                 <div class="recipe-item">
                     <div class="recipe-image">
@@ -726,15 +829,162 @@
                 </div>
             </div>
         </div>
+        <div id="recipe-pagination" class="animate__animated wow animate__fadeIn">
+            <div id="arr-prev">
+                <img src="images/prev.png" alt="">
+            </div>
+            <div id="count-page">
+
+            </div>
+            <div id="arr-next">
+                <img src="images/next.png" alt="">
+            </div>
+        </div>
+        <div class="recipe-popup">
+            <div class="recipe-popup-container">
+                <div class="recipe-popup-container-close">
+                    <img src="images/close.png" alt="">
+                </div>
+                <div class="recipe-popup-container-title">
+                    Бутерброды с оливками, творогом,
+                    луком и базиликом
+                </div>
+                <div class="recipe-popup-container-ingrid">
+                    <div class="recipe-popup-container-ingrid-image">
+                        <img src="images/recipe11.png" alt="">
+                    </div>
+                    <div class="recipe-popup-container-ingrid-items">
+                        Ингредиенты:
+                        <ul>
+                            <li>0,5 банки черных оливок</li>
+                            <li>100 г творога</li>
+                            <li>20 г зеленого лука</li>
+                            <li>20 г базилика</li>
+                            <li>ржаной хлеб</li>
+                            <li>соль по вкусу</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recipe-popup-container-coocking">
+                    Как приготовить:
+                </div>
+                <div class="recipe-popup-container-coocking-text">
+                    Измельчите в блендере черные оливки. Мелко нарежьте зеленый лук и базилик. Смешайте всё с творогом.
+                    Посолите и намажьте смесь на ржаной хлеб.
+                </div>
+            </div>
+        </div>
+        <div class="recipe-popup ">
+            <div class="recipe-popup-container">
+                <div class="recipe-popup-container-close">
+                    <img src="images/close.png" alt="">
+                </div>
+                <div class="recipe-popup-container-title">
+                    Бутерброды с брынзой
+                </div>
+                <div class="recipe-popup-container-ingrid">
+                    <div class="recipe-popup-container-ingrid-image">
+                        <img src="images/recipe33.png" alt="">
+                    </div>
+                    <div class="recipe-popup-container-ingrid-items">
+                        Ингредиенты:
+                        <ul>
+                            <li>1 пучек зеленого лука</li>
+                            <li>1 пучек петрушки</li>
+                            <li>55 г брынзы</li>
+                            <li>2 ч л сливочного масла</li>
+                            <li>белый хлеб</li>
+                            <li>1шт помидор</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recipe-popup-container-coocking">
+                    Как приготовить:
+                </div>
+                <div class="recipe-popup-container-coocking-text">
+                    Измельчить зеленый лук и петрушку.Брынзу перемешать со сливочном маслом, луком и зеленью.Выложить
+                    сырную массу на хлеб. Сверху положить тонкие кружочки помидора.Запекать бутерброды в микроволновке
+                    при полной мощности 2–3 минуты.
+                </div>
+            </div>
+        </div>
+        <div class="recipe-popup ">
+            <div class="recipe-popup-container">
+                <div class="recipe-popup-container-close">
+                    <img src="images/close.png" alt="">
+                </div>
+                <div class="recipe-popup-container-title">
+                    Бутерброды с твердым сыром и горчицей
+                </div>
+                <div class="recipe-popup-container-ingrid">
+                    <div class="recipe-popup-container-ingrid-image">
+                        <img src="images/recipe22.png" alt="">
+                    </div>
+                    <div class="recipe-popup-container-ingrid-items">
+                        Ингредиенты:
+                        <ul>
+                            <li>200 г твердого сыра</li>
+                            <li>1 ст. л. горчицы</li>
+                            <li>100 г сливочного масла</li>
+                            <li>красный перец</li>
+                            <li>цельнозерновой хлеб</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recipe-popup-container-coocking">
+                    Как приготовить:
+                </div>
+                <div class="recipe-popup-container-coocking-text">
+                    Мелко натри сыр.Заправь тертый сыр горчицей и щепоткой красного перца.Смешай сыр со сливочным
+                    маслом.Прекрасно подойдет к цельнозерновому хлебу. Украшением могут служить орехи, зелень или свежие
+                    овощи.
+                </div>
+            </div>
+        </div>
+        <div class="recipe-popup">
+            <div class="recipe-popup-container">
+                <div class="recipe-popup-container-close">
+                    <img src="images/close.png" alt="">
+                </div>
+                <div class="recipe-popup-container-title">
+                    Бутерброды с яйцами и печенью трески
+                </div>
+                <div class="recipe-popup-container-ingrid">
+                    <div class="recipe-popup-container-ingrid-image">
+                        <img src="images/recipe11.png" alt="">
+                    </div>
+                    <div class="recipe-popup-container-ingrid-items">
+                        Ингредиенты:
+                        <ul>
+                            <li>1 банка печени трески</li>
+                            <li>2 вареных яйца</li>
+                            <li>1 ст. л. лимонного сока</li>
+                            <li>1 ст. л. майонеза</li>
+                            <li>соль по вкусу</li>
+                            <li>перец по вкусу</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recipe-popup-container-coocking">
+                    Как приготовить:
+                </div>
+                <div class="recipe-popup-container-coocking-text">
+                    Разомни вилкой печень трески.Натри в нее вареные яйца.Измельчи и добавь лук.Заправь массу лимонным
+                    соком и майонезом.Добавь соль и перец по вкусу, перемешай.Намажь на хлеб и наслаждайся вкусом.Свежие
+                    овощи и зелень послужат хорошим украшением для твоих бутербродов.
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 
 <div id="follow">
     <div id="follow-container">
-        <div id="follow-image">
+        <div id="follow-image" class="animate__animated wow animate__rotateInDownLeft">
             <img src="images/happy-backer.png" alt="">
         </div>
-        <div id="follow-items">
+        <div id="follow-items" class="animate__animated wow animate__rotateInUpRight">
             <div id="follow-items-title">
                 Следите за нашими новинками
                 и вкусными рецептами!
@@ -743,25 +993,25 @@
                 <div id="follow-items-form-input">
                     <input type="text" placeholder="Введите е-mail">
                 </div>
-                <div id="follow-items-form-button">
-                    <button class="btn">
+                <div id="follow-items-form-button" class="hvr-pulse">
+                    <button class="btn ">
                         Подписаться
                     </button>
                 </div>
             </div>
             <div id="follow-items-social">
-                <a href="https://www.instagram.com/">
+                <a href="https://www.instagram.com/" target="_blank">
                     <img src="images/insta.png" alt="">
                 </a>
 
-                <a href="https://web.telegram.org/">
+                <a href="https://web.telegram.org/" target="_blank">
                     <img src="images/telegram.png" alt="">
                 </a>
 
-                <a href="https://www.youtube.com/">
+                <a href="https://www.youtube.com/" target="_blank">
                     <img src="images/youtube.png" alt="">
                 </a>
-                <a href="https://vk.com/">
+                <a href="https://vk.com/" target="_blank">
                     <img src="images/vk-social-logotype.png" alt="">
                 </a>
 
@@ -775,33 +1025,35 @@
             href="https://yandex.fr/maps/960/zaporizhia/?utm_medium=mapframe&utm_source=maps"
             style="color:#eee;font-size:12px;position:absolute;top:0px;">Zaporizhia</a><a
             href="https://yandex.fr/maps/960/zaporizhia/house/sobornyi_prospekt_147/Z0wYdwRhSUUOQFptfXR1c3pjYg==/?ll=35.131943%2C47.842051&utm_medium=mapframe&utm_source=maps&z=17.6"
-            style="color:#eee;font-size:12px;position:absolute;top:14px;">Sobornyi prospekt, 147 — Yandex.Maps</a>
+            style="color:#eee;font-size:12px;position:absolute;top:14px;">Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Accusamus dolor doloribus eius hic illo impedit nobis quae quisquam repellendus suscipit? —
+        Yandex.Maps</a>
         <iframe src="https://yandex.fr/map-widget/v1/-/CCUuITrJDA" width="100%" height="500" frameborder=""
                 allowfullscreen="true" style="position:relative;"></iframe>
     </div>
 </div>
 
 <div id="footer">
-    <div id="footer-container">
+    <div id="footer-container" class="animate__animated wow animate__backInUp">
         <div id="footer-info">
             <div id="footer-logo">
-                <img src="images/logo.png" alt="">
+                <a href="#"><img src="images/logo.png" alt=""></a>
             </div>
             <div id="footer-social">
                 <div id="footer-social-title">
                     Мы в соц сетях
                 </div>
                 <div id="footer-social-items">
-                    <a href="">
+                    <a href="https://www.instagram.com/" target="_blank">
                         <img src="images/insta.png" alt="">
                     </a>
-                    <a href="">
+                    <a href="https://web.telegram.org/" target="_blank">
                         <img src="images/telegram.png" alt="">
                     </a>
-                    <a href="">
+                    <a href="https://www.youtube.com/" target="_blank">
                         <img src="images/youtube.png" alt="">
                     </a>
-                    <a href="">
+                    <a href="https://vk.com/" target="_blank">
                         <img src="images/vk-social-logotype.png" alt="">
                     </a>
                 </div>
@@ -811,10 +1063,10 @@
             </div>
         </div>
         <div id="footer-nav">
-            <a href="#">Наша продукция</a>
-            <a href="#">О нас</a>
-            <a href="#">Контакты</a>
-            <a href="#">Доставка и оплата</a>
+            <a href="#products" class="hvr-forward">Наша продукция</a>
+            <a href="#about" class="hvr-forward">О нас</a>
+            <a href="#footer" class="hvr-forward">Контакты</a>
+            <a href="#" class="hvr-forward">Доставка и оплата</a>
         </div>
         <div id="footer-contacts">
             <div id="footer-contacts-title">
@@ -825,11 +1077,11 @@
                     Адрес:
                 </div>
                 <div class="footer-contacts-item-text">
-                    г. Новосибирск, ул. Ленина, д. 177
+                    г. Запорожье, просп. Соборный, д. 147
                 </div>
             </div>
-            <div id="footer-contacts-phone" ">
-                <img src="images/telephone.png" alt="">
+            <div id="footer-contacts-phone">
+                <img src="images/telephone.png" alt="" class="hvr-pulse">
                 <span>+7 (526) 987 00 88</span>
             </div>
             <div id="footer-contacts-time">
@@ -844,7 +1096,9 @@
     </div>
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.simplePagination.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
 
 
