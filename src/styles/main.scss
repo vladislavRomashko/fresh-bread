@@ -82,961 +82,1353 @@ $Tenor: 'TenorSans', sans-serif;
   }
 }
 
+@mixin background-popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  z-index: 9999;
+}
+
+@mixin popup-close {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-#header-container {
-  @include container;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 23px 0;
+body {
+  position: relative;
 
-  #header-nav {
+
+  #header-container {
+    @include container;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 23px 0;
 
-    #header-logo {
-      margin-right: 62px;
-    }
-
-    #header-menu {
-      a {
-        text-decoration: none;
-        font-size: 16px;
-        font-family: $Lato;
-        color: rgb(34, 34, 34);
-        margin: 0 25px;
-      }
-
-    }
-  }
-
-  #header-info {
-    display: flex;
-    align-items: center;
-
-    #cart {
+    #header-nav {
       display: flex;
       align-items: center;
-      margin: 0 20px 0 53px;
 
-      #cart-count {
-        margin-left: 10px;
-        font-size: 14px;
-        font-family: $Lato;
-        color: rgb(34, 34, 34);
-      }
-    }
-
-    #header-phone {
-      @include phone;
-    }
-  }
-}
-
-#main {
-  background: url("../../images/main-bg.png");
-
-  #main-container {
-    @include container;
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    #main-image {
-      position: absolute;
-      top: 32px;
-      right: -40px;
-    }
-
-    #main-info {
-      width: 605px;
-      margin-top: 177px;
-      margin-bottom: 147px;
-
-      #main-info-title {
-        font-size: 60px;
-        font-family: $Gabriela;
-        color: rgb(175, 95, 17);
-        line-height: 65px;
+      #header-logo {
+        margin-right: 62px;
       }
 
-      #main-info-text {
-        font-size: 18px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        margin-top: 37px;
-      }
-
-      #main-info-action {
-
-        #main-btn {
-          background-color: rgb(247, 195, 94);
-          width: 282px;
-          font-size: 20px;
+      #header-menu {
+        a {
+          text-decoration: none;
+          font-size: 16px;
           font-family: $Lato;
-          text-align: center;
-          padding: 20px;
-          border: none;
-          border-radius: 40px;
-          margin-top: 60px;
-
-          &:hover {
-            box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-.block-title {
-  font-size: 35px;
-  font-family: $Gabriela;
-  color: rgb(175, 95, 17);
-}
-
-#priority-container {
-  @include container;
-  position: relative;
-  padding: 120px 0;
-
-  #priority-bg {
-    position: absolute;
-    left: -389px;
-    top: 0;
-    height: 100%;
-  }
-
-  h2.block-title {
-    text-align: center;
-
-  }
-
-  #priority-items {
-    margin-top: 78px;
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
-
-    .priority-item {
-      width: 260px;
-
-      .priority-item-title {
-        font-size: 18px;
-        font-family: $Gabriela;
-        color: rgb(34, 34, 34);
-
-        span {
-          vertical-align: middle;
-        }
-
-        img {
-          vertical-align: middle;
-          margin-right: 20px;
-        }
-      }
-    }
-
-    .priority-item-text {
-      font-size: 14px;
-      font-family: $LatoLight;
-      color: rgb(34, 34, 34);
-      margin-top: 20px;
-      line-height: 21px;
-    }
-  }
-
-  #priority-proof {
-    background-image: url("../../images/rolling-pin.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 80px auto 0 auto;
-    width: 385px;
-    height: 151px;
-    padding: 25px 30px 30px 30px;
-
-    #priority-proof-text {
-      font-size: 16px;
-      font-family: $LatoLight;
-      color: rgb(34, 34, 34);
-      line-height: 24px;
-      text-align: center;
-    }
-  }
-}
-
-.product-btn {
-  font-size: 16px;
-  color: rgb(55, 29, 3);
-  background-color: rgb(247, 195, 94);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  padding: 12px;
-  text-align: center;
-  width: 180px;
-  font-family: $LatoBold;
-  margin-top: 12px;
-
-  &:hover {
-    box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
-    cursor: pointer;
-  }
-
-
-  img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-
-  span {
-    vertical-align: middle;
-  }
-
-}
-
-
-#products {
-  background-image: url("../../images/products-bg.png");
-  background-position: center;
-
-  #products-container {
-    @include container;
-    padding: 120px 0 182px 0;
-
-    h2.block-title {
-      text-align: center;
-      margin-bottom: 79px;
-      color: #af6012;
-    }
-
-    #products-items {
-      margin: 0 auto;
-      text-align: center;
-      width: 500px;
-
-      .product-cart {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .product-item {
-        border-radius: 30px;
-        background-color: rgb(255, 255, 255);
-        width: 290px;
-        padding: 40px 50px;
-        margin: 12px;
-
-        &:hover {
-          box-shadow: 0px 4px 10px 5px rgba(107, 77, 18, 0.3);
-        }
-
-        .product-item-image {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          height: 151px;
-
-          img {
-            width: 100%;
-          }
-        }
-
-        .product-item-title {
-          font-size: 24px;
-          font-family: $Gabriela;
-          color: rgb(67, 67, 67);
-          text-align: center;
-          margin-top: 25px;
-        }
-
-        .product-item-weight {
-          font-size: 18px;
-          font-family: $Gabriela;
-          color: rgb(67, 67, 67);
-          text-align: center;
-          margin-top: 15px;
-        }
-
-        .product-item-description {
-          font-size: 16px;
-          font-family: $LatoLight;
           color: rgb(34, 34, 34);
-          text-align: center;
-          margin-top: 20px;
-          height: 40px;
+          margin: 0 25px;
         }
 
-        .product-item-price {
-          font-size: 18px;
-          font-family: $LatoBold;
-          color: rgb(175, 96, 18);
-          text-align: center;
-          margin-top: 24px;
-        }
-
-        .product-item-details {
-          font-size: 16px;
-          font-family: "Lato";
-          color: rgb(34, 34, 34);
-          text-align: center;
-          margin-top: 30px;
-          cursor: pointer;
-
-          span {
-            margin-right: 10px;
-          }
-        }
       }
     }
-  }
-}
 
-.slick-slide img {
-  display: inline;
-}
+    #header-info {
+      display: flex;
+      align-items: center;
 
-button.slick-next.slick-arrow {
-  position: absolute;
-  bottom: -77px;
-  right: 113px;
-  background: transparent;
-  width: 35px;
-  height: 48px;
-  border: 1px solid #cfc1b1;
-  cursor: pointer;
-  border-radius: 0 25px 25px 0;
-
-  &::before {
-    content: url("../../images/next.png");
-  }
-}
-
-button.slick-prev.slick-arrow {
-  position: absolute;
-  bottom: -77px;
-  left: 113px;
-  background: transparent;
-  width: 35px;
-  height: 48px;
-  border: 1px solid #cfc1b1;
-  border-right: none;
-  border-radius: 25px 0 0 25px;
-  cursor: pointer;
-  vertical-align: middle;
-  text-align: center;
-
-  &::before {
-    content: url("../../images/prev.png");
-    text-align: center;
-    vertical-align: middle;
-  }
-}
-
-ul.recipe-dots {
-  display: inline-flex;
-  list-style: none;
-  padding: 5px;
-  position: absolute;
-  bottom: -91px;
-  left: 568px;
-
-}
-
-ul.product-dots {
-  display: inline-flex;
-  list-style: none;
-  border: 1px solid #cfc1b1;
-  padding: 5px;
-  position: absolute;
-  bottom: -77px;
-  left: 147px;
-
-}
-
-ul li button {
-  margin: 10px 10px;
-  border: none;
-  background: transparent;
-  font-family: $LatoBold;
-  color: #434343;
-  cursor: pointer;
-}
-
-ul li.slick-active button {
-  color: #af6012;
-}
-
-
-#healthy-container {
-  @include container;
-  position: relative;
-  padding: 120px 0;
-
-  h2.block-title {
-    text-align: center;
-    color: #af6012;
-  }
-
-  #healthy-bg {
-    position: absolute;
-    top: 0;
-    right: -351px;
-  }
-
-  #healthy-container-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 103px;
-
-    #healthy-container-info-left {
-      #txt-top {
-        margin-bottom: 20px;
-      }
-
-      .healthy-container-info-text {
-        @include infoText;
-      }
-    }
-  }
-
-
-  #healthy-container-info-right {
-    @include infoText;
-    margin-left: 25px;
-  }
-
-  #healthy-container-items {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin-top: 87px;
-
-    .healthy-container-item {
-      width: 279px;
-      text-align: center;
-
-      .healthy-container-item-image {
+      #cart {
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
+        margin: 0 20px 0 53px;
 
-      .healthy-container-item-text {
-        font-size: 16px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        line-height: 1.313;
-        text-align: center;
-      }
-    }
-  }
-
-  #healthy-container-production {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 100px;
-
-    #healthy-container-production-image {
-      width: 487px;
-    }
-
-    #healthy-container-production-block {
-      background-image: url("../../images/rolling-p.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      width: 690px;
-      height: 245px;
-      padding: 62px 30px;
-      text-align: center;
-
-      #healthy-container-production-text1 {
-        font-size: 16px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        line-height: 1.313;
-        margin-bottom: 20px;
-      }
-
-      #healthy-container-production-text2 {
-        font-size: 16px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        line-height: 1.313;
-      }
-
-    }
-  }
-}
-
-#about {
-  background: url("../../images/about-bg.png");
-
-  #about-container {
-    @include container;
-    padding: 120px 0 114px 0;
-    position: relative;
-
-    h2.block-title {
-      text-align: center;
-      color: #af6012;
-    }
-
-    #about-items-image {
-      position: absolute;
-      top: 399px;
-      left: 207px;
-      z-index: 0;
-    }
-
-    #about-items {
-      margin-top: 80px;
-      position: relative;
-
-      .about-item.right {
-        margin-left: auto;
-      }
-
-      .about-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 585px;
-        z-index: 2;
-
-        .about-item-text {
-          font-size: 16px;
-          font-family: $LatoLight;
-          color: rgb(34, 34, 34);
-          line-height: 1.313;
-          width: 232px;
-        }
-      }
-    }
-
-    #about-info {
-      margin: 80px auto 0 auto;
-      width: 1000px;
-      background-image: url("../../images/about-rolling-pin.png");
-      background-repeat: no-repeat;
-      background-size: 100%;
-      padding: 43px 100px 55px;
-      text-align: center;
-
-      .about-info-text {
-        font-size: 16px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        line-height: 1.313;
-      }
-
-      #about-info-loz {
-        font-size: 18px;
-        font-family: $Lato;
-        color: rgb(175, 96, 18);
-        margin-top: 25px;
-      }
-    }
-  }
-}
-
-#recipe-container {
-  @include container;
-  position: relative;
-
-  #recipe-bg1 {
-    position: absolute;
-    top: -60px;
-    right: -160px;
-  }
-
-  #recipe-bg2 {
-    position: absolute;
-    bottom: 17px;
-    left: -310px;
-  }
-
-  h2.block-title {
-    color: #af6012;
-    text-align: center;
-    margin-top: 120px;
-  }
-
-  #recipe-items {
-    margin-top: 74px;
-    text-align: center;
-
-    .recipe-block-items {
-      .recipe-item {
-        display: flex;
-        flex-direction: column;
-        width: 575px;
-        height: 270px;
-        border-radius: 30px;
-        overflow: hidden;
-        margin: 25px auto 0 auto;
-
-        .recipe-text {
-          padding: 25px;
-          font-size: 18px;
+        #cart-count {
+          margin-left: 10px;
+          font-size: 14px;
           font-family: $Lato;
-          color: rgb(55, 29, 3);
-          line-height: 1.333;
-          text-align: center;
-          background-color: #f7c35e;
-        }
-
-        .recipe-image {
-          overflow: hidden;
-
-          img {
-            width: 100%;
-          }
-
+          color: rgb(34, 34, 34);
         }
       }
-    }
 
-  }
-
-  #recipe-pagination {
-    width: 153px;
-    border: 1px solid #cfc1b1;;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    margin: 42px auto 120px auto;
-
-    #arr-prev {
-      border: none;
-      border-right: 1px solid #cfc1b1;;
-      padding: 15px;
-      background: transparent;
-      cursor: pointer;
-
-    }
-
-    #arr-next {
-      background: transparent;
-      border: none;
-      border-left: 1px solid #cfc1b1;;
-      padding: 15px;
-      cursor: pointer;
+      #header-phone {
+        @include phone;
+      }
     }
   }
 
-  .recipe-popup.active {
-    display: block;
-  }
+  #main {
+    background: url("../../images/main-bg.png");
 
-  .recipe-popup {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    left: 0;
-    top: 0;
-    margin: 0 auto;
-    z-index: 9999;
-
-    .recipe-popup-container {
+    #main-container {
+      @include container;
       position: relative;
-      margin: 78px auto 0 auto;
-      width: 580px;
-      padding: 76px 60px;
-      border-radius: 30px;
-      background-color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
 
-      .recipe-popup-container-close {
-        width: 28px;
-        height: 28px;
+      #main-image {
         position: absolute;
-        right: 30px;
-        top: 30px;
+        top: 32px;
+        right: -40px;
       }
 
-      .recipe-popup-container-title {
-        font-size: 24px;
-        font-family: $Tenor;
-        color: rgb(175, 96, 18);
+      #main-info {
+        width: 605px;
+        margin-top: 177px;
+        margin-bottom: 147px;
 
-      }
-
-      .recipe-popup-container-ingrid {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        margin-top: 30px;
-
-        .recipe-popup-container-ingrid-image {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 205px;
-          height: 180px;
-          overflow: hidden;
-          border-radius: 30px;
-
-          img {
-            width: 100%;
-            height: 100%;
-
-
-          }
+        #main-info-title {
+          font-size: 60px;
+          font-family: $Gabriela;
+          color: rgb(175, 95, 17);
+          line-height: 65px;
         }
 
-        .recipe-popup-container-ingrid-items {
-          margin-left: 38px;
-          font-size: 16px;
-          font-family: $Lato;
+        #main-info-text {
+          font-size: 18px;
+          font-family: $LatoLight;
           color: rgb(34, 34, 34);
-          line-height: 45px;
-
-
-          ul {
-            //margin-top: 23px;
-            font-size: 16px;
-            font-family: $Lato;
-            color: rgb(34, 34, 34);
-
-
-            li:not(:first-child) {
-              //margin-top: 15px;
-            }
-
-            li {
-              font-size: 14px;
-              font-family: $Lato;
-              color: rgb(34, 34, 34);
-              line-height: 28px;
-
-              &::marker {
-                color: #cfc1b1;
-              }
-            }
-          }
-        }
-      }
-
-      .recipe-popup-container-coocking {
-        margin-top: 30px;
-        font-size: 16px;
-        font-family: $Lato;
-        color: rgb(34, 34, 34);
-      }
-
-      .recipe-popup-container-coocking-text {
-        font-size: 16px;
-        font-family: $LatoLight;
-        color: rgb(34, 34, 34);
-        line-height: 1.313;
-        margin-top: 18px;
-        width: 410px;
-      }
-    }
-  }
-}
-
-#follow {
-  background-image: url("../../images/follow-bg.png");
-
-  #follow-container {
-    @include container;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 104px 0;
-
-    #follow-image {
-      border-width: 1px;
-      border-color: rgb(207, 193, 177);
-      border-style: solid;
-      border-radius: 50%;
-      width: 408px;
-      height: 408px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: 90px;
-    }
-
-    #follow-items {
-      margin-right: 100px;
-
-      #follow-items-title {
-        font-size: 24px;
-        font-family: $Gabriela;
-        color: rgb(175, 96, 18);
-        width: 390px;
-      }
-
-      #follow-items-form {
-        margin-top: 39px;
-        display: flex;
-        justify-content: flex-start;
-
-        #follow-items-form-input {
-          border-width: 1px;
-          border-color: rgb(149, 81, 14);
-          border-style: solid;
-          background-color: rgb(255, 255, 255);
-          width: 279px;
-          border-radius: 30px;
-          overflow: hidden;
-          margin-right: 24px;
-
-          input {
-            border: none;
-            font-size: 15px;
-            font-family: $Lato;
-            color: rgb(55, 29, 3);
-            line-height: 55px;
-            margin-left: 20px;
-            width: 250px;
-            outline: none;
-
-            &::placeholder {
-              font-size: 15px;
-              font-family: $Lato;
-              color: rgb(55, 29, 3);
-              line-height: 55px;
-              margin-left: 20px;
-            }
-          }
+          margin-top: 37px;
         }
 
-        #follow-items-form-button {
+        #main-info-action {
 
-          button.btn {
-            padding: 18px;
-            text-align: center;
-            width: 180px;
-            font-size: 16px;
-            font-family: $Lato;
-            color: rgb(55, 29, 3);
-            border-radius: 30px;
+          #main-btn {
             background-color: rgb(247, 195, 94);
+            width: 282px;
+            font-size: 20px;
+            font-family: $Lato;
+            text-align: center;
+            padding: 20px;
             border: none;
+            border-radius: 40px;
+            margin-top: 60px;
 
             &:hover {
               box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
               cursor: pointer;
             }
+          }
+        }
+      }
+    }
+  }
 
+
+  .block-title {
+    font-size: 35px;
+    font-family: $Gabriela;
+    color: rgb(175, 95, 17);
+  }
+
+  #priority-container {
+    @include container;
+    position: relative;
+    padding: 120px 0;
+
+    #priority-bg {
+      position: absolute;
+      left: -389px;
+      top: 0;
+      height: 100%;
+    }
+
+    h2.block-title {
+      text-align: center;
+
+    }
+
+    #priority-items {
+      margin-top: 78px;
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+
+      .priority-item {
+        width: 260px;
+
+        .priority-item-title {
+          font-size: 18px;
+          font-family: $Gabriela;
+          color: rgb(34, 34, 34);
+
+          span {
+            vertical-align: middle;
           }
 
+          img {
+            vertical-align: middle;
+            margin-right: 20px;
+          }
         }
       }
 
-      #follow-items-social {
-        margin-top: 36px;
-        @include social-items;
+      .priority-item-text {
+        font-size: 14px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        margin-top: 20px;
+        line-height: 21px;
+      }
+    }
+
+    #priority-proof {
+      background-image: url("../../images/rolling-pin.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 80px auto 0 auto;
+      width: 385px;
+      height: 151px;
+      padding: 25px 30px 30px 30px;
+
+      #priority-proof-text {
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+  }
+
+  .product-btn {
+    font-size: 16px;
+    color: rgb(55, 29, 3);
+    background-color: rgb(247, 195, 94);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+    width: 180px;
+    font-family: $LatoBold;
+    margin-top: 12px;
+
+    &:hover {
+      box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
+      cursor: pointer;
+    }
+
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+
+  }
+
+
+  #products {
+    background-image: url("../../images/products-bg.png");
+    background-position: center;
+
+    #products-container {
+      @include container;
+      padding: 120px 0 182px 0;
+
+      h2.block-title {
+        text-align: center;
+        margin-bottom: 79px;
+        color: #af6012;
+      }
+
+      #products-items {
+        margin: 0 auto;
+        text-align: center;
+        width: 500px;
+
+        .product-cart {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .product-item {
+          border-radius: 30px;
+          background-color: rgb(255, 255, 255);
+          width: 290px;
+          padding: 40px 50px;
+          margin: 12px;
+
+          &:hover {
+            box-shadow: 0px 4px 10px 5px rgba(107, 77, 18, 0.3);
+          }
+
+          .product-item-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 151px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .product-item-title {
+            font-size: 24px;
+            font-family: $Gabriela;
+            color: rgb(67, 67, 67);
+            text-align: center;
+            margin-top: 25px;
+          }
+
+          .product-item-weight {
+            font-size: 18px;
+            font-family: $Gabriela;
+            color: rgb(67, 67, 67);
+            text-align: center;
+            margin-top: 15px;
+          }
+
+          .product-item-description {
+            font-size: 16px;
+            font-family: $LatoLight;
+            color: rgb(34, 34, 34);
+            text-align: center;
+            margin-top: 20px;
+            height: 40px;
+          }
+
+          .product-item-price {
+            font-size: 18px;
+            font-family: $LatoBold;
+            color: rgb(175, 96, 18);
+            text-align: center;
+            margin-top: 24px;
+          }
+
+          .product-item-details {
+            font-size: 16px;
+            font-family: "Lato";
+            color: rgb(34, 34, 34);
+            text-align: center;
+            margin-top: 30px;
+            cursor: pointer;
+
+            span {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .products-card.active {
+        display: block;
+      }
+
+      .products-card {
+        @include background-popup;
+
+        .product-card-container {
+          position: relative;
+          width: 1000px;
+          background: #ffffff;
+          margin: 80px auto 0 auto;
+          border-radius: 30px;
+          padding: 85px 60px;
+
+          .product-popup-container-close {
+            @include popup-close;
+          }
+
+          .products-block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .product-card-image {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 290px;
+              height: 220px;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .product-card-info {
+              width: 475px;
+
+              .product-card-info-title {
+                font-size: 30px;
+                font-family: $Gabriela;
+                color: rgb(175, 96, 18);
+              }
+
+              .product-card-info-composition {
+                width: 345px;
+
+                .product-card-info-composition-title {
+                  font-size: 18px;
+                  font-family: $Gabriela;
+                  color: rgb(34, 34, 34);
+                  margin-top: 29px;
+                }
+
+                .product-card-info-composition-text {
+                  font-size: 16px;
+                  font-family: $LatoLight;
+                  color: rgb(34, 34, 34);
+                  margin-top: 15px;
+                  line-height: 21px;
+                }
+              }
+
+              .product-card-info-actions {
+                margin-top: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                .product-card-info-actions-count {
+                  border: 1px solid rgb(207, 193, 177);
+                  width: 118px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-radius: 30px;
+
+                  .product-card-info-actions-count-min {
+                    border-right: 1px solid rgb(207, 193, 177);
+                    padding: 14px 12px 14px 16px;
+
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+
+                  .product-card-info-actions-count-pl {
+                    border-left: 1px solid rgb(207, 193, 177);
+                    padding: 14px 16px 14px 12px;
+
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+                }
+
+                .product-card-info-actions-price {
+                  font-size: 18px;
+                  font-family: $LatoBold;
+                  color: rgb(175, 96, 18);
+                  margin-left: 68px;
+                  margin-right: 31px;
+                }
+
+                .product-card-info-actions-btn {
+                  .product-btn {
+                    margin: 0;
+                  }
+                }
+              }
+            }
+
+            .product-card-specifications {
+              margin-top: 48px;
+              border-radius: 30px;
+              background-color: rgb(252, 245, 236);
+              width: 368px;
+              padding: 30px;
+
+              .product-card-specifications-title {
+                font-size: 18px;
+                font-family: $Gabriela;
+                color: rgb(34, 34, 34);
+              }
+
+              .product-card-specifications-table {
+                table {
+                  margin-bottom: 27px;
+
+                  tr {
+                    word-wrap: break-word;
+
+
+                    td {
+                      width: 280px;
+                      word-wrap: break-word;
+                      font-size: 16px;
+                      font-family: $LatoLight;
+                      color: rgb(34, 34, 34);
+                      line-height: 21px;
+                    }
+
+                    .table-title {
+                      padding-top: 15px;
+                      padding-bottom: 21px;
+                    }
+                  }
+
+                }
+              }
+
+
+              .product-card-specifications-text {
+                margin-top: 15px;
+                font-size: 16px;
+                font-family: $LatoLight;
+                color: rgb(34, 34, 34);
+              }
+            }
+
+            .product-card-delivery {
+              margin-top: 48px;
+              height: 280px;
+              padding: 35px 60px;
+              background: url("../../images/delivery-rolling-pin.png");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 100%;
+              width: 475px;
+              text-align: center;
+              font-size: 16px;
+              font-family: $LatoLight;
+              color: rgb(34, 34, 34);
+              line-height: 1.313;
+
+              .product-card-delivery-text {
+                .product-card-delivery-text-min-time {
+                  margin: 25px 0;
+                }
+
+                p {
+                  width: 370px;
+                  margin: 0 auto;
+
+                  span {
+                    font-family: $Lato;
+                  }
+
+                  a {
+                    color: rgb(34, 34, 34);
+                    text-decoration: none;
+                    border-bottom: 2px solid #222;
+                  }
+
+                }
+              }
+
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slick-slide img {
+    display: inline;
+  }
+
+  button.slick-next.slick-arrow {
+    position: absolute;
+    bottom: -77px;
+    right: 113px;
+    background: transparent;
+    width: 35px;
+    height: 48px;
+    border: 1px solid #cfc1b1;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+
+    &::before {
+      content: url("../../images/next.png");
+    }
+  }
+
+  button.slick-prev.slick-arrow {
+    position: absolute;
+    bottom: -77px;
+    left: 113px;
+    background: transparent;
+    width: 35px;
+    height: 48px;
+    border: 1px solid #cfc1b1;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+
+    &::before {
+      content: url("../../images/prev.png");
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  ul.recipe-dots {
+    display: inline-flex;
+    list-style: none;
+    padding: 5px;
+    position: absolute;
+    bottom: -91px;
+    left: 568px;
+
+  }
+
+  ul.product-dots {
+    display: inline-flex;
+    list-style: none;
+    border: 1px solid #cfc1b1;
+    padding: 5px;
+    position: absolute;
+    bottom: -77px;
+    left: 147px;
+
+  }
+
+  ul li button {
+    margin: 10px 10px;
+    border: none;
+    background: transparent;
+    font-family: $LatoBold;
+    color: #434343;
+    cursor: pointer;
+  }
+
+  ul li.slick-active button {
+    color: #af6012;
+  }
+
+
+  #healthy-container {
+    @include container;
+    position: relative;
+    padding: 120px 0;
+
+    h2.block-title {
+      text-align: center;
+      color: #af6012;
+    }
+
+    #healthy-bg {
+      position: absolute;
+      top: 0;
+      right: -351px;
+    }
+
+    #healthy-container-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 103px;
+
+      #healthy-container-info-left {
+        #txt-top {
+          margin-bottom: 20px;
+        }
+
+        .healthy-container-info-text {
+          @include infoText;
+        }
+      }
+    }
+
+
+    #healthy-container-info-right {
+      @include infoText;
+      margin-left: 25px;
+    }
+
+    #healthy-container-items {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin-top: 87px;
+
+      .healthy-container-item {
+        width: 279px;
+        text-align: center;
+
+        .healthy-container-item-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+
+        .healthy-container-item-text {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+          text-align: center;
+        }
+      }
+    }
+
+    #healthy-container-production {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 100px;
+
+      #healthy-container-production-image {
+        width: 487px;
+      }
+
+      #healthy-container-production-block {
+        background-image: url("../../images/rolling-p.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 690px;
+        height: 245px;
+        padding: 62px 30px;
+        text-align: center;
+
+        #healthy-container-production-text1 {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+          margin-bottom: 20px;
+        }
+
+        #healthy-container-production-text2 {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+        }
 
       }
     }
   }
-}
+
+  #about {
+    background: url("../../images/about-bg.png");
+
+    #about-container {
+      @include container;
+      padding: 120px 0 114px 0;
+      position: relative;
+
+      h2.block-title {
+        text-align: center;
+        color: #af6012;
+      }
+
+      #about-items-image {
+        position: absolute;
+        top: 399px;
+        left: 207px;
+        z-index: 0;
+      }
+
+      #about-items {
+        margin-top: 80px;
+        position: relative;
+
+        .about-item.right {
+          margin-left: auto;
+        }
+
+        .about-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 585px;
+          z-index: 2;
+
+          .about-item-text {
+            font-size: 16px;
+            font-family: $LatoLight;
+            color: rgb(34, 34, 34);
+            line-height: 1.313;
+            width: 232px;
+          }
+        }
+      }
+
+      #about-info {
+        margin: 80px auto 0 auto;
+        width: 1000px;
+        background-image: url("../../images/about-rolling-pin.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 43px 100px 55px;
+        text-align: center;
+
+        .about-info-text {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+        }
+
+        #about-info-loz {
+          font-size: 18px;
+          font-family: $Lato;
+          color: rgb(175, 96, 18);
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+
+  #recipe-container {
+    @include container;
+    position: relative;
+
+    #recipe-bg1 {
+      position: absolute;
+      top: -60px;
+      right: -160px;
+    }
+
+    #recipe-bg2 {
+      position: absolute;
+      bottom: 17px;
+      left: -310px;
+    }
+
+    h2.block-title {
+      color: #af6012;
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    #recipe-items {
+      margin-top: 74px;
+      text-align: center;
+
+      .recipe-block-items {
+        .recipe-item {
+          display: flex;
+          flex-direction: column;
+          width: 575px;
+          height: 270px;
+          border-radius: 30px;
+          overflow: hidden;
+          margin: 25px auto 0 auto;
+
+          .recipe-text {
+            padding: 25px;
+            font-size: 18px;
+            font-family: $Lato;
+            color: rgb(55, 29, 3);
+            line-height: 1.333;
+            text-align: center;
+            background-color: #f7c35e;
+          }
+
+          .recipe-image {
+            overflow: hidden;
+
+            img {
+              width: 100%;
+            }
+
+          }
+        }
+      }
+
+    }
+
+    #recipe-pagination {
+      width: 153px;
+      border: 1px solid #cfc1b1;;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+      margin: 42px auto 120px auto;
+
+      #arr-prev {
+        border: none;
+        border-right: 1px solid #cfc1b1;;
+        padding: 15px;
+        background: transparent;
+        cursor: pointer;
+
+      }
+
+      #arr-next {
+        background: transparent;
+        border: none;
+        border-left: 1px solid #cfc1b1;;
+        padding: 15px;
+        cursor: pointer;
+      }
+    }
+
+    .recipe-popup.active {
+      display: block;
+    }
+
+    .recipe-popup {
+      @include background-popup;
+
+      .recipe-popup-container {
+        position: relative;
+        margin: 78px auto 0 auto;
+        width: 580px;
+        padding: 76px 60px;
+        border-radius: 30px;
+        background-color: rgb(255, 255, 255);
+
+        .recipe-popup-container-close {
+          @include popup-close;
+        }
+
+        .recipe-popup-container-title {
+          font-size: 24px;
+          font-family: $Tenor;
+          color: rgb(175, 96, 18);
+
+        }
+
+        .recipe-popup-container-ingrid {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          margin-top: 30px;
+
+          .recipe-popup-container-ingrid-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 205px;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 30px;
+
+            img {
+              width: 100%;
+              height: 100%;
 
 
-#map {
-  width: 100%;
-  height: 500px;
-}
+            }
+          }
 
-#footer-container {
-  @include container;
-  padding: 60px 0 80px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+          .recipe-popup-container-ingrid-items {
+            margin-left: 38px;
+            font-size: 16px;
+            font-family: $Lato;
+            color: rgb(34, 34, 34);
+            line-height: 45px;
 
-  #footer-info {
-    #footer-social {
-      #footer-social-title {
+
+            ul {
+              //margin-top: 23px;
+              font-size: 16px;
+              font-family: $Lato;
+              color: rgb(34, 34, 34);
+
+
+              li:not(:first-child) {
+                //margin-top: 15px;
+              }
+
+              li {
+                font-size: 14px;
+                font-family: $Lato;
+                color: rgb(34, 34, 34);
+                line-height: 28px;
+
+                &::marker {
+                  color: #cfc1b1;
+                }
+              }
+            }
+          }
+        }
+
+        .recipe-popup-container-coocking {
+          margin-top: 30px;
+          font-size: 16px;
+          font-family: $Lato;
+          color: rgb(34, 34, 34);
+        }
+
+        .recipe-popup-container-coocking-text {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+          margin-top: 18px;
+          width: 410px;
+        }
+      }
+    }
+  }
+
+  #follow {
+    background-image: url("../../images/follow-bg.png");
+
+    #follow-container {
+      @include container;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 104px 0;
+
+      #follow-image {
+        border-width: 1px;
+        border-color: rgb(207, 193, 177);
+        border-style: solid;
+        border-radius: 50%;
+        width: 408px;
+        height: 408px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 90px;
+      }
+
+      #follow-items {
+        margin-right: 100px;
+
+        #follow-items-title {
+          font-size: 24px;
+          font-family: $Gabriela;
+          color: rgb(175, 96, 18);
+          width: 390px;
+        }
+
+        #follow-items-form {
+          margin-top: 39px;
+          display: flex;
+          justify-content: flex-start;
+
+          #follow-items-form-input {
+            border-width: 1px;
+            border-color: rgb(149, 81, 14);
+            border-style: solid;
+            background-color: rgb(255, 255, 255);
+            width: 279px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-right: 24px;
+
+            input {
+              border: none;
+              font-size: 15px;
+              font-family: $Lato;
+              color: rgb(55, 29, 3);
+              line-height: 55px;
+              margin-left: 20px;
+              width: 250px;
+              outline: none;
+
+              &::placeholder {
+                font-size: 15px;
+                font-family: $Lato;
+                color: rgb(55, 29, 3);
+                line-height: 55px;
+                margin-left: 20px;
+              }
+            }
+          }
+
+          #follow-items-form-button {
+
+            button.btn {
+              padding: 18px;
+              text-align: center;
+              width: 180px;
+              font-size: 16px;
+              font-family: $Lato;
+              color: rgb(55, 29, 3);
+              border-radius: 30px;
+              background-color: rgb(247, 195, 94);
+              border: none;
+
+              &:hover {
+                box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
+                cursor: pointer;
+              }
+
+            }
+
+          }
+        }
+
+        #follow-items-social {
+          margin-top: 36px;
+          @include social-items;
+
+        }
+      }
+    }
+  }
+
+
+  #map {
+    width: 100%;
+    height: 500px;
+  }
+
+  #footer-container {
+    @include container;
+    padding: 60px 0 80px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    #footer-info {
+      #footer-social {
+        #footer-social-title {
+          font-size: 18px;
+          font-family: $Gabriela;
+          color: rgb(34, 34, 34);
+          margin-top: 32px;
+        }
+
+        #footer-social-items {
+          @include social-items;
+          margin-top: 23px;
+        }
+      }
+
+      #rules {
+        margin-top: 40px;
+        font-size: 12px;
+        font-family: $Lato;
+        color: rgb(111, 111, 111);
+      }
+    }
+
+    #footer-nav {
+      display: flex;
+      flex-direction: column;
+      margin-left: 190px;
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        font-family: $Lato;
+        color: rgb(34, 34, 34);
+
+        &:not(:first-child) {
+          margin-top: 27px;
+        }
+      }
+    }
+
+    #footer-contacts {
+      margin-left: 370px;
+
+      #footer-contacts-title {
         font-size: 18px;
         font-family: $Gabriela;
         color: rgb(34, 34, 34);
-        margin-top: 32px;
+        margin-bottom: 15px;
       }
 
-      #footer-social-items {
-        @include social-items;
-        margin-top: 23px;
+      .footer-contacts-item-title {
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        margin-bottom: 15px;
       }
-    }
 
-    #rules {
-      margin-top: 40px;
-      font-size: 12px;
-      font-family: $Lato;
-      color: rgb(111, 111, 111);
-    }
-  }
+      .footer-contacts-item-text {
+        font-size: 14px;
+        font-family: $Lato;
+        color: rgb(34, 34, 34);
+      }
 
-  #footer-nav {
-    display: flex;
-    flex-direction: column;
-    margin-left: 190px;
 
-    a {
-      text-decoration: none;
-      font-size: 16px;
-      font-family: $Lato;
-      color: rgb(34, 34, 34);
-
-      &:not(:first-child) {
-        margin-top: 27px;
+      #footer-contacts-phone {
+        margin: 40px 0;
+        @include phone;
       }
     }
   }
 
-  #footer-contacts {
-    margin-left: 370px;
+  #forma {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow-y: auto;
 
-    #footer-contacts-title {
-      font-size: 18px;
-      font-family: $Gabriela;
-      color: rgb(34, 34, 34);
-      margin-bottom: 15px;
-    }
+    #forma-container {
+      margin: 50px auto;
+      position: relative;
+      width: 1000px;
+      padding: 96px 60px 80px 60px;
+      background: #fff;
+      border-radius: 30px;
 
-    .footer-contacts-item-title {
-      font-size: 16px;
-      font-family: $LatoLight;
-      color: rgb(34, 34, 34);
-      margin-bottom: 15px;
-    }
+      #back-to-cart {
+        position: absolute;
+        left: 60px;
+        top: 43px;
 
-    .footer-contacts-item-text {
-      font-size: 14px;
-      font-family: $Lato;
-      color: rgb(34, 34, 34);
-    }
+        img {
+          vertical-align: middle;
+        }
+
+        span {
+          font-size: 16px;
+          font-family: $Lato;
+          color: rgb(84, 84, 84);
+          margin-left: 15px;
+        }
+      }
+
+      .forma-popup-container-close {
+        position: absolute;
+        top: 41px;
+        right: 41px;
+      }
+
+      #form {
+        width: 450px;
+
+        #form-title {
+          font-size: 35px;
+          font-family: $Gabriela;
+          color: rgb(175, 96, 18);
+        }
+
+        form {
+          margin-top: 39px;
 
 
-    #footer-contacts-phone {
-      margin: 40px 0;
-      @include phone;
+          #form-container-delivery {
+            .form-container-title {
+              font-size: 18px;
+              font-family: $LatoBold;
+              color: rgb(67, 67, 67);
+              margin-bottom: 30px;
+
+              &:not(first-child) {
+                margin-top: 37px;
+              }
+
+            }
+
+            .form-radio {
+              input[type=radio] {
+                display: none;
+              }
+
+              input {
+                margin-bottom: 15px;
+              }
+
+              label {
+                position: relative;
+                font-size: 16px;
+                font-family: $Lato;
+                color: rgb(34, 34, 34);
+                padding-left: 30px;
+                display: inline-block;
+                margin-bottom: 15px;
+
+                &:before {
+                  content: "";
+                  display: inline-block;
+                  width: 15px;
+                  height: 15px;
+                  position: absolute;
+                  left: 0;
+                  bottom: 1px;
+                  background: url(../../images/radio-emp.png) 0 0 no-repeat;
+                }
+              }
+            }
+
+            label {
+              font-size: 14px;
+              font-family: $Lato;
+              color: rgb(84, 84, 84);
+              margin-bottom: 22px;
+              padding-left: 30px;
+              display: inline-block;
+            }
+
+            input[type=radio]:checked + label:before {
+              background: url(../../images/radio-checked.png) 0 0 no-repeat;
+            }
+          }
+
+          #form-container-method-pay {
+            .form-radio.inl {
+              display: inline-block;
+              padding-right: 110px;
+
+            }
+          }
+
+          #form-container-person-data {
+            .form-container-title.pd {
+              margin-bottom: 18px;
+            }
+
+            input[type=text] {
+              font-size: 15px;
+              font-family: $Lato;
+              color: #000;
+              border-width: 1px;
+              border-color: rgb(149, 81, 14);
+              border-style: solid;
+              width: 447px;
+              padding: 19px;
+              margin-bottom: 15px;
+              border-radius: 30px;
+              outline: none;
+
+              &::placeholder {
+                font-size: 15px;
+                font-family: $Lato;
+                color: rgb(82, 81, 81);
+              }
+            }
+          }
+
+          #form-container-comments {
+            .form-container-title.cc {
+              margin-top: 34px;
+              margin-bottom: 18px;
+            }
+
+            textarea {
+              border-width: 1px;
+              border-color: rgb(149, 81, 14);
+              border-style: solid;
+              border-radius: 24px;
+              width: 448px;
+              padding: 19px;
+              font-size: 15px;
+              font-family: $Lato;
+              color: rgb(82, 81, 81);
+              line-height: 1.2;
+              outline: 0;
+
+            }
+          }
+        }
+      }
     }
   }
+
 }
-
