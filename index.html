@@ -2520,14 +2520,36 @@
                         <div class="form-container-title cc">
                             4. Уточнение к заказу
                         </div>
-                        <textarea name="comments" id="comments" cols="30" rows="10" >
+                        <textarea name="comments" id="comments" cols="30" rows="10">
 Введите ваш комметнарий
 (не объязательно)
                     </textarea>
                     </div>
             </form>
         </div>
+        <div class="purchases">
+            <div class="purchases-items purchases-item-style">
+                Товаров: <span class="purchases-items-num">5 шт.</span>
+            </div>
+            <div class="purchases-sum purchases-item-style">
+                Сумма заказа: <span class="purchases-sum-num">250 руб.</span>
+            </div>
+            <div class="purchases-delivery purchases-item-style">
+                Стоимость доставки: <span class="purchases-delivery-num">250 руб.</span>
+            </div>
+            <div class="purchases-total purchases-item-style">
+                Итого к оплате: <span class="purchases-total-num">250 руб.</span>
+            </div>
+
+            <div id="purchases-action">
+                <button type="button" id="purchases-action-btn">Подтвердить оформление заказа</button>
+            </div>
+            <div class="free-delivery">
+                При заказе от 500 рублей – бесплатная доставка
+            </div>
+        </div>
     </div>
+</div>
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/jquery.simplePagination.js"></script>

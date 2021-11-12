@@ -1259,7 +1259,7 @@ body {
   }
 
   #forma {
-    display: none;
+    display: block;
     position: fixed;
     left: 0;
     top: 0;
@@ -1276,6 +1276,7 @@ body {
       padding: 96px 60px 80px 60px;
       background: #fff;
       border-radius: 30px;
+
 
       #back-to-cart {
         position: absolute;
@@ -1426,6 +1427,56 @@ body {
 
             }
           }
+        }
+      }
+
+      .purchases {
+        border-radius: 30px;
+        background-color: rgb(252, 245, 236);
+        width: 400px;
+        padding: 40px;
+
+        .purchases-item-style {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          margin-bottom: 20px;
+
+          span {
+            font-size: 20px;
+            font-family: $LatoBold;
+            color: rgb(175, 96, 18);
+            margin-left: 20px;
+          }
+        }
+
+        .purchases-delivery {
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #cfc1b1;
+        }
+
+        #purchases-action-btn {
+          background-color: rgb(247, 195, 94);
+          width: 320px;
+          padding: 17px;
+          text-align: center;
+          font-size: 15px;
+          font-family: $Lato;
+          color: rgb(55, 29, 3);
+          border: none;
+          border-radius: 30px;
+
+          &:hover {
+            box-shadow: 0px 0px 10px 1px rgba(255, 167, 0, 0.6);
+          }
+        }
+
+        .free-delivery {
+          font-size: 14px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          margin-top: 20px;
         }
       }
     }
