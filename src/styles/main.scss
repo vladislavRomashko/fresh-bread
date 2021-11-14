@@ -107,7 +107,9 @@ $Tenor: 'TenorSans', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  //line-height: 0.9;
 }
+
 
 body {
   position: relative;
@@ -304,11 +306,11 @@ body {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
     width: 180px;
     font-family: $LatoBold;
-    margin-top: 12px;
+    margin-top: 10px;
 
     &:hover {
       box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
@@ -359,7 +361,7 @@ body {
           border-radius: 30px;
           background-color: rgb(255, 255, 255);
           width: 290px;
-          padding: 40px 50px;
+          padding: 35px 50px;
           margin: 12px;
 
           &:hover {
@@ -383,7 +385,7 @@ body {
             font-family: $Gabriela;
             color: rgb(67, 67, 67);
             text-align: center;
-            margin-top: 25px;
+            margin-top: 15px;
           }
 
           .product-item-weight {
@@ -391,7 +393,7 @@ body {
             font-family: $Gabriela;
             color: rgb(67, 67, 67);
             text-align: center;
-            margin-top: 15px;
+            margin-top: 10px;
           }
 
           .product-item-description {
@@ -399,7 +401,7 @@ body {
             font-family: $LatoLight;
             color: rgb(34, 34, 34);
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             height: 40px;
           }
 
@@ -408,15 +410,15 @@ body {
             font-family: $LatoBold;
             color: rgb(175, 96, 18);
             text-align: center;
-            margin-top: 24px;
+            margin-top: 15px;
           }
 
           .product-item-details {
             font-size: 16px;
-            font-family: "Lato";
+            font-family: $Lato;
             color: rgb(34, 34, 34);
             text-align: center;
-            margin-top: 30px;
+            margin-top: 25px;
             cursor: pointer;
 
             span {
@@ -426,210 +428,6 @@ body {
         }
       }
 
-      .products-card.active {
-        display: block;
-      }
-
-      .products-card {
-        @include background-popup;
-
-        .product-card-container {
-          position: relative;
-          width: 1000px;
-          background: #ffffff;
-          margin: 80px auto 0 auto;
-          border-radius: 30px;
-          padding: 85px 60px;
-
-          .product-popup-container-close {
-            @include popup-close;
-          }
-
-          .products-block {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-            .product-card-image {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 290px;
-              height: 220px;
-
-              img {
-                width: 100%;
-                height: 100%;
-              }
-            }
-
-            .product-card-info {
-              width: 475px;
-
-              .product-card-info-title {
-                font-size: 30px;
-                font-family: $Gabriela;
-                color: rgb(175, 96, 18);
-              }
-
-              .product-card-info-composition {
-                width: 345px;
-
-                .product-card-info-composition-title {
-                  font-size: 18px;
-                  font-family: $Gabriela;
-                  color: rgb(34, 34, 34);
-                  margin-top: 29px;
-                }
-
-                .product-card-info-composition-text {
-                  font-size: 16px;
-                  font-family: $LatoLight;
-                  color: rgb(34, 34, 34);
-                  margin-top: 15px;
-                  line-height: 21px;
-                }
-              }
-
-              .product-card-info-actions {
-                margin-top: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-
-                .product-card-info-actions-count {
-                  border: 1px solid rgb(207, 193, 177);
-                  width: 118px;
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  border-radius: 30px;
-
-                  .product-card-info-actions-count-min {
-                    border-right: 1px solid rgb(207, 193, 177);
-                    padding: 14px 12px 14px 16px;
-
-                    &:hover {
-                      cursor: pointer;
-                    }
-                  }
-
-                  .product-card-info-actions-count-pl {
-                    border-left: 1px solid rgb(207, 193, 177);
-                    padding: 14px 16px 14px 12px;
-
-                    &:hover {
-                      cursor: pointer;
-                    }
-                  }
-                }
-
-                .product-card-info-actions-price {
-                  font-size: 18px;
-                  font-family: $LatoBold;
-                  color: rgb(175, 96, 18);
-                  margin-left: 68px;
-                  margin-right: 31px;
-                }
-
-                .product-card-info-actions-btn {
-                  .product-btn {
-                    margin: 0;
-                  }
-                }
-              }
-            }
-
-            .product-card-specifications {
-              margin-top: 48px;
-              border-radius: 30px;
-              background-color: rgb(252, 245, 236);
-              width: 368px;
-              padding: 30px;
-
-              .product-card-specifications-title {
-                font-size: 18px;
-                font-family: $Gabriela;
-                color: rgb(34, 34, 34);
-              }
-
-              .product-card-specifications-table {
-                table {
-                  margin-bottom: 27px;
-
-                  tr {
-                    word-wrap: break-word;
-
-
-                    td {
-                      width: 280px;
-                      word-wrap: break-word;
-                      font-size: 16px;
-                      font-family: $LatoLight;
-                      color: rgb(34, 34, 34);
-                      line-height: 21px;
-                    }
-
-                    .table-title {
-                      padding-top: 15px;
-                      padding-bottom: 21px;
-                    }
-                  }
-
-                }
-              }
-
-
-              .product-card-specifications-text {
-                margin-top: 15px;
-                font-size: 16px;
-                font-family: $LatoLight;
-                color: rgb(34, 34, 34);
-              }
-            }
-
-            .product-card-delivery {
-              margin-top: 48px;
-              height: 280px;
-              padding: 35px 60px;
-              background: url("../../images/delivery-rolling-pin.png");
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: 100%;
-              width: 475px;
-              text-align: center;
-              font-size: 16px;
-              font-family: $LatoLight;
-              color: rgb(34, 34, 34);
-              line-height: 1.313;
-
-              .product-card-delivery-text {
-                .product-card-delivery-text-min-time {
-                  margin: 25px 0;
-                }
-
-                p {
-                  width: 370px;
-                  margin: 0 auto;
-
-                  span {
-                    font-family: $Lato;
-                  }
-
-                  a {
-                    color: rgb(34, 34, 34);
-                    text-decoration: none;
-                    border-bottom: 2px solid #222;
-                  }
-
-                }
-              }
-
-
-            }
-          }
-        }
-      }
     }
   }
 
@@ -912,6 +710,8 @@ body {
       text-align: center;
 
       .recipe-block-items {
+        margin-bottom: 14px;
+
         .recipe-item {
           display: flex;
           flex-direction: column;
@@ -920,6 +720,11 @@ body {
           border-radius: 30px;
           overflow: hidden;
           margin: 25px auto 0 auto;
+
+          &:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+          }
+
 
           .recipe-text {
             padding: 25px;
@@ -972,105 +777,7 @@ body {
       }
     }
 
-    .recipe-popup.active {
-      display: block;
-    }
 
-    .recipe-popup {
-      @include background-popup;
-
-      .recipe-popup-container {
-        position: relative;
-        margin: 78px auto 0 auto;
-        width: 580px;
-        padding: 76px 60px;
-        border-radius: 30px;
-        background-color: rgb(255, 255, 255);
-
-        .recipe-popup-container-close {
-          @include popup-close;
-        }
-
-        .recipe-popup-container-title {
-          font-size: 24px;
-          font-family: $Tenor;
-          color: rgb(175, 96, 18);
-
-        }
-
-        .recipe-popup-container-ingrid {
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-end;
-          margin-top: 30px;
-
-          .recipe-popup-container-ingrid-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 205px;
-            height: 180px;
-            overflow: hidden;
-            border-radius: 30px;
-
-            img {
-              width: 100%;
-              height: 100%;
-
-
-            }
-          }
-
-          .recipe-popup-container-ingrid-items {
-            margin-left: 38px;
-            font-size: 16px;
-            font-family: $Lato;
-            color: rgb(34, 34, 34);
-            line-height: 45px;
-
-
-            ul {
-              //margin-top: 23px;
-              font-size: 16px;
-              font-family: $Lato;
-              color: rgb(34, 34, 34);
-
-
-              li:not(:first-child) {
-                //margin-top: 15px;
-              }
-
-              li {
-                font-size: 14px;
-                font-family: $Lato;
-                color: rgb(34, 34, 34);
-                line-height: 28px;
-
-                &::marker {
-                  color: #cfc1b1;
-                }
-              }
-            }
-          }
-        }
-
-        .recipe-popup-container-coocking {
-          margin-top: 30px;
-          font-size: 16px;
-          font-family: $Lato;
-          color: rgb(34, 34, 34);
-        }
-
-        .recipe-popup-container-coocking-text {
-          font-size: 16px;
-          font-family: $LatoLight;
-          color: rgb(34, 34, 34);
-          line-height: 1.313;
-          margin-top: 18px;
-          width: 410px;
-        }
-      }
-    }
   }
 
   #follow {
@@ -1258,8 +965,316 @@ body {
     }
   }
 
+  #products-cards-popup {
+
+    .products-card.active {
+      display: block;
+    }
+
+
+    .products-card {
+      @include background-popup;
+      overflow-y: auto;
+
+
+      .product-card-container {
+        position: relative;
+        width: 1000px;
+        background: #ffffff;
+        margin: 80px auto 0 auto;
+        border-radius: 30px;
+        padding: 85px 60px;
+
+        .product-popup-container-close {
+          @include popup-close;
+        }
+
+        .products-block {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .product-card-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 290px;
+            height: 220px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .product-card-info {
+            width: 475px;
+
+            .product-card-info-title {
+              font-size: 30px;
+              font-family: $Gabriela;
+              color: rgb(175, 96, 18);
+            }
+
+            .product-card-info-composition {
+              width: 345px;
+
+              .product-card-info-composition-title {
+                font-size: 18px;
+                font-family: $Gabriela;
+                color: rgb(34, 34, 34);
+                margin-top: 25px;
+              }
+
+              .product-card-info-composition-text {
+                font-size: 16px;
+                font-family: $LatoLight;
+                color: rgb(34, 34, 34);
+                margin-top: 10px;
+                line-height: 21px;
+              }
+            }
+
+            .product-card-info-actions {
+              margin-top: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              .product-card-info-actions-count {
+                border: 1px solid rgb(207, 193, 177);
+                width: 118px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 30px;
+
+                .product-card-info-actions-count-min {
+                  border-right: 1px solid rgb(207, 193, 177);
+                  padding: 14px 12px 14px 16px;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+
+                .product-card-info-actions-count-pl {
+                  border-left: 1px solid rgb(207, 193, 177);
+                  padding: 14px 16px 14px 12px;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+
+              .product-card-info-actions-price {
+                font-size: 18px;
+                font-family: $LatoBold;
+                color: rgb(175, 96, 18);
+                margin-left: 68px;
+                margin-right: 31px;
+              }
+
+              .product-card-info-actions-btn {
+                .product-btn {
+                  margin: 0;
+                }
+              }
+            }
+          }
+
+          .product-card-specifications {
+            margin-top: 48px;
+            border-radius: 30px;
+            background-color: rgb(252, 245, 236);
+            width: 368px;
+            padding: 25px;
+
+            .product-card-specifications-title {
+              font-size: 18px;
+              font-family: $Gabriela;
+              color: rgb(34, 34, 34);
+            }
+
+            .product-card-specifications-table {
+              table {
+                margin-bottom: 20px;
+
+                tr {
+                  word-wrap: break-word;
+
+
+                  td {
+                    width: 280px;
+                    word-wrap: break-word;
+                    font-size: 16px;
+                    font-family: $LatoLight;
+                    color: rgb(34, 34, 34);
+                    line-height: 21px;
+                  }
+
+                  .table-title {
+                    padding-top: 10px;
+                    padding-bottom: 20px;
+                  }
+                }
+
+              }
+            }
+
+
+            .product-card-specifications-text {
+              margin-top: 10px;
+              font-size: 16px;
+              font-family: $LatoLight;
+              color: rgb(34, 34, 34);
+            }
+          }
+
+          .product-card-delivery {
+            margin-top: 48px;
+            height: 270px;
+            padding: 35px 55px;
+            background: url("../../images/delivery-rolling-pin.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            width: 475px;
+            text-align: center;
+            font-size: 16px;
+            font-family: $LatoLight;
+            color: rgb(34, 34, 34);
+            line-height: 1.313;
+
+            .product-card-delivery-text {
+              .product-card-delivery-text-min-time {
+                margin: 20px 0;
+              }
+
+              p {
+                width: 370px;
+                margin: 0 auto;
+
+                span {
+                  font-family: $Lato;
+                }
+
+                a {
+                  color: rgb(34, 34, 34);
+                  text-decoration: none;
+                  border-bottom: 2px solid #222;
+                }
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+  }
+
+  #recipe-block-popup {
+    .recipe-popup.active {
+      display: block;
+    }
+
+    .recipe-popup {
+      @include background-popup;
+      overflow-y: auto;
+
+      .recipe-popup-container {
+        position: relative;
+        margin: 78px auto 0 auto;
+        width: 580px;
+        padding: 70px 60px;
+        border-radius: 30px;
+        background-color: rgb(255, 255, 255);
+
+        .recipe-popup-container-close {
+          @include popup-close;
+        }
+
+        .recipe-popup-container-title {
+          font-size: 24px;
+          font-family: $Tenor;
+          color: rgb(175, 96, 18);
+
+        }
+
+        .recipe-popup-container-ingrid {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          margin-top: 20px;
+
+          .recipe-popup-container-ingrid-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 205px;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 30px;
+
+            img {
+              width: 100%;
+              height: 100%;
+
+
+            }
+          }
+
+          .recipe-popup-container-ingrid-items {
+            margin-left: 38px;
+            font-size: 16px;
+            font-family: $Lato;
+            color: rgb(34, 34, 34);
+            line-height: 45px;
+
+
+            ul {
+              font-size: 16px;
+              font-family: $Lato;
+              color: rgb(34, 34, 34);
+
+              li {
+                font-size: 14px;
+                font-family: $Lato;
+                color: rgb(34, 34, 34);
+                line-height: 28px;
+
+                &::marker {
+                  color: #cfc1b1;
+                }
+              }
+            }
+          }
+        }
+
+        .recipe-popup-container-coocking {
+          margin-top: 25px;
+          font-size: 16px;
+          font-family: $Lato;
+          color: rgb(34, 34, 34);
+        }
+
+        .recipe-popup-container-coocking-text {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+          margin-top: 10px;
+          width: 410px;
+        }
+      }
+    }
+  }
+
   #forma {
-    display: block;
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -1273,9 +1288,13 @@ body {
       margin: 50px auto;
       position: relative;
       width: 1000px;
-      padding: 96px 60px 80px 60px;
+      padding: 90px 60px 80px 60px;
       background: #fff;
       border-radius: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 425px 355px;
+      grid-gap: 0 25px;
 
 
       #back-to-cart {
@@ -1303,6 +1322,8 @@ body {
 
       #form {
         width: 450px;
+        grid-row-start: 1;
+        grid-row-end: 3;
 
         #form-title {
           font-size: 35px;
@@ -1311,7 +1332,7 @@ body {
         }
 
         form {
-          margin-top: 39px;
+          margin-top: 30px;
 
 
           #form-container-delivery {
@@ -1319,10 +1340,10 @@ body {
               font-size: 18px;
               font-family: $LatoBold;
               color: rgb(67, 67, 67);
-              margin-bottom: 30px;
+              margin-bottom: 25px;
 
               &:not(first-child) {
-                margin-top: 37px;
+                margin-top: 35px;
               }
 
             }
@@ -1343,7 +1364,7 @@ body {
                 color: rgb(34, 34, 34);
                 padding-left: 30px;
                 display: inline-block;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
 
                 &:before {
                   content: "";
@@ -1362,7 +1383,7 @@ body {
               font-size: 14px;
               font-family: $Lato;
               color: rgb(84, 84, 84);
-              margin-bottom: 22px;
+              margin-bottom: 15px;
               padding-left: 30px;
               display: inline-block;
             }
@@ -1382,7 +1403,7 @@ body {
 
           #form-container-person-data {
             .form-container-title.pd {
-              margin-bottom: 18px;
+              margin-bottom: 15px;
             }
 
             input[type=text] {
@@ -1393,7 +1414,7 @@ body {
               border-color: rgb(149, 81, 14);
               border-style: solid;
               width: 447px;
-              padding: 19px;
+              padding: 15px;
               margin-bottom: 15px;
               border-radius: 30px;
               outline: none;
@@ -1408,8 +1429,12 @@ body {
 
           #form-container-comments {
             .form-container-title.cc {
-              margin-top: 34px;
-              margin-bottom: 18px;
+              margin-top: 30px;
+              margin-bottom: 15px;
+              font-size: 18px;
+              font-family: $LatoBold;
+              color: rgb(67, 67, 67);
+
             }
 
             textarea {
@@ -1434,24 +1459,26 @@ body {
         border-radius: 30px;
         background-color: rgb(252, 245, 236);
         width: 400px;
-        padding: 40px;
+        height: 340px;
+        padding: 35px;
+        margin-top: 85px;
 
         .purchases-item-style {
           font-size: 16px;
           font-family: $LatoLight;
           color: rgb(34, 34, 34);
-          margin-bottom: 20px;
+          margin-bottom: 15px;
 
           span {
             font-size: 20px;
             font-family: $LatoBold;
             color: rgb(175, 96, 18);
-            margin-left: 20px;
+            margin-left: 14px;
           }
         }
 
         .purchases-delivery {
-          margin-bottom: 20px;
+          margin-bottom: 15px;
           padding-bottom: 20px;
           border-bottom: 1px solid #cfc1b1;
         }
@@ -1459,13 +1486,14 @@ body {
         #purchases-action-btn {
           background-color: rgb(247, 195, 94);
           width: 320px;
-          padding: 17px;
+          padding: 15px;
           text-align: center;
           font-size: 15px;
           font-family: $Lato;
           color: rgb(55, 29, 3);
           border: none;
           border-radius: 30px;
+          margin-top: 7px;
 
           &:hover {
             box-shadow: 0px 0px 10px 1px rgba(255, 167, 0, 0.6);
@@ -1476,8 +1504,298 @@ body {
           font-size: 14px;
           font-family: $LatoLight;
           color: rgb(34, 34, 34);
-          margin-top: 20px;
+          margin-top: 15px;
         }
+      }
+
+      .product-card-delivery {
+        margin-top: 40px;
+        padding: 35px 55px;
+        background: url("../../images/zakaz-rolling-pin.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 405px;
+        height: 315px;
+        text-align: center;
+        font-size: 16px;
+        font-family: $LatoLight;
+        color: rgb(34, 34, 34);
+        line-height: 1.313;
+
+        .product-card-delivery-text {
+          .product-card-delivery-text-min-time {
+            margin-bottom: 22px;
+            width: 290px;
+          }
+
+          p {
+            width: 242px;
+            margin: 0 auto;
+
+            &:first-child {
+              margin-bottom: 22px;
+            }
+
+            &:last-child {
+              width: 240px;
+            }
+
+
+            span {
+              font-family: $Lato;
+            }
+
+            a {
+              color: rgb(34, 34, 34);
+              text-decoration: none;
+              border-bottom: 2px solid #222;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+
+  .shopping-cart.active {
+    display: block;
+  }
+
+  .shopping-cart {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow-y: auto;
+
+    #shopping-cart-container {
+      border-radius: 30px;
+      background-color: rgb(255, 255, 255);
+      margin: 50px auto;
+      position: relative;
+      width: 1000px;
+      padding: 80px 60px;
+
+      #shopping-cart-title {
+        font-size: 35px;
+        font-family: $Gabriela;
+        color: rgb(175, 96, 18);
+      }
+
+      .shopping-cart-popup-container-close {
+        @include popup-close;
+      }
+
+      #shopping-cart-items {
+        border-radius: 30px;
+        background-color: rgb(252, 245, 236);
+        width: 876px;
+        margin-top: 37px;
+        padding: 0 30px;
+
+        #shopping-cart-item-cover {
+          .shopping-cart-item {
+            width: 820px;
+            height: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid #cfc1b1;
+            }
+
+            .shopping-cart-item-images {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 105px;
+              height: 85px;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .shopping-cart-item-description {
+              width: 195px;
+              font-size: 18px;
+              font-family: $Gabriela;
+              color: rgb(67, 67, 67);
+
+              .shopping-cart-item-description-title {
+                margin-bottom: 10px;
+              }
+            }
+
+            .quantity {
+              width: 118px;
+              height: 46px;
+              border-width: 1px;
+              border-color: rgb(207, 193, 177);
+              border-style: solid;
+              display: flex;
+              align-items: center;
+              border-radius: 30px;
+              overflow: hidden;
+
+              .plus-btn, .minus-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background: transparent;
+                font-size: 18px;
+                font-family: $LatoLight;
+                color: rgb(34, 34, 34);
+                cursor: pointer;
+              }
+
+              .plus-btn {
+                border-left: 1px solid rgb(207, 193, 177);
+                padding: 20px 17px 20px 12px;
+              }
+
+              .minus-btn {
+                border-right: 1px solid rgb(207, 193, 177);
+                padding: 20px 12px 20px 17px;
+              }
+
+              input {
+                width: 10px;
+                background: transparent;
+                outline: none;
+                border: 0;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 18px;
+                font-family: $LatoLight;
+                color: rgb(34, 34, 34);
+              }
+            }
+
+            .shopping-cart-item-price {
+              font-size: 18px;
+              font-family: $LatoBold;
+              color: rgb(175, 96, 18);
+              font-weight: bold;
+            }
+
+            .shopping-cart-item-action {
+              display: flex;
+              align-items: center;
+
+              span {
+                font-size: 14px;
+                font-family: $LatoLight;
+                color: rgb(158, 149, 139);
+                margin-left: 15px;
+              }
+            }
+          }
+        }
+      }
+
+      #shopping-cart-info {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 40px;
+
+        .shopping-cart-delivery {
+          padding: 35px;
+          background: url("../../images/cart-rolling-pin.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100% 100%;
+          width: 555px;
+          height: 232px;
+          text-align: center;
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          line-height: 1.313;
+
+          .shopping-cart-delivery-text {
+            .shopping-cart-delivery-text-min-time {
+              margin-bottom: 20px;
+            }
+
+            p {
+              width: 480px;
+              margin: 0 auto;
+
+              span {
+                font-family: $Lato;
+              }
+
+              a {
+                color: rgb(34, 34, 34);
+                text-decoration: none;
+                border-bottom: 2px solid #222;
+              }
+
+            }
+          }
+        }
+
+        .shopping-cart-purchases {
+          width: 280px;
+          margin-left: 40px;
+
+          .shopping-cart-purchases-item-style {
+            font-size: 16px;
+            font-family: $LatoLight;
+            color: rgb(34, 34, 34);
+            margin-bottom: 14px;
+
+            span {
+              font-size: 20px;
+              font-family: $LatoBold;
+              color: rgb(175, 96, 18);
+              margin-left: 14px;
+            }
+          }
+
+          #shopping-cart-total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #cfc1b1;
+          }
+
+          #shopping-cart-action-btn {
+            background-color: rgb(247, 195, 94);
+            width: 210px;
+            padding: 15px;
+            text-align: center;
+            font-size: 15px;
+            font-family: $Lato;
+            color: rgb(55, 29, 3);
+            border: none;
+            border-radius: 30px;
+            margin-top: 5px;
+            cursor: pointer;
+
+            &:hover {
+              box-shadow: 0px 0px 10px 1px rgba(255, 167, 0, 0.6);
+            }
+          }
+
+          .shopping-cart-free-delivery {
+            width: 190px;
+            font-size: 14px;
+            font-family: $LatoLight;
+            color: rgb(34, 34, 34);
+            margin-top: 10px;
+          }
+        }
+
       }
     }
   }
