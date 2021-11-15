@@ -1,0 +1,146 @@
+//-----MIXINS-----
+
+@mixin container-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 1918px) {
+  #priority {
+    position: relative;
+
+    #priority-container {
+      position: static;
+
+      #priority-bg {
+        left: 0;
+      }
+    }
+  }
+
+  #healthy {
+    position: relative;
+
+
+    #healthy-container {
+      position: static;
+
+      #healthy-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1917px) {
+
+  #healthy, #recipe {
+    overflow: hidden;
+  }
+
+}
+
+@media screen and (max-width: 1310px) {
+
+  #main {
+    #main-container {
+      @include container-padding;
+
+      #main-image {
+        position: relative !important;
+        max-width: 450px;
+        top: auto !important;
+        right: auto !important;
+        margin-left: 60px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
+
+// * 1200 - 1229 *
+@media screen and (max-width: 1229px) {
+
+  #header {
+    #header-container {
+      @include container-padding;
+    }
+  }
+
+  #main {
+    #main-container {
+      @include container-padding;
+    }
+  }
+
+  #priority {
+    #priority-container {
+      @include container-padding;
+    }
+  }
+
+  #products {
+    #products-container {
+      @include container-padding;
+    }
+  }
+
+  #healthy {
+    #healthy-container {
+      @include container-padding;
+
+      #healthy-container-production {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        #healthy-container-production-image {
+          width: 600px;
+          margin-bottom: 40px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #about {
+    #about-container {
+      @include container-padding;
+    }
+  }
+
+  #recipe {
+    #recipe-container {
+      @include container-padding;
+    }
+  }
+
+  #follow {
+    #follow-container {
+      @include container-padding;
+    }
+  }
+
+  #footer {
+    #footer-container {
+      @include container-padding;
+    }
+  }
+
+  ul.recipe-dots {
+    left: 547px !important;
+  }
+
+}
+
+
+// * 1024 - 1199 *
+@media screen and (max-width: 1199px) {
+
+
+}
