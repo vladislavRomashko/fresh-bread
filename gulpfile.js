@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 sass.compiler = require('node-sass');
 
 exports.sass = function () {
-    return src('./src/styles/*.scss')
+    return src('./src/styles/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))

@@ -70,6 +70,11 @@
   #header {
     #header-container {
       @include container-padding;
+      #header-info {
+        #cart {
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -142,5 +147,30 @@
 // * 1024 - 1199 *
 @media screen and (max-width: 1199px) {
 
+#header {
+  #header-container {
+    #header-info {
 
+      #cart {
+        margin: 0;
+      }
+
+      #header-phone {
+        display: none;
+      }
+    }
+  }
+}
+
+  #footer {
+    #footer-container {
+      justify-content: space-between;
+      #footer-nav {
+        margin: 0;
+      }
+      #footer-contacts {
+        margin: 0;
+      }
+    }
+  }
 }
