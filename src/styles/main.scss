@@ -479,7 +479,7 @@ body {
     padding: 5px;
     position: absolute;
     bottom: -91px;
-    left: 568px;
+    left: 319px;
 
   }
 
@@ -708,11 +708,13 @@ body {
     }
 
     #recipe-items {
-      margin-top: 74px;
+      margin: 74px auto 0 auto;
       text-align: center;
+      width: 700px;
 
       .recipe-block-items {
         margin-bottom: 14px;
+
 
         .recipe-item {
           display: flex;
