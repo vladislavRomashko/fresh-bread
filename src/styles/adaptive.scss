@@ -507,6 +507,10 @@
               margin-right: auto;
             }
           }
+
+          #healthy-container-info-right {
+            width: 395px;
+          }
         }
 
         #healthy-container-items {
@@ -792,31 +796,36 @@
 }
 
 
-  //* 320 - 425 *
+//* 320 - 425 *
 @media screen and (max-width: 424px) {
-  body{
+  body {
     #header {
       #header-container {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: nowrap;
+
         #header-logo {
           order: 1;
           margin-left: 0;
           width: 78px;
+
           a {
             img {
               width: 100%;
             }
           }
         }
+
         #header-info {
           order: 2;
           margin: 0;
         }
+
         #header-menu {
           display: none;
         }
+
         #header-burger {
           display: block;
           order: 3;
@@ -824,22 +833,26 @@
       }
     }
 
-    #main{
+    #main {
       #main-container {
         #main-image {
           max-width: 260px;
         }
+
         #main-info {
           width: 290px;
           margin-bottom: 60px;
+
           #main-info-title {
             font-size: 28px;
             line-height: 30px;
           }
+
           #main-info-text {
             margin-top: 25px;
             font-size: 12px;
           }
+
           #main-info-action {
             a {
               #main-btn {
@@ -855,31 +868,244 @@
       #priority-container {
         padding-top: 55px;
         padding-bottom: 60px;
+
         h2.block-title {
           font-size: 24px;
         }
+
         #priority-items {
           align-items: flex-start;
           margin: 0;
-          .priority-item  {
+
+          .priority-item {
             margin: 35px 0 0 0;
             text-align: left;
             width: 290px;
+
             .priority-item-title {
               span {
                 font-size: 18px;
               }
             }
+
             .priority-item-text {
               font-size: 12px;
             }
 
           }
         }
+
         #priority-proof {
           background-image: url("../../images/prior-adapt-rolling-pin.png");
+          width: 290px;
+          padding: 25px 14px;
+          margin-top: 30px;
+
+          #priority-proof-text {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+
+    #products {
+      #products-container {
+        padding-top: 60px;
+        padding-bottom: 130px;
+
+        h2.block-title {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+
+        #products-items {
+          width: 290px;
+
+          .product-item {
+            width: 142px;
+            padding: 10px 10px 35px;
+
+            .product-item-image {
+              height: 108px;
+
+              img {
+                width: 80%;
+              }
+            }
+
+            .product-item-title {
+              font-size: 16px;
+              margin: 0;
+            }
+
+            .product-item-weight {
+              font-size: 12px;
+            }
+
+            .product-item-description {
+              font-size: 12px;
+              margin-top: 10px;
+            }
+
+            .product-item-price {
+              font-size: 18px;
+              margin-top: 15px;
+            }
+
+            .product-item-action {
+              .product-btn {
+                width: 120px;
+                font-size: 12px;
+              }
+            }
+
+            .product-item-details {
+              margin-top: 20px;
+
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    button.slick-prev.slick-arrow {
+      left: 11px;
+    }
+
+    ul.product-dots {
+      left: 46px;
+    }
+
+    button.slick-next.slick-arrow {
+      right: 4px;
+    }
+
+
+    #healthy {
+      #healthy-container {
+        #healthy-bg {
+          right: -100px;
+          top: -8px;
+        }
+
+        .block-title {
+          font-size: 24px;
+        }
+
+        #healthy-container-info {
+          margin-top: 20px;
+
+          #healthy-container-info-left {
+            width: 290px;
+
+            .healthy-container-info-text {
+              width: 290px;
+              font-size: 14px;
+            }
+          }
+
+          #healthy-container-info-right {
+            width: 290px;
+
+            .healthy-container-info-text {
+              width: 290px;
+              font-size: 14px;
+              text-align: center;
+            }
+          }
+        }
+
+        #healthy-container-items {
+          .healthy-container-item {
+            width: 290px;
+
+            .healthy-container-item-text {
+              font-size: 12px;
+              text-align: left;
+            }
+          }
+        }
+
+        #healthy-container-production {
+          #healthy-container-production-image {
+            width: 290px;
+            height: 238px;
+            background-image: url("../../images/healthy-card-img.png");
+            background-repeat: no-repeat;
+
+            img {
+              display: none;
+            }
+          }
+
+          #healthy-container-production-block {
+            background-image: url("../../images/healthy-rolling-pin-min-adapt.png");
+            width: 290px;
+            padding: 25px 21px 30px;
+
+            #healthy-container-production-text1 {
+              font-size: 14px;
+            }
+
+            #healthy-container-production-text2 {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    #about {
+      #about-container {
+        padding: 60px 15px;
+
+        .block-title {
+          font-size: 35px;
+        }
+
+        #about-items-container {
+          max-width: 290px;
+
+          #about-items {
+            max-width: 290px;
+            margin: 0;
+
+            .about-item {
+              width: 290px;
+
+              .about-item-text {
+                font-size: 12px;
+                width: 210px;
+              }
+            }
+
+            .about-item.right {
+              .about-item-text {
+                font-size: 12px;
+                width: 210px;
+              }
+            }
+          }
+        }
+        #about-info {
+          background-image: url("../../images/about-info-320-rolling-pin.png");
+          width: 290px;
+          padding: 30px 20px;
+          .about-info-text {
+            font-size: 12px;
+          }
+          #about-info-loz {
+            font-size: 12px;
+            margin-top: 15px;
+          }
         }
       }
     }
   }
 }
+
+
