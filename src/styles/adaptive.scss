@@ -292,27 +292,30 @@
 
     #about {
       #about-container {
-        //#about-items-image {
-        //  transform: rotate(180deg);
-        //  top: 346px;
-        //  left: 300px;
-        //}
+
         #about-items-container {
           width: 728px;
           margin: 0 auto;
           position: relative;
 
           #about-items-image {
-            top: 143px;
+            display: none;
           }
 
           #about-items {
+            background-image: url("../../images/about-fig-min.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+
             .about-item.right {
               .about-item-image {
                 order: 2;
               }
 
               .about-item-image {
+                width: 200px;
+                height: 200px;
+
                 img {
                   width: 100%;
                 }
@@ -328,6 +331,16 @@
             .about-item {
               .about-item-text {
                 width: 300px;
+              }
+
+              .about-item-image {
+                width: 200px;
+                height: 200px;
+
+                img {
+                  width: 100%;
+                }
+
               }
             }
           }
@@ -540,19 +553,36 @@
 
     #about {
       #about-container {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
         #about-items-container {
-          max-width: 730px;
+          max-width: 395px;
+
+          #about-items-image {
+            display: none;
+          }
 
           #about-items {
+            background-image: url("../../images/about-line.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            max-width: 395px;
+            margin-top: 60px;
+
             .about-item {
               justify-content: flex-start;
               width: 390px;
               height: 150px;
-              margin: 50px 0 ;
+              margin: 50px 0;
+
+              .about-item-text {
+                width: 250px;
+              }
 
               .about-item-image {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
                 margin-right: 20px;
 
                 img {
@@ -561,11 +591,16 @@
               }
             }
 
-            .about-item-right {
+            .about-item.right {
+              .about-item-text {
+                width: 250px;
+              }
+
               .about-item-image {
-                width: 150px;
-                height: 150px;
-                margin-right: 20px;
+                width: 120px;
+                height: 120px;
+                margin-left: 20px;
+                margin-right: 0;
 
                 img {
                   width: 100%
@@ -574,9 +609,277 @@
             }
           }
         }
+
+        #about-info {
+          background-image: url("../../images/rolling-pin-about-adapt.png");
+          width: 395px;
+        }
+      }
+    }
+
+    #recipe {
+      #recipe-container {
+        max-width: 425px;
+
+        #recipe-bg1 {
+          display: none;
+        }
+
+        #recipe-bg2 {
+          display: none;
+        }
+
+        h2.block-title {
+          font-size: 30px;
+        }
+
+        #recipe-items {
+          width: 395px;
+
+          .recipe-block-items {
+
+            .recipe-item {
+              height: 220px;
+              width: auto;
+              margin: 25px 25px;
+
+              .recipe-text {
+                padding: 10px;
+                height: 70px;
+              }
+
+            }
+          }
+        }
+
+        #recipe-pagination {
+          margin-top: 0;
+        }
+
+      }
+    }
+
+    ul.recipe-dots {
+      bottom: -49px;
+      left: 165px;
+    }
+
+    #follow {
+      #follow-container {
+        #follow-image {
+          width: 370px;
+          height: 370px;
+
+          img {
+            width: 96%;
+          }
+        }
+
+        #follow-items {
+          #follow-items-form {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            #follow-items-form-input {
+              margin: 0;
+            }
+
+            #follow-items-form-button {
+              margin-top: 25px;
+            }
+          }
+        }
       }
     }
   }
-
 }
 
+@media screen and (max-width: 720px) {
+  body {
+    #footer {
+      #footer-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 60px;
+
+        #footer-info {
+          #footer-social {
+            display: none;
+          }
+
+          #rules {
+            display: none;
+          }
+        }
+
+        #footer-nav {
+          text-align: center;
+          margin-top: 35px;
+        }
+
+        #footer-contacts {
+          margin-top: 35px;
+          text-align: center;
+
+          #footer-contacts-action {
+            display: block;
+
+            button {
+              border-width: 1px;
+              border-color: rgb(247, 195, 94);
+              border-style: solid;
+              width: 178px;
+              padding: 15px;
+              text-align: center;
+              font-size: 16px;
+              font-family: $Lato;
+              color: rgb(55, 29, 3);
+              border-radius: 30px;
+              background: transparent;
+
+              &:hover {
+                background: rgb(247, 195, 94);
+                box-shadow: 0 0 4px 0.5px rgb(94, 76, 36);
+
+              }
+            }
+
+          }
+
+          #footer-contacts-time {
+            margin-top: 25px;
+          }
+
+          #footer-contacts-phone {
+            margin: 20px 0 15px 0;
+          }
+        }
+
+        #social-rules-adapt {
+          display: block;
+          margin-top: 40px;
+
+          #adapt-footer-social-title {
+            font-size: 16px;
+            font-family: $Gabriela;
+            color: rgb(34, 34, 34);
+            text-align: center;
+          }
+
+          #adapt-footer-social-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 35px;
+
+            a {
+              text-decoration: none;
+            }
+          }
+
+          #adapt-rules {
+            margin-top: 35px;
+            font-size: 12px;
+            font-family: $Lato;
+            color: rgb(111, 111, 111);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+  //* 320 - 425 *
+@media screen and (max-width: 424px) {
+  body{
+    #header {
+      #header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        #header-logo {
+          order: 1;
+          margin-left: 0;
+          width: 78px;
+          a {
+            img {
+              width: 100%;
+            }
+          }
+        }
+        #header-info {
+          order: 2;
+          margin: 0;
+        }
+        #header-menu {
+          display: none;
+        }
+        #header-burger {
+          display: block;
+          order: 3;
+        }
+      }
+    }
+
+    #main{
+      #main-container {
+        #main-image {
+          max-width: 260px;
+        }
+        #main-info {
+          width: 290px;
+          margin-bottom: 60px;
+          #main-info-title {
+            font-size: 28px;
+            line-height: 30px;
+          }
+          #main-info-text {
+            margin-top: 25px;
+            font-size: 12px;
+          }
+          #main-info-action {
+            a {
+              #main-btn {
+                margin-top: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #priority {
+      #priority-container {
+        padding-top: 55px;
+        padding-bottom: 60px;
+        h2.block-title {
+          font-size: 24px;
+        }
+        #priority-items {
+          align-items: flex-start;
+          margin: 0;
+          .priority-item  {
+            margin: 35px 0 0 0;
+            text-align: left;
+            width: 290px;
+            .priority-item-title {
+              span {
+                font-size: 18px;
+              }
+            }
+            .priority-item-text {
+              font-size: 12px;
+            }
+
+          }
+        }
+        #priority-proof {
+          background-image: url("../../images/prior-adapt-rolling-pin.png");
+        }
+      }
+    }
+  }
+}

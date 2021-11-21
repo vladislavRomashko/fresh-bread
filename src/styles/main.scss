@@ -124,8 +124,8 @@ body {
 
 
 
-      #header-logo {
-
+      #header-burger {
+display: none;
       }
 
       #header-menu {
@@ -648,6 +648,11 @@ body {
           justify-content: space-between;
           width: 585px;
           z-index: 2;
+          .about-item-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
 
           .about-item-text {
             font-size: 16px;
@@ -890,6 +895,7 @@ body {
     height: 500px;
   }
 
+
   #footer-container {
     @include container;
     padding: 60px 0 80px 0;
@@ -940,6 +946,9 @@ body {
 
     #footer-contacts {
       margin-left: 370px;
+      #footer-contacts-action {
+        display: none;
+      }
 
       #footer-contacts-title {
         font-size: 18px;
@@ -966,6 +975,9 @@ body {
         margin: 40px 0;
         @include phone;
       }
+    }
+    #social-rules-adapt {
+      display: none;
     }
   }
 
