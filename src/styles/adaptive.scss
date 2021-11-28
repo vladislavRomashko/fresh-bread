@@ -400,6 +400,147 @@
         }
       }
     }
+
+    #products-cards-popup {
+      .products-card {
+        .product-card-container {
+          padding: 45px 20px;
+          width: 432px;
+          margin: 40px auto;
+
+          .products-block {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .product-card-image {
+              width: 200px;
+              height: 145px;
+            }
+
+            .product-card-info {
+              text-align: center;
+              width: 350px;
+
+              .product-card-info-title {
+                font-size: 27px;
+                margin-top: 20px;
+              }
+
+              .product-card-info-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 20px;
+
+                .product-card-info-actions-count {
+                  order: 2;
+                }
+
+                .product-card-info-actions-price {
+                  margin: 0 0 20px 0;
+                  width: 290px;
+                  order: 1;
+                }
+
+                .product-card-info-actions-btn {
+                  order: 3;
+                  margin-left: 25px;
+                }
+              }
+            }
+
+            .product-card-specifications {
+              margin-top: 30px;
+            }
+
+            .product-card-delivery {
+              margin-top: 30px;
+              background-size: 100% 100%;
+              width: 390px;
+              padding: 30px 10px;
+              font-size: 15px;
+              height: auto;
+
+              .product-card-delivery-text {
+                p {
+                  width: 350px;
+                }
+
+                .product-card-delivery-text-min-time {
+                  margin: 20px auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .shopping-cart {
+      #shopping-cart-container {
+        width: 730px;
+        padding: 60px 30px;
+
+        #shopping-cart-items {
+          width: auto;
+
+          #shopping-cart-item-cover {
+            .shopping-cart-item {
+              width: auto;
+
+              .shopping-cart-item-description {
+                width: 140px;
+              }
+
+              .action-block {
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+
+        #shopping-cart-info {
+          .shopping-cart-delivery {
+            width: 420px;
+
+            .shopping-cart-delivery-text {
+              p {
+                width: 330px;
+                font-size: 14px;
+              }
+            }
+          }
+
+          .shopping-cart-purchases {
+          }
+        }
+      }
+    }
+
+    #forma {
+      #forma-container {
+        width: 570px;
+        grid-template-columns: 450px;
+        justify-content: center;
+        padding: 90px 30px 40px;
+
+        #form {
+          #form-title {
+            text-align: center;
+          }
+
+        }
+
+        .purchases {
+          margin: 30px auto 0;
+        }
+
+        .product-card-delivery {
+          margin: 30px auto 0;
+        }
+      }
+    }
+
   }
 }
 
@@ -732,19 +873,119 @@
             justify-content: center;
             align-items: center;
 
+            #email-error {
+              font-size: 16px;
+              left: 82px;
+              top: 59px;
+            }
+
             #follow-items-form-input {
               margin: 0;
             }
 
             #follow-items-form-button {
               margin-top: 25px;
+              button.btn {
+                width: 279px;
+              }
             }
+          }
+        }
+      }
+    }
+
+    #footer-container {
+      #up {
+        display: flex;
+      }
+    }
+
+    #recipe-block-popup {
+      .recipe-popup {
+        .recipe-popup-container {
+          width: 425px;
+          padding: 50px 15px 40px;
+
+          .recipe-popup-container-title {
+            width: 360px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .shopping-cart {
+      #shopping-cart-container {
+        width: 100%;
+        border-radius: 0;
+
+        #shopping-cart-title {
+          text-align: center;
+          font-size: 24px;
+        }
+
+        #shopping-cart-items {
+          #shopping-cart-item-cover {
+            .shopping-cart-item {
+              justify-content: flex-start;
+              flex-wrap: wrap;
+              height: auto;
+              padding: 20px 0;
+
+              .shopping-cart-item-images {
+                width: 90px;
+                height: 70px;
+              }
+
+              .shopping-cart-item-description {
+                margin-left: 20px;
+                font-size: 18px;
+              }
+
+              .action-block {
+                .shopping-cart-item-price {
+                  margin-left: 15px;
+                }
+
+                .shopping-cart-item-action {
+                  justify-content: flex-end;
+                  margin-left: 20px;
+
+                  span {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        #shopping-cart-info {
+          flex-direction: column;
+          align-items: center;
+
+          .shopping-cart-purchases {
+            order: 1;
+            text-align: center;
+            margin-left: 0;
+
+            .shopping-cart-free-delivery {
+              width: auto;
+
+            }
+          }
+
+          .shopping-cart-delivery {
+            order: 2;
+            margin-top: 20px;
           }
         }
       }
     }
   }
 }
+
+// * 720 *
 
 @media screen and (max-width: 720px) {
   body {
@@ -791,8 +1032,12 @@
               background: transparent;
 
               &:hover {
-                background: rgb(247, 195, 94);
-                box-shadow: 0 0 4px 0.5px rgb(94, 76, 36);
+                cursor: pointer;
+                transition-property: background-color, box-shadow;
+                transition-duration: 0.15s;
+                transition-timing-function: ease-out;
+                background-color: rgba(247, 195, 94, 0.35);
+                box-shadow: 0px 2px 9px 5px rgba(247, 195, 94, 0.35);
 
               }
             }
@@ -842,6 +1087,426 @@
   }
 }
 
+
+// * 620 *
+
+@media screen and (max-width: 620px) {
+  body {
+
+    .shopping-cart {
+      #shopping-cart-container {
+        padding: 45px 15px 40px;
+
+        #shopping-cart-items {
+          width: auto;
+          padding: 0 20px;
+          margin: 20px auto 0 auto;
+
+          #shopping-cart-item-cover {
+            .shopping-cart-item {
+              justify-content: center;
+              flex-wrap: wrap;
+              height: auto;
+              padding: 20px 0;
+
+              .shopping-cart-item-images {
+                width: 60px;
+                height: 40px;
+              }
+
+              .shopping-cart-item-description {
+                font-size: 16px;
+              }
+
+              .action-block {
+                margin-top: 30px;
+                margin-left: 0;
+                justify-content: center;
+
+                .shopping-cart-item-price {
+                  margin-left: 15px;
+                }
+
+                .shopping-cart-item-action {
+                  justify-content: flex-end;
+                  margin-left: 38px;
+
+                  span {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        #shopping-cart-info {
+          flex-direction: column;
+          align-items: center;
+
+          .shopping-cart-purchases {
+            order: 1;
+            text-align: center;
+            margin-left: 0;
+
+            .shopping-cart-free-delivery {
+              width: auto;
+              font-size: 12px;
+
+            }
+          }
+
+          .shopping-cart-delivery {
+            background-image: url("../../images/shoping-cart-adapt-rolling-pin.png");
+            order: 2;
+            margin-top: 20px;
+            width: 290px;
+            padding: 25px 15px 35px;
+            height: auto;
+
+            .shopping-cart-delivery-text {
+              p {
+                width: 253px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #form-cong {
+      #form-cong-container {
+        width: 290px;
+        margin: 220px auto;
+        padding: 45px 0px 35px;
+
+        .form-cong-container-close {
+          position: absolute;
+          top: 20px;
+          right: 15px;
+        }
+
+        .form-cong-container-text {
+          font-size: 18px;
+          margin: 20px;
+        }
+
+      }
+    }
+
+  }
+}
+
+// * 589
+
+@media screen and (max-width: 589px) {
+  body {
+
+    #forma {
+      #forma-container {
+        width: 100%;
+        border-radius: 0;
+        grid-template-columns: 290px;
+        padding: 90px 15px 35px;
+        #back-to-cart {
+          top: 30px;
+          left: 10px;
+        }
+        .forma-popup-container-close {
+          top: 20px;
+          right: 15px;
+        }
+
+        #form {
+          width: auto;
+
+          #form-title {
+            font-size: 24px;
+          }
+
+          form {
+            #form-container-delivery {
+              .form-container-title {
+                font-size: 16px;
+              }
+
+              label {
+                font-size: 12px;
+              }
+
+              .form-radio {
+                label {
+                  font-size: 14px;
+                }
+              }
+            }
+
+            #form-container-person-data {
+              input[type=text] {
+                width: 290px;
+              }
+            }
+
+            #form-container-comments {
+              textarea {
+                width: 290px;
+              }
+            }
+          }
+        }
+         .purchases {
+           width: 290px;
+           padding: 30px 20px;
+           .purchases-item-style {
+             font-size: 14px;
+             padding-bottom: 15px;
+             span {
+               font-size: 18px;
+             }
+           }
+           #purchases-action-btn {
+             width: 250px;
+             font-size: 14px;
+             margin: 0;
+           }
+           .free-delivery {
+             font-size: 12px;
+             width: 160px;
+           }
+         }
+        .product-card-delivery {
+          background-image: url("../../images/zakaz-adaptiv-rolling-pin.png") ;
+          height: auto;
+          width: 290px;
+          padding: 25px 15px 35px;
+          .product-card-delivery-text {
+            p {
+              font-size: 14px;
+              width: 212px;
+              &:first-child {
+                margin-bottom: 20px;
+              }
+            }
+            .product-card-delivery-text-min-time {
+              width: 255px;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// * 459 *
+
+@media screen and (max-width: 459px) {
+  body {
+    #products-cards-popup {
+      .products-card {
+        .product-card-container {
+          padding: 65px 15px 35px;
+          width: 100%;
+          margin: 40px auto;
+          border-radius: 0;
+
+          .products-block {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .product-card-image {
+              width: 135px;
+              height: auto;
+            }
+
+            .product-card-info {
+              text-align: center;
+              width: 290px;
+
+              .product-card-info-title {
+                font-size: 18px;
+                margin-top: 20px;
+              }
+
+              .product-card-info-composition {
+                width: 290px;
+
+                .product-card-info-composition-title {
+                  font-size: 16px;
+                  margin-top: 15px;
+                }
+
+                .product-card-info-composition-text {
+                  font-size: 14px;
+                }
+              }
+
+              .product-card-info-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 20px;
+
+                .product-card-info-actions-count {
+                  order: 2;
+                }
+
+                .product-card-info-actions-price {
+                  margin: 0 0 20px 0;
+                  width: 290px;
+                  order: 1;
+                }
+
+                .product-card-info-actions-btn {
+                  font-size: 12px;
+                  width: 144px;
+                  order: 3;
+                  margin-left: 25px;
+
+                  .product-btn {
+                    font-size: 12px;
+                    width: 144px;
+                  }
+                }
+              }
+            }
+
+            .product-card-specifications {
+              margin-top: 30px;
+              width: 290px;
+              text-align: center;
+              padding: 15px;
+
+              .product-card-specifications-title {
+                font-size: 16px;
+              }
+
+              .product-card-specifications-table {
+                table {
+                  margin-bottom: 15px;
+
+                  tr {
+                    .table-title {
+                      font-size: 14px;
+                      padding-top: 10px;
+                      padding-bottom: 15px;
+                      text-align: center;
+                    }
+
+                    td {
+                      text-align: left;
+                      font-size: 14px;
+                      line-height: 18px;
+                    }
+                  }
+                }
+              }
+
+              .product-card-specifications-text {
+                font-size: 14px;
+                margin-top: 5px;
+              }
+            }
+
+            .product-card-delivery {
+              background-image: url("../../images/prod-card-adapt-rolling-pin.png");
+              margin-top: 30px;
+              background-size: 100% 100%;
+              width: 290px;
+              padding: 35px 15px;
+              font-size: 15px;
+              height: auto;
+
+              .product-card-delivery-text {
+
+                p {
+                  font-size: 14px;
+                  width: 255px;
+                  margin: 0 auto;
+                  text-align: center;
+
+                  .pcd-time {
+                    display: block;
+                  }
+                }
+
+                .product-card-delivery-text-min-time {
+                  margin: 20px 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// * 439  *
+
+@media screen and (max-width: 439px) {
+  body {
+    #recipe-block-popup {
+      .recipe-popup {
+        .recipe-popup-container {
+          width: 100%;
+          border-radius: 0;
+          padding: 50px 15px 40px;
+
+          .recipe-popup-container-close {
+            top: 20px;
+            right: 15px;
+          }
+
+          .recipe-popup-container-title {
+            width: 300px;
+            font-size: 18px;
+            margin: 0 auto;
+          }
+
+          .recipe-popup-container-ingrid {
+            align-items: flex-start;
+            justify-content: center;
+
+            .recipe-popup-container-ingrid-image {
+              width: 134px;
+              height: auto;
+              margin-top: 8px;
+            }
+
+            .recipe-popup-container-ingrid-items {
+              font-size: 14px;
+              line-height: 30px;
+
+              ul {
+                li {
+                  font-size: 12px;
+                  line-height: 25px;
+                }
+              }
+            }
+          }
+
+          .recipe-popup-container-coocking {
+            font-size: 14px;
+            margin: 14px auto 0 auto;
+            width: 290px;
+          }
+
+          .recipe-popup-container-coocking-text {
+            margin: 12px auto 0 auto;
+            max-width: 290px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+
+}
 
 //* 320 - 425 *
 @media screen and (max-width: 424px) {
@@ -1222,27 +1887,35 @@
           }
 
           #follow-items-form {
+            #email-error {
+              left: 47px;
+              top: 58px;
+            }
             #follow-items-form-input {
               width: 290px;
             }
 
             #follow-items-form-button {
               margin-top: 20px;
+
               button.btn {
                 width: 290px;
               }
 
             }
           }
+
           #follow-items-social {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            a{
+
+            a {
               width: 40px;
               height: 40px;
               margin: 0;
-              img  {
+
+              img {
                 width: 100%;
               }
             }

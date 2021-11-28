@@ -114,6 +114,96 @@ $Tenor: 'TenorSans', sans-serif;
 body {
   position: relative;
 
+  img.krestik:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  #burger-menu {
+    display: none;
+    background: #fff;
+    width: 100%;
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 15px;
+
+    #burger-menu-close {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 40px;
+      right: 22px;
+    }
+
+    #burger-menu-title {
+      font-size: 25px;
+      font-family: $Gabriela;
+      color: rgb(175, 95, 17);
+      margin-top: 75px;
+    }
+
+    #burger-menu-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 35px;
+      border-bottom: 1px solid #cfc1b1;
+
+      a {
+        font-size: 16px;
+        font-family: $Lato;
+        color: rgb(34, 34, 34);
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
+    }
+
+    #burger-menu-call {
+      text-align: center;
+      margin-top: 25px;
+
+      #burger-menu-phone {
+        img {
+          vertical-align: middle;
+        }
+
+        span {
+          font-size: 16px;
+          font-family: $Lato;
+          color: rgb(34, 34, 34);
+          margin-left: 10px;
+        }
+      }
+
+      #burger-menu-action {
+        margin-top: 15px;
+        margin-bottom: 40px;
+
+        button {
+          border: 1px solid rgb(247, 195, 94);
+          border-radius: 24px;
+          width: 176px;
+          background: transparent;
+          padding: 15px;
+          text-align: center;
+          font-size: 16px;
+          font-family: $Lato;
+          color: rgb(55, 29, 3);
+
+          &:hover {
+            cursor: pointer;
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.15s;
+            transition-timing-function: ease-out;
+            background-color: rgba(247, 195, 94, 0.35);
+            box-shadow: 0px 2px 9px 5px rgba(247, 195, 94, 0.35);
+          }
+        }
+      }
+    }
+  }
 
   #header-container {
     @include container;
@@ -151,6 +241,11 @@ body {
         display: flex;
         align-items: center;
         margin: 0 20px 0 53px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+        }
 
         #cart-count {
           margin-left: 10px;
@@ -748,9 +843,11 @@ body {
 
           .recipe-image {
             overflow: hidden;
+            font-size: 0;
 
             img {
               width: 100%;
+              font-size: 0;
             }
 
           }
@@ -823,10 +920,22 @@ body {
           width: 390px;
         }
 
+
         #follow-items-form {
           margin-top: 39px;
           display: flex;
           justify-content: flex-start;
+          position: relative;
+
+          #email-error {
+            display: none;
+            font-size: 18px;
+            color: red;
+            width: 100%;
+            position: absolute;
+            left: 28px;
+            top: 60px;
+          }
 
           #follow-items-form-input {
             border-width: 1px;
@@ -847,6 +956,7 @@ body {
               margin-left: 20px;
               width: 250px;
               outline: none;
+              background-color: transparent;
 
               &::placeholder {
                 font-size: 15px;
@@ -856,6 +966,7 @@ body {
                 margin-left: 20px;
               }
             }
+
           }
 
           #follow-items-form-button {
@@ -891,12 +1002,6 @@ body {
   }
 
 
-  #map {
-    width: 100%;
-    height: 500px;
-  }
-
-
   #footer-container {
     @include container;
     padding: 60px 0 80px 0;
@@ -904,6 +1009,23 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    position: relative;
+
+    #up {
+      border-radius: 50%;
+      background-color: rgb(247, 195, 94);
+      position: absolute;
+      right: 15px;
+      top: -25px;
+      width: 45px;
+      height: 45px;
+      z-index: 293;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+
+    }
 
     #footer-info {
       #footer-social {
@@ -1287,6 +1409,12 @@ body {
           line-height: 1.313;
           margin-top: 10px;
           width: 410px;
+
+          a {
+            text-decoration: none;
+            border-bottom: 1px solid #222;
+            color: rgb(34, 34, 34);
+          }
         }
       }
     }
@@ -1312,7 +1440,7 @@ body {
       border-radius: 30px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 425px 355px;
+      grid-template-rows: 425px 1fr;
       grid-gap: 0 25px;
 
 
@@ -1320,6 +1448,11 @@ body {
         position: absolute;
         left: 60px;
         top: 43px;
+
+        &:hover {
+          cursor: pointer;
+          transform: translateX(-5px);
+        }
 
         img {
           vertical-align: middle;
@@ -1360,10 +1493,7 @@ body {
               font-family: $LatoBold;
               color: rgb(67, 67, 67);
               margin-bottom: 25px;
-
-              &:not(first-child) {
-                margin-top: 35px;
-              }
+              margin-top: 35px;
 
             }
 
@@ -1425,6 +1555,13 @@ body {
               margin-bottom: 15px;
             }
 
+            .error-styles {
+              margin-top: 5px;
+              margin-left: 30px;
+              color: red;
+              font-size: 14px;
+              display: none;
+            }
             input[type=text] {
               font-size: 15px;
               font-family: $Lato;
@@ -1434,9 +1571,12 @@ body {
               border-style: solid;
               width: 447px;
               padding: 15px;
-              margin-bottom: 15px;
+              margin-top: 15px;
               border-radius: 30px;
               outline: none;
+              &:first-child {
+                margin-top: 0;
+              }
 
               &::placeholder {
                 font-size: 15px;
@@ -1486,7 +1626,7 @@ body {
           font-size: 16px;
           font-family: $LatoLight;
           color: rgb(34, 34, 34);
-          margin-bottom: 15px;
+          margin-bottom: 10px;
 
           span {
             font-size: 20px;
@@ -1624,7 +1764,7 @@ body {
             height: 145px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
 
             &:not(:last-child) {
               border-bottom: 1px solid #cfc1b1;
@@ -1647,75 +1787,89 @@ body {
               font-size: 18px;
               font-family: $Gabriela;
               color: rgb(67, 67, 67);
+              margin-left: 30px;
 
               .shopping-cart-item-description-title {
                 margin-bottom: 10px;
               }
             }
 
-            .quantity {
-              width: 118px;
-              height: 46px;
-              border-width: 1px;
-              border-color: rgb(207, 193, 177);
-              border-style: solid;
+            .action-block {
+              flex-grow: 1;
               display: flex;
               align-items: center;
-              border-radius: 30px;
-              overflow: hidden;
+              justify-content: space-between;
+              margin-left: 70px;
 
-              .plus-btn, .minus-btn {
+              .quantity {
+                width: 118px;
+                height: 46px;
+                border-width: 1px;
+                border-color: rgb(207, 193, 177);
+                border-style: solid;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                border: none;
-                background: transparent;
+                border-radius: 30px;
+                overflow: hidden;
+
+                .plus-btn, .minus-btn {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: none;
+                  background: transparent;
+                  font-size: 18px;
+                  font-family: $LatoLight;
+                  color: rgb(34, 34, 34);
+                  cursor: pointer;
+                }
+
+                .plus-btn {
+                  border-left: 1px solid rgb(207, 193, 177);
+                  padding: 20px 17px 20px 12px;
+                }
+
+                .minus-btn {
+                  border-right: 1px solid rgb(207, 193, 177);
+                  padding: 20px 12px 20px 17px;
+                }
+
+                input {
+                  width: 10px;
+                  background: transparent;
+                  outline: none;
+                  border: 0;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  font-size: 18px;
+                  font-family: $LatoLight;
+                  color: rgb(34, 34, 34);
+                }
+              }
+
+              .shopping-cart-item-price {
                 font-size: 18px;
-                font-family: $LatoLight;
-                color: rgb(34, 34, 34);
-                cursor: pointer;
+                font-family: $LatoBold;
+                color: rgb(175, 96, 18);
+                font-weight: bold;
               }
 
-              .plus-btn {
-                border-left: 1px solid rgb(207, 193, 177);
-                padding: 20px 17px 20px 12px;
-              }
+              .shopping-cart-item-action {
+                display: flex;
+                align-items: center;
 
-              .minus-btn {
-                border-right: 1px solid rgb(207, 193, 177);
-                padding: 20px 12px 20px 17px;
-              }
+                &:hover {
+                  cursor: pointer;
+                  transform: scale(1.05);
+                }
 
-              input {
-                width: 10px;
-                background: transparent;
-                outline: none;
-                border: 0;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                font-size: 18px;
-                font-family: $LatoLight;
-                color: rgb(34, 34, 34);
-              }
-            }
-
-            .shopping-cart-item-price {
-              font-size: 18px;
-              font-family: $LatoBold;
-              color: rgb(175, 96, 18);
-              font-weight: bold;
-            }
-
-            .shopping-cart-item-action {
-              display: flex;
-              align-items: center;
-
-              span {
-                font-size: 14px;
-                font-family: $LatoLight;
-                color: rgb(158, 149, 139);
-                margin-left: 15px;
+                span {
+                  font-size: 14px;
+                  font-family: $LatoLight;
+                  color: rgb(158, 149, 139);
+                  margin-left: 15px;
+                }
               }
             }
           }
@@ -1819,9 +1973,40 @@ body {
     }
   }
 
-  #map {
-    height: 300px;
+  #form-cong {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.6);
+
+    #form-cong-container {
+      width: 515px;
+      margin: 220px auto;
+      background-color: #ffffff;
+      border-radius: 30px;
+      padding: 35px;
+      position: relative;
+
+      .form-cong-container-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+      }
+
+      .form-cong-container-text {
+        font-size: 28px;
+        font-family: $Gabriela;
+        color: #af6012;
+        text-align: center;
+        margin: 35px;
+      }
+
+    }
   }
+
 }
 
 @import "adaptive.scss";

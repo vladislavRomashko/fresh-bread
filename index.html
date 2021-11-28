@@ -31,6 +31,26 @@
 <body>
 
 <div id="header" class=" animate__animated wow animate__backInLeft">
+    <div id="burger-menu">
+        <div id="burger-menu-close">
+            <img src="images/close.png" alt="">
+        </div>
+        <div id="burger-menu-title">Меню</div>
+        <div id="burger-menu-items">
+            <a href="#products">Наша продукция</a>
+            <a href="#about">О нас</a>
+            <a href="#footer">Контакты</a>
+        </div>
+        <div id="burger-menu-call">
+            <div id="burger-menu-phone">
+                <img src="images/telephone.png" alt="">
+                <span>+7 (526) 987 00 88</span>
+            </div>
+            <div id="burger-menu-action">
+                <button>Заказать звонок</button>
+            </div>
+        </div>
+    </div>
     <div id="header-container">
         <div id="header-logo">
             <a href="#">
@@ -38,11 +58,11 @@
             </a>
         </div>
 
-            <div id="header-menu">
-                <a href="#products" class="hvr-grow">Наша продукция</a>
-                <a href="#about" class="hvr-grow">О нас</a>
-                <a href="#footer" class="hvr-grow">Контакты</a>
-            </div>
+        <div id="header-menu">
+            <a href="#products" class="hvr-grow">Наша продукция</a>
+            <a href="#about" class="hvr-grow">О нас</a>
+            <a href="#footer" class="hvr-grow">Контакты</a>
+        </div>
         <div id="header-info">
             <div id="header-phone">
                 <img src="images/telephone.png" alt="" class="hvr-pulse">
@@ -171,8 +191,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card1">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card1">
                     </div>
                 </div>
 
@@ -200,8 +220,8 @@
                     </div>
 
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card2">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card2">
                     </div>
                 </div>
             </div>
@@ -229,8 +249,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card3">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card3">
                     </div>
                 </div>
 
@@ -257,13 +277,13 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card4">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card4">
                     </div>
                 </div>
             </div>
             <div class="product-cart">
-                <div class="product-item">
+                <div class="product-item" id="rjan">
                     <div class="product-item-image">
                         <img src="images/fresh-bread5.png" alt="">
                     </div>
@@ -286,8 +306,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card5">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card5">
                     </div>
                 </div>
 
@@ -314,8 +334,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card6">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card6">
                     </div>
                 </div>
             </div>
@@ -343,8 +363,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card7">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card7">
                     </div>
                 </div>
 
@@ -371,12 +391,11 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card8">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card8">
                     </div>
                 </div>
             </div>
-
             <div class="product-cart">
                 <div class="product-item">
                     <div class="product-item-image">
@@ -401,12 +420,12 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card9">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card9">
                     </div>
                 </div>
 
-                <div class="product-item">
+                <div class="product-item" id="zern">
                     <div class="product-item-image">
                         <img src="images/fresh-bread10.png" alt="">
                     </div>
@@ -429,8 +448,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card10">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card10">
                     </div>
                 </div>
             </div>
@@ -458,8 +477,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card11">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card11">
                     </div>
                 </div>
 
@@ -486,8 +505,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card12">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card12">
                     </div>
                 </div>
             </div>
@@ -515,8 +534,8 @@
                         </button>
                     </div>
                     <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                        <span data-id="product-card13">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card13">
                     </div>
                 </div>
 
@@ -542,9 +561,9 @@
                             <span>В корзину</span>
                         </button>
                     </div>
-                    <div class="product-item-details hvr-forward">
-                        <span>Подробнее</span>
-                        <img src="images/arrowSmall.png" alt="">
+                    <div class="product-item-details hvr-forward" data-id="product-card14">
+                        <span data-id="product-card14">Подробнее</span>
+                        <img src="images/arrowSmall.png" alt="" data-id="product-card14">
                     </div>
                 </div>
             </div>
@@ -635,48 +654,51 @@
     <div id="about-container">
         <h2 class="block-title animate__animated wow animate__zoomIn"> О нас</h2>
         <div id="about-items-container">
-        <div id="about-items-image">
-            <img src="images/about-fig.png" alt="">
-        </div>
-        <div id="about-items">
-            <div class="about-item animate__animated wow animate__fadeInRightBig">
-                <div class="about-item-image">
-                    <img src="images/about1.png" alt="">
-                </div>
-                <div class="about-item-text">
-                    Вот уже более десяти лет мы растим живую закваску, на которой каждый день вручную вымешиваются наши
-                    хлеба.
-                </div>
+            <div id="about-items-image">
+                <img src="images/about-fig.png" alt="">
             </div>
-            <div class="about-item right animate__animated wow animate__fadeInLeftBig">
-                <div class="about-item-image ">
-                    <img src="images/about2.png" alt="">
+            <div id="about-items">
+                <div class="about-item animate__animated wow animate__fadeInRightBig">
+                    <div class="about-item-image">
+                        <img src="images/about1.png" alt="">
+                    </div>
+                    <div class="about-item-text">
+                        Вот уже более десяти лет мы растим живую закваску, на которой каждый день вручную вымешиваются
+                        наши
+                        хлеба.
+                    </div>
                 </div>
-                <div class="about-item-text">
-                    Такому хлебу нужно 9 часов, чтобы медленно созреть – набрать силу и пористость в мякише, подняться и
-                    обрести красивую округлую форму.
+                <div class="about-item right animate__animated wow animate__fadeInLeftBig">
+                    <div class="about-item-image ">
+                        <img src="images/about2.png" alt="">
+                    </div>
+                    <div class="about-item-text">
+                        Такому хлебу нужно 9 часов, чтобы медленно созреть – набрать силу и пористость в мякише,
+                        подняться и
+                        обрести красивую округлую форму.
 
+                    </div>
                 </div>
-            </div>
-            <div class="about-item animate__animated wow animate__fadeInRightBig">
-                <div class="about-item-image">
-                    <img src="images/about3.png" alt="">
+                <div class="about-item animate__animated wow animate__fadeInRightBig">
+                    <div class="about-item-image">
+                        <img src="images/about3.png" alt="">
+                    </div>
+                    <div class="about-item-text">
+                        Жар и пар наших печей дарят хлебу твёрдую хрустящую корочку и нежную ароматную сердцевину.
+                    </div>
                 </div>
-                <div class="about-item-text">
-                    Жар и пар наших печей дарят хлебу твёрдую хрустящую корочку и нежную ароматную сердцевину.
+                <div class="about-item right animate__animated wow animate__fadeInLeftBig">
+                    <div class="about-item-image">
+                        <img src="images/about4.png" alt="">
+                    </div>
+                    <div class="about-item-text">
+                        В наших пекарнях мы встаем спозаранку: в 5 часов утра тестомесы уже складывают первые мешки
+                        муки, а
+                        ложимся поздно. Ведь золотистые багеты нужно подавать тёплыми к вашему столу.
+                    </div>
                 </div>
-            </div>
-            <div class="about-item right animate__animated wow animate__fadeInLeftBig">
-                <div class="about-item-image">
-                    <img src="images/about4.png" alt="">
-                </div>
-                <div class="about-item-text">
-                    В наших пекарнях мы встаем спозаранку: в 5 часов утра тестомесы уже складывают первые мешки муки, а
-                    ложимся поздно. Ведь золотистые багеты нужно подавать тёплыми к вашему столу.
-                </div>
-            </div>
 
-        </div>
+            </div>
         </div>
         <div id="about-info" class="animate__animated wow animate__jackInTheBox">
             <div class="about-info-text">
@@ -703,17 +725,17 @@
             <div class="recipe-block-items">
                 <div class="recipe-item">
                     <div class="recipe-image">
-                        <img src="images/recipe1.png" alt="">
+                        <img src="images/recipe1.png" alt="" data-id="recipe-popup4">
                     </div>
-                    <div class="recipe-text">
+                    <div class="recipe-text" data-id="recipe-popup4">
                         Бутерброды с яйцами и печенью трески
                     </div>
                 </div>
                 <div class="recipe-item">
                     <div class="recipe-image">
-                        <img src="images/recipe2.png" alt="">
+                        <img src="images/recipe2.png" alt="" data-id="recipe-popup3">
                     </div>
-                    <div class="recipe-text">
+                    <div class="recipe-text" data-id="recipe-popup3">
                         Бутерброды с твердым сыром и горчицей
                     </div>
                 </div>
@@ -721,17 +743,17 @@
             <div class="recipe-block-items">
                 <div class="recipe-item">
                     <div class="recipe-image">
-                        <img src="images/recipe3.png" alt="">
+                        <img src="images/recipe3.png" alt="" data-id="recipe-popup2">
                     </div>
-                    <div class="recipe-text">
+                    <div class="recipe-text" data-id="recipe-popup2">
                         Бутерброды с брынзой
                     </div>
                 </div>
                 <div class="recipe-item">
                     <div class="recipe-image">
-                        <img src="images/recipe4.png" alt="">
+                        <img src="images/recipe4.png" alt="" data-id="recipe-popup1">
                     </div>
-                    <div class="recipe-text">
+                    <div class="recipe-text" data-id="recipe-popup1">
                         Бутерброды с оливками, творогом, луком и базиликом
                     </div>
                 </div>
@@ -765,14 +787,18 @@
             </div>
             <div id="follow-items-form">
                 <div id="follow-items-form-input">
-                    <input type="text" placeholder="Введите е-mail">
+                    <input type="email" placeholder="Введите е-mail" id="email">
+
                 </div>
+                <p id="email-error">Поле с E-mail не заполненно !</p>
+
                 <div id="follow-items-form-button" class="hvr-pulse">
                     <button class="btn ">
                         Подписаться
                     </button>
                 </div>
             </div>
+
             <div id="follow-items-social">
                 <a href="https://www.instagram.com/" target="_blank">
                     <img src="images/insta.png" alt="">
@@ -802,13 +828,19 @@
             style="color:#eee;font-size:12px;position:absolute;top:14px;">Lorem ipsum dolor sit amet, consectetur
         adipisicing elit. Accusamus dolor doloribus eius hic illo impedit nobis quae quisquam repellendus suscipit? —
         Yandex.Maps</a>
-        <iframe src="https://yandex.fr/map-widget/v1/-/CCUuITrJDA" width="100%" height="300" frameborder=""
+        <iframe src="https://yandex.fr/map-widget/v1/-/CCUuITrJDA" width="100%" height="500" frameborder=""
                 allowfullscreen="true" style="position:relative;"></iframe>
     </div>
 </div>
 
+
 <div id="footer">
+
     <div id="footer-container" class="animate__animated wow animate__backInUp">
+        <a href="#" id="up">
+            <img src="images/arr-up.png" alt="">
+        </a>
+
         <div id="footer-info">
             <div id="footer-logo">
                 <a href="#"><img src="images/logo.png" alt=""></a>
@@ -899,10 +931,10 @@
 
 <div id="products-cards-popup">
 
-    <div class="products-card ">
+    <div class="products-card " id="product-card1">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -977,7 +1009,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -987,7 +1019,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1004,10 +1037,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card ">
+    <div class="products-card " id="product-card2">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1082,7 +1115,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1092,7 +1125,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1109,10 +1143,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card3">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1187,7 +1221,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1197,7 +1231,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1214,10 +1249,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card4">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1292,7 +1327,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1302,7 +1337,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1319,10 +1355,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card5">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1397,7 +1433,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1407,7 +1443,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1424,10 +1461,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card6">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1502,7 +1539,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1512,7 +1549,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1529,10 +1567,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card7">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1608,7 +1646,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1618,7 +1656,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1635,10 +1674,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card8">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1713,7 +1752,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1723,7 +1762,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1740,10 +1780,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card9">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1819,7 +1859,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1829,7 +1869,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1846,10 +1887,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card10">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -1924,7 +1965,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -1934,7 +1975,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -1951,10 +1993,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card11">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -2029,7 +2071,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -2039,7 +2081,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -2056,10 +2099,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card12">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -2134,7 +2177,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -2144,7 +2187,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -2161,10 +2205,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card13">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -2239,7 +2283,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -2249,7 +2293,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -2266,10 +2311,10 @@
             </div>
         </div>
     </div>
-    <div class="products-card">
+    <div class="products-card" id="product-card14">
         <div class="product-card-container">
             <div class="product-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="products-block">
                 <div class="product-card-image">
@@ -2344,7 +2389,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="product-card-specifications-title product-card-specifications-title2" >
+                    <div class="product-card-specifications-title product-card-specifications-title2">
                         Срок годности:
                     </div>
                     <div class="product-card-specifications-text">
@@ -2354,7 +2399,8 @@
                 <div class="product-card-delivery">
                     <div class="product-card-delivery-text">
                         <p>
-                            Доставка заказов производится с <span>10:00</span> до <span>21:00</span>
+                            Доставка заказов производится с <span>10:00</span> <span
+                                class="pcd-time">до <span>21:00</span></span>
                             по городу.
                         </p>
                         <p>
@@ -2375,10 +2421,10 @@
 </div>
 
 <div id="recipe-block-popup">
-    <div class="recipe-popup ">
+    <div class="recipe-popup" id="recipe-popup1">
         <div class="recipe-popup-container">
             <div class="recipe-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="recipe-popup-container-title">
                 Бутерброды с оливками, творогом,
@@ -2391,7 +2437,7 @@
                 <div class="recipe-popup-container-ingrid-items">
                     Ингредиенты:
                     <ul>
-                        <li>0,5 банки черных оливок</li>
+                        <li>0,5 банки маслин</li>
                         <li>100 г творога</li>
                         <li>20 г зеленого лука</li>
                         <li>20 г базилика</li>
@@ -2405,14 +2451,15 @@
             </div>
             <div class="recipe-popup-container-coocking-text">
                 Измельчите в блендере черные оливки. Мелко нарежьте зеленый лук и базилик. Смешайте всё с творогом.
-                Посолите и намажьте смесь на ржаной хлеб.
+                Посолите и намажьте смесь на <a href="#rjan">ржаной хлеб</a>.
             </div>
+
         </div>
     </div>
-    <div class="recipe-popup ">
+    <div class="recipe-popup" id="recipe-popup2">
         <div class="recipe-popup-container">
             <div class="recipe-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="recipe-popup-container-title">
                 Бутерброды с брынзой
@@ -2443,10 +2490,10 @@
             </div>
         </div>
     </div>
-    <div class="recipe-popup ">
+    <div class="recipe-popup" id="recipe-popup3">
         <div class="recipe-popup-container">
             <div class="recipe-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="recipe-popup-container-title">
                 Бутерброды с твердым сыром и горчицей
@@ -2471,15 +2518,16 @@
             </div>
             <div class="recipe-popup-container-coocking-text">
                 Мелко натри сыр.Заправь тертый сыр горчицей и щепоткой красного перца.Смешай сыр со сливочным
-                маслом.Прекрасно подойдет к цельнозерновому хлебу. Украшением могут служить орехи, зелень или свежие
+                маслом.Прекрасно подойдет к <a href="#zern">цельнозерновому хлебу</a>. Украшением могут служить орехи,
+                зелень или свежие
                 овощи.
             </div>
         </div>
     </div>
-    <div class="recipe-popup">
+    <div class="recipe-popup" id="recipe-popup4">
         <div class="recipe-popup-container">
             <div class="recipe-popup-container-close">
-                <img src="images/close.png" alt="">
+                <img src="images/close.png" alt="" class="krestik">
             </div>
             <div class="recipe-popup-container-title">
                 Бутерброды с яйцами и печенью трески
@@ -2512,14 +2560,14 @@
     </div>
 </div>
 
-<div id="forma">
+<div id="forma" class="forma-area">
     <div id="forma-container">
         <div id="back-to-cart">
             <img src="images/left-arr.png" alt="">
             <span>Назад в корзину</span>
         </div>
         <div class="forma-popup-container-close">
-            <img src="images/close.png" alt="">
+            <img src="images/close.png" alt="" class="krestik">
         </div>
         <div id="form">
             <div id="form-title">
@@ -2557,9 +2605,12 @@
                         <div class="form-container-title pd">
                             3. Личные данные
                         </div>
-                        <input type="text" placeholder="Ваше имя" name="name">
-                        <input type="text" placeholder="Ваша фамилия" name="second name">
-                        <input type="text" placeholder="Ваш телефон" name="phone">
+                        <input type="text" placeholder="Ваше имя" name="name" id="name">
+                        <p id="form-err-name" class="error-styles"> Укажите ваше имя </p>
+                        <input type="text" placeholder="Ваша фамилия" name="second-name" id="second-name">
+                        <p id="form-err-sec-name" class="error-styles"> Укажите вашу фамилию </p>
+                        <input type="text" placeholder="Ваш телефон" name="phone" id="phone">
+                        <p id="form-err-phone" class="error-styles"> Укажите ваш телефон </p>
                     </div>
                 </div>
                 <div id="form-container-comments">
@@ -2615,10 +2666,20 @@
     </div>
 </div>
 
+<div id="form-cong" class="form-cong">
+    <div id="form-cong-container">
+        <div class="form-cong-container-close">
+            <img src="images/close.png" alt="" class="krestik">
+        </div>
+        <div class="form-cong-container-text">Спасибо за Ваш заказ !</div>
+        <div class="form-cong-container-text">В течении 15 минут наш оператор свяжется с вами.</div>
+    </div>
+</div>
+
 <div class="shopping-cart ">
     <div id="shopping-cart-container">
         <div class="shopping-cart-popup-container-close">
-            <img src="images/close.png" alt="">
+            <img src="images/close.png" alt="" class="krestik">
         </div>
         <div id="shopping-cart-title">
             Корзина
@@ -2638,24 +2699,25 @@
                             320 г
                         </div>
                     </div>
+                    <div class="action-block">
+                        <div class="quantity">
+                            <button class="minus-btn" type="button" name="button">
+                                -
+                            </button>
+                            <input type="text" name="name" value="1">
+                            <button class="plus-btn" type="button" name="button">
+                                +
+                            </button>
+                        </div>
 
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            -
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            +
-                        </button>
-                    </div>
+                        <div class="shopping-cart-item-price">
+                            60 руб.
+                        </div>
 
-                    <div class="shopping-cart-item-price">
-                        60 руб.
-                    </div>
-
-                    <div class="shopping-cart-item-action">
-                        <img src="images/trash.png" alt="">
-                        <span>Удалить</span>
+                        <div class="shopping-cart-item-action">
+                            <img src="images/trash.png" alt="">
+                            <span>Удалить</span>
+                        </div>
                     </div>
                 </div>
                 <div class="shopping-cart-item">
@@ -2671,24 +2733,25 @@
                             320 г
                         </div>
                     </div>
+                    <div class="action-block">
+                        <div class="quantity">
+                            <button class="minus-btn" type="button" name="button">
+                                -
+                            </button>
+                            <input type="text" name="name" value="1">
+                            <button class="plus-btn" type="button" name="button">
+                                +
+                            </button>
+                        </div>
 
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            -
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            +
-                        </button>
-                    </div>
+                        <div class="shopping-cart-item-price">
+                            70 руб.
+                        </div>
 
-                    <div class="shopping-cart-item-price">
-                        70 руб.
-                    </div>
-
-                    <div class="shopping-cart-item-action">
-                        <img src="images/trash.png" alt="">
-                        <span>Удалить</span>
+                        <div class="shopping-cart-item-action">
+                            <img src="images/trash.png" alt="">
+                            <span>Удалить</span>
+                        </div>
                     </div>
                 </div>
                 <div class="shopping-cart-item">
@@ -2704,24 +2767,25 @@
                             320 г
                         </div>
                     </div>
+                    <div class="action-block">
+                        <div class="quantity">
+                            <button class="minus-btn" type="button" name="button">
+                                -
+                            </button>
+                            <input type="text" name="name" value="1">
+                            <button class="plus-btn" type="button" name="button">
+                                +
+                            </button>
+                        </div>
 
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            -
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            +
-                        </button>
-                    </div>
+                        <div class="shopping-cart-item-price">
+                            96 руб.
+                        </div>
 
-                    <div class="shopping-cart-item-price">
-                        96 руб.
-                    </div>
-
-                    <div class="shopping-cart-item-action">
-                        <img src="images/trash.png" alt="">
-                        <span>Удалить</span>
+                        <div class="shopping-cart-item-action">
+                            <img src="images/trash.png" alt="">
+                            <span>Удалить</span>
+                        </div>
                     </div>
                 </div>
                 <div class="shopping-cart-item">
@@ -2737,24 +2801,25 @@
                             320 г
                         </div>
                     </div>
+                    <div class="action-block">
+                        <div class="quantity">
+                            <button class="minus-btn" type="button" name="button">
+                                -
+                            </button>
+                            <input type="text" name="name" value="1">
+                            <button class="plus-btn" type="button" name="button">
+                                +
+                            </button>
+                        </div>
 
-                    <div class="quantity">
-                        <button class="minus-btn" type="button" name="button">
-                            -
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="plus-btn" type="button" name="button">
-                            +
-                        </button>
-                    </div>
+                        <div class="shopping-cart-item-price">
+                            96 руб.
+                        </div>
 
-                    <div class="shopping-cart-item-price">
-                        96 руб.
-                    </div>
-
-                    <div class="shopping-cart-item-action">
-                        <img src="images/trash.png" alt="">
-                        <span>Удалить</span>
+                        <div class="shopping-cart-item-action">
+                            <img src="images/trash.png" alt="">
+                            <span>Удалить</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2800,8 +2865,9 @@
         </div>
     </div>
 </div>
+
+
 <script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/jquery.simplePagination.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
