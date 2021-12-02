@@ -407,6 +407,18 @@ body {
     width: 180px;
     font-family: $LatoBold;
     margin-top: 10px;
+    &::before {
+      content: '';
+      background-image: url("../../images/food-basket.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 10px;
+
+      width: 20px;
+      height: 20px;
+    }
 
     &:hover {
       box-shadow: 0px 5px 9px 0px rgba(110, 81, 22, 0.35);
@@ -414,16 +426,16 @@ body {
     }
 
 
-    img {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-
-    span {
-      vertical-align: middle;
-    }
+    //img {
+    //  width: 20px;
+    //  height: 20px;
+    //  margin-right: 10px;
+    //  vertical-align: middle;
+    //}
+    //
+    //span {
+    //  vertical-align: middle;
+    //}
 
   }
 
@@ -626,6 +638,42 @@ body {
       margin-top: 103px;
 
       #healthy-container-info-left {
+        #read-more {
+          display: none;
+          text-align: center;
+          margin: 15px;
+
+          span {
+            font-size: 16px;
+            font-family: $Lato;
+            color: rgb(34, 34, 34);
+          }
+
+          img {
+            margin-left: 15px;
+          }
+        }
+
+        .hide-block {
+          display: none;
+        }
+
+        #hide-text1 {
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          text-align: center;
+        }
+
+        #hide-text2 {
+          display: none;
+          margin-top: 40px;
+          font-size: 16px;
+          font-family: $LatoLight;
+          color: rgb(34, 34, 34);
+          text-align: center;
+        }
+
         #txt-top {
           margin-bottom: 20px;
         }
@@ -1562,6 +1610,7 @@ body {
               font-size: 14px;
               display: none;
             }
+
             input[type=text] {
               font-size: 15px;
               font-family: $Lato;
@@ -1574,6 +1623,7 @@ body {
               margin-top: 15px;
               border-radius: 30px;
               outline: none;
+
               &:first-child {
                 margin-top: 0;
               }
@@ -1636,10 +1686,10 @@ body {
           }
         }
 
-        .purchases-delivery {
-          margin-bottom: 15px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #cfc1b1;
+        .purchases-total {
+          margin-top: 20px;
+          padding-top: 15px;
+          border-top: 1px solid #cfc1b1;
         }
 
         #purchases-action-btn {

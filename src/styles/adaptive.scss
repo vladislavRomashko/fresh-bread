@@ -688,15 +688,35 @@
           margin-top: 60px;
 
           #healthy-container-info-left {
+            #read-more {
+              display: block;
+            }
 
+            .hide-block {
+              display: none;
+              width: 400px;
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              line-height: 1.313;
+            }
+
+            //#hide-text2 {
+            //  display: none;
+            //}
             .healthy-container-info-text {
               max-width: 395px;
               margin-left: auto;
               margin-right: auto;
             }
+
+            #healthy-text-hide {
+              display: none;
+            }
           }
 
           #healthy-container-info-right {
+            display: none;
             width: 395px;
           }
         }
@@ -885,6 +905,7 @@
 
             #follow-items-form-button {
               margin-top: 25px;
+
               button.btn {
                 width: 279px;
               }
@@ -1208,10 +1229,12 @@
         border-radius: 0;
         grid-template-columns: 290px;
         padding: 90px 15px 35px;
+
         #back-to-cart {
           top: 30px;
           left: 10px;
         }
+
         .forma-popup-container-close {
           top: 20px;
           right: 15px;
@@ -1254,39 +1277,49 @@
             }
           }
         }
-         .purchases {
-           width: 290px;
-           padding: 30px 20px;
-           .purchases-item-style {
-             font-size: 14px;
-             padding-bottom: 15px;
-             span {
-               font-size: 18px;
-             }
-           }
-           #purchases-action-btn {
-             width: 250px;
-             font-size: 14px;
-             margin: 0;
-           }
-           .free-delivery {
-             font-size: 12px;
-             width: 160px;
-           }
-         }
+
+        .purchases {
+          width: 290px;
+          padding: 30px 20px;
+          height: auto;
+
+          .purchases-item-style {
+            font-size: 14px;
+
+
+            span {
+              font-size: 18px;
+            }
+          }
+
+          #purchases-action-btn {
+            width: 250px;
+            font-size: 14px;
+            margin: 0;
+          }
+
+          .free-delivery {
+            font-size: 12px;
+            width: 160px;
+          }
+        }
+
         .product-card-delivery {
-          background-image: url("../../images/zakaz-adaptiv-rolling-pin.png") ;
+          background-image: url("../../images/zakaz-adaptiv-rolling-pin.png");
           height: auto;
           width: 290px;
           padding: 25px 15px 35px;
+
           .product-card-delivery-text {
             p {
               font-size: 14px;
               width: 212px;
+
               &:first-child {
                 margin-bottom: 20px;
               }
             }
+
             .product-card-delivery-text-min-time {
               width: 255px;
               margin-bottom: 20px;
@@ -1665,12 +1698,12 @@
               margin-top: 15px;
             }
 
-            .product-item-action {
-              .product-btn {
-                width: 120px;
-                font-size: 12px;
-              }
+
+            .product-btn {
+              width: 120px;
+              font-size: 12px;
             }
+
 
             .product-item-details {
               margin-top: 20px;
@@ -1714,10 +1747,22 @@
           #healthy-container-info-left {
             width: 290px;
 
+            .hide-block {
+              font-size: 14px;
+              width: 290px;
+            }
+
             .healthy-container-info-text {
               width: 290px;
               font-size: 14px;
             }
+
+            #read-more {
+              span {
+                font-size: 14px;
+              }
+            }
+
           }
 
           #healthy-container-info-right {
@@ -1891,6 +1936,7 @@
               left: 47px;
               top: 58px;
             }
+
             #follow-items-form-input {
               width: 290px;
             }
