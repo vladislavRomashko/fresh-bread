@@ -1791,6 +1791,14 @@ body {
       width: 1000px;
       padding: 80px 60px;
 
+      #empty {
+        display: none;
+        text-align: center;
+        font-size: 25px;
+        color: rgba(68, 66, 66, 0.8);
+        margin: 50px auto 70px;
+      }
+
       #shopping-cart-title {
         font-size: 35px;
         font-family: $Gabriela;
