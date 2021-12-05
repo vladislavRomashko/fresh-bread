@@ -226,7 +226,7 @@ $(document).ready(function () {
             itemAction.className = 'shopping-cart-item-action';
 
             let itemActionImg = document.createElement('img');
-            itemActionImg.src = '../images/trash.png';
+            itemActionImg.src = '/images/trash.png';
 
             let spanDelete = document.createElement('span');
             spanDelete.innerHTML = 'Удалить';
