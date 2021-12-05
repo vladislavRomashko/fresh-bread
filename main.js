@@ -101,50 +101,6 @@ $(document).ready(function () {
         }
     });
 
-    // --------------- Form validation ---------------
-
-    let name = $('#name');
-    let secondName = $('#second-name');
-    let phone = $('#phone');
-    let formCong = $('#form-cong')
-    let errName = $('#form-err-name')
-    let errSecName = $('#form-err-sec-name')
-    let errPhone = $('#form-err-phone')
-    let input = $('input[type=text]')
-
-
-    $('#purchases-action > button').click(() => {
-
-        if (name.val() && secondName.val() && phone.val()) {
-            form.hide();
-            formCong.show();
-        }
-
-        if (!name.val()) {
-            errName.show();
-            name.css('border-color', 'red');
-        } else {
-            errName.hide();
-            name.css('border-color', '#95510e');
-        }
-
-        if (!secondName.val()) {
-            errSecName.show();
-            secondName.css('border-color', 'red');
-        } else {
-            errSecName.hide();
-            secondName.css('border-color', '#95510e');
-        }
-
-        if (!phone.val()) {
-            errPhone.show();
-            phone.css('border-color', 'red');
-        } else {
-            errPhone.hide();
-            phone.css('border-color', '#95510e');
-        }
-
-    });
 
     $('.form-cong-container-close img, #form-cong').click((e) => {
         if (e.target.classList.contains('krestik') || e.target.classList.contains('form-cong')) {
@@ -199,7 +155,7 @@ $(document).ready(function () {
         let cartItems = document.getElementById('shopping-cart-item-cover');
 
 
-        if (localStorage.length === 0 ) {
+        if (localStorage.length === 0) {
             $('#empty').show();
 
         } else {
@@ -223,7 +179,7 @@ $(document).ready(function () {
 
             let cartImg = document.createElement('img');
             cartImg.src = cartArray[i].productImage;
-            console.log(cartImg.src)
+
 
             cartImage.append(cartImg);
 
@@ -284,8 +240,6 @@ $(document).ready(function () {
             cartItems.append(cartContainer);
         }
 
-
-
     });
 
     let totalSum = $('.purchases-total-num');
@@ -300,7 +254,7 @@ $(document).ready(function () {
         for (let i = 0; i < Array.length; i++) {
             sumCost += Array[i].productSum
         }
-        console.log(Array)
+
         cost.text(sumCost + ' руб')
 
         if (Array.length === 0) {
@@ -452,7 +406,7 @@ $(document).ready(function () {
                 localStorage.setItem('cart', JSON.stringify(cartArray));
             }
             ;
-            console.log(localStorage)
+
 
             sumMoney();
 
@@ -483,7 +437,7 @@ $(document).ready(function () {
 
                 number = 0
 
-                console.log(number)
+
 
                 if (number === 0) {
 
@@ -495,21 +449,20 @@ $(document).ready(function () {
     )
     ;
 
-
     $('.in-cart-btn').click(function (event) {
 
-        let prPrice = $(event.target).siblings('.product-item-price').contents('span').text().trim();
+        let prPrice = $(event.target).closest('.product-card-info-actions-btn').siblings('.product-card-info-actions-price').contents('span').text().trim();
 
         let product = {
-            productImage: $(event.target).find('.product-card-image').contents('img').attr('src'),
-            productTitle: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').text().trim(),
+            productImage: $(event.target).closest('.product-card-info').siblings('.product-card-image').contents('img').attr('src'),
+            productTitle: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').contents('.title-card').text().trim(),
             productCount: 0,
             productPrice: prPrice,
             productSum: Number(prPrice),
             productId: $(event.target).attr('data-id'),
-            productWight: $(event.target).siblings('.product-item-weight').text().trim(),
+            productWight: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').contents('.weight-card').text().trim(),
         };
-        console.log(product.productImage)
+
 
         let cart = localStorage.getItem('cart');
         let itemId = $(event.target).attr('data-id');
@@ -556,7 +509,6 @@ $(document).ready(function () {
         }
         ;
 
-
         sumMoney();
 
         sumPieces();
@@ -586,14 +538,11 @@ $(document).ready(function () {
 
             number = 0
 
-            console.log(number)
-
             if (number === 0) {
 
                 totalSum.text(sumCost + ' руб.');
             }
         });
-
 
 
     });
@@ -602,6 +551,70 @@ $(document).ready(function () {
     sumMoney();
 
     sumPieces();
+
+    // --------------- Form validation ---------------
+
+    let name = $('#name');
+    let name2 = $('#second-name');
+    let phone = $('#phone');
+    let formCong = $('#form-cong');
+    let errName = $('#form-err-name');
+    let errName2 = $('#form-err-sec-name');
+    let errPhone = $('#form-err-phone');
+    let input = $('input[type=text]');
+    let localCartStorage = JSON.parse(localStorage.getItem('cart'));
+    let comments = $('#comments');
+    let delMeth1 = $('#method1');
+    let delMeth2 = $('#method2');
+    let card = $('#card');
+    let cash = $('#cash');
+
+    $('#purchases-action > button').click(() => {
+
+        if (name.val() && name2.val() && phone.val()) {
+            form.hide();
+            formCong.show();
+
+            // $.ajax({
+            //     type: 'post',
+            //     url: 'mail.php',
+            //     data: 'name=' + name.val() + '&name2=' + name2.val() + '&phone=' + phone.val() + '&localCartStorage=' + localCartStorage + '&comments=' + comments.val() + '&delMeth1=' + delMeth1.val().prop('checked') + '&delMeth2=' + delMeth2.val().prop('checked') + '&card=' + card.val().prop('checked') + '&cash=' + cash.val().prop('checked') + '&cartSum' + cartSum.val(),
+            //     success: () => {
+            //         form.hide();
+            //         formCong.show();
+            //     },
+            //     error: () => {
+            //         form.hide();
+            //         alert('Ошибка заказа. Свяжитесь пожалуйста по номеру телефона.')
+            //     }
+            // })
+        }
+
+        if (!name.val()) {
+            errName.show();
+            name.css('border-color', 'red');
+        } else {
+            errName.hide();
+            name.css('border-color', '#95510e');
+        }
+
+        if (!name2.val()) {
+            errName2.show();
+            name2.css('border-color', 'red');
+        } else {
+            errName2.hide();
+            name2.css('border-color', '#95510e');
+        }
+
+        if (!phone.val()) {
+            errPhone.show();
+            phone.css('border-color', 'red');
+        } else {
+            errPhone.hide();
+            phone.css('border-color', '#95510e');
+        }
+
+    });
 
 // ---------- Added sum and count to cart and form
 

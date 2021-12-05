@@ -1091,21 +1091,7 @@ body {
     align-items: flex-start;
     position: relative;
 
-    #up {
-      border-radius: 50%;
-      background-color: rgb(247, 195, 94);
-      position: absolute;
-      right: 15px;
-      top: -25px;
-      width: 45px;
-      height: 45px;
-      z-index: 293;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
 
-    }
 
     #footer-info {
       #footer-social {
@@ -2095,6 +2081,22 @@ body {
       }
 
     }
+  }
+
+  #up {
+    border-radius: 50%;
+    background-color: rgb(247, 195, 94);
+    position: fixed;
+    right: 15px;
+    bottom: 50px;
+    width: 45px;
+    height: 45px;
+    z-index: 293;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
   }
 
 }
