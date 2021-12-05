@@ -1,31 +1,31 @@
 @font-face {
   font-family: 'Gabriela' ;
-  src: url("../../fonts/Gabriela.ttf");
+  src: url("../fonts/Gabriela.ttf");
 }
 
 @font-face {
   font-family: 'LatoBold' ;
-  src: url("../../fonts/Lato-Bold.ttf");
+  src: url("../fonts/Lato-Bold.ttf");
 }
 
 @font-face {
   font-family: 'LatoLight' ;
-  src: url("../../fonts/Lato-Light.ttf");
+  src: url("../fonts/Lato-Light.ttf");
 }
 
 @font-face {
   font-family: 'LatoRegular' ;
-  src: url("../../fonts/Lato-Regular.ttf");
+  src: url("../fonts/Lato-Regular.ttf");
 }
 
 @font-face {
   font-family: 'NexaScript' ;
-  src: url("../../fonts/NexaScriptHeavy.ttf");
+  src: url("../fonts/NexaScriptHeavy.ttf");
 }
 
 @font-face {
   font-family: 'TenorSans' ;
-  src: url("../../fonts/tenorSans.ttf");
+  src: url("../fonts/tenorSans.ttf");
 }
 
 //--- Variables ---
@@ -262,7 +262,7 @@ body {
   }
 
   #main {
-    background: url("../../images/main-bg.png");
+    background: url("../images/main-bg.png");
 
     #main-container {
       @include container;
@@ -377,7 +377,7 @@ body {
     }
 
     #priority-proof {
-      background-image: url("../../images/rolling-pin.png");
+      background-image: url("../images/rolling-pin.png");
       background-repeat: no-repeat;
       background-position: center;
       margin: 80px auto 0 auto;
@@ -409,7 +409,7 @@ body {
     margin-top: 10px;
     &::before {
       content: '';
-      background-image: url("../../images/food-basket.png");
+      background-image: url("../images/food-basket.png");
       background-size: contain;
       background-repeat: no-repeat;
       display: inline-block;
@@ -441,7 +441,7 @@ body {
     margin-top: 10px;
     &::before {
       content: '';
-      background-image: url("../../images/food-basket.png");
+      background-image: url("../images/food-basket.png");
       background-size: contain;
       background-repeat: no-repeat;
       display: inline-block;
@@ -473,7 +473,7 @@ body {
 
 
   #products {
-    background-image: url("../../images/products-bg.png");
+    background-image: url("../images/products-bg.png");
     background-position: center;
 
     #products-container {
@@ -587,7 +587,7 @@ body {
     border-radius: 0 25px 25px 0;
 
     &::before {
-      content: url("../../images/next.png");
+      content: url("../images/next.png");
     }
   }
 
@@ -606,7 +606,7 @@ body {
     text-align: center;
 
     &::before {
-      content: url("../../images/prev.png");
+      content: url("../images/prev.png");
       text-align: center;
       vertical-align: middle;
     }
@@ -760,7 +760,7 @@ body {
       }
 
       #healthy-container-production-block {
-        background-image: url("../../images/rolling-p.png");
+        background-image: url("../images/rolling-p.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100%;
@@ -789,7 +789,7 @@ body {
   }
 
   #about {
-    background: url("../../images/about-bg.png");
+    background: url("../images/about-bg.png");
 
     #about-container {
       @include container;
@@ -843,7 +843,7 @@ body {
       #about-info {
         margin: 80px auto 0 auto;
         width: 1000px;
-        background-image: url("../../images/about-rolling-pin.png");
+        background-image: url("../images/about-rolling-pin.png");
         background-repeat: no-repeat;
         background-size: 100%;
         padding: 43px 100px 55px;
@@ -968,7 +968,7 @@ body {
   }
 
   #follow {
-    background-image: url("../../images/follow-bg.png");
+    background-image: url("../images/follow-bg.png");
 
     #follow-container {
       @include container;
@@ -1343,7 +1343,7 @@ body {
             margin-top: 48px;
             height: 270px;
             padding: 35px 55px;
-            background: url("../../images/delivery-rolling-pin.png");
+            background: url("../images/delivery-rolling-pin.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
@@ -1589,7 +1589,7 @@ body {
                   position: absolute;
                   left: 0;
                   bottom: 1px;
-                  background: url(../../images/radio-emp.png) 0 0 no-repeat;
+                  background: url(../images/radio-emp.png) 0 0 no-repeat;
                 }
               }
             }
@@ -1604,7 +1604,7 @@ body {
             }
 
             input[type=radio]:checked + label:before {
-              background: url(../../images/radio-checked.png) 0 0 no-repeat;
+              background: url(../images/radio-checked.png) 0 0 no-repeat;
             }
           }
 
@@ -1738,7 +1738,7 @@ body {
       .product-card-delivery {
         margin-top: 40px;
         padding: 35px 55px;
-        background: url("../../images/zakaz-rolling-pin.png");
+        background: url("../images/zakaz-rolling-pin.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100% 100%;
@@ -1959,7 +1959,7 @@ body {
 
         .shopping-cart-delivery {
           padding: 35px;
-          background: url("../../images/cart-rolling-pin.png");
+          background: url("../images/cart-rolling-pin.png");
           background-repeat: no-repeat;
           background-position: center;
           background-size: 100% 100%;
