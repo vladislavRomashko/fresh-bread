@@ -495,6 +495,108 @@ $(document).ready(function () {
     )
     ;
 
+
+    $('.in-cart-btn').click(function (event) {
+
+        let prPrice = $(event.target).siblings('.product-item-price').contents('span').text().trim();
+
+        let product = {
+            productImage: $(event.target).find('.product-card-image').contents('img').attr('src'),
+            productTitle: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').text().trim(),
+            productCount: 0,
+            productPrice: prPrice,
+            productSum: Number(prPrice),
+            productId: $(event.target).attr('data-id'),
+            productWight: $(event.target).siblings('.product-item-weight').text().trim(),
+        };
+        console.log(product.productImage)
+
+        let cart = localStorage.getItem('cart');
+        let itemId = $(event.target).attr('data-id');
+
+
+        if (cart) {
+            let cartArray = JSON.parse(cart);
+
+            let cartPosition = false
+
+            for (let i = 0; i < cartArray.length; i++) {
+                if (cartArray[i].productId === itemId) {
+
+                    cartArray[i].productCount += 1
+                    cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount
+                    cartPosition = true
+
+                }
+
+            }
+            if (cartPosition === false) {
+                cartArray.push(product);
+                for (let i = 0; i < cartArray.length; i++) {
+                    if (cartArray[i].productId === itemId) {
+                        cartArray[i].productCount += 1
+
+                    }
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+
+        } else {
+            let cartArray = []
+            cartArray.push(product);
+            for (let i = 0; i < cartArray.length; i++) {
+                if (cartArray[i].productId === itemId) {
+                    cartArray[i].productCount += 1
+
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+        }
+        ;
+
+
+        sumMoney();
+
+        sumPieces();
+
+        totalSumItems();
+
+        // ------- Проверка клика на поле доставки ---------
+
+        deliveryRadio.click(() => {
+            deliveryPrice.show();
+
+            number = 1;
+
+            if (number === 1 && sumCost >= 500) {
+                delMoney.text('0 руб.')
+                totalSum.text(sumCost + ' руб.');
+
+            } else if (number === 1) {
+
+                totalSum.text(sumCost + 250 + ' руб.');
+            }
+
+        });
+
+        notDelivery.click(() => {
+            deliveryPrice.hide();
+
+            number = 0
+
+            console.log(number)
+
+            if (number === 0) {
+
+                totalSum.text(sumCost + ' руб.');
+            }
+        });
+
+
+
+    });
     // ----------------- * End Click * ----------------------
 
     sumMoney();

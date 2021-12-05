@@ -395,6 +395,38 @@ body {
     }
   }
 
+  .in-cart-btn {
+    font-size: 16px;
+    color: rgb(55, 29, 3);
+    background-color: rgb(247, 195, 94);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    width: 180px;
+    font-family: $LatoBold;
+    margin-top: 10px;
+    &::before {
+      content: '';
+      background-image: url("../../images/food-basket.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 10px;
+
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      box-shadow: 0px 5px 9px 0px rgba(110, 81, 22, 0.35);
+      cursor: pointer;
+    }
+
+  }
+
   .product-btn {
     font-size: 16px;
     color: rgb(55, 29, 3);
@@ -1170,7 +1202,7 @@ body {
         position: relative;
         width: 1000px;
         background: #ffffff;
-        margin: 80px auto 0 auto;
+        margin: 80px auto 80px auto;
         border-radius: 30px;
         padding: 85px 60px;
 
@@ -1266,7 +1298,7 @@ body {
               }
 
               .product-card-info-actions-btn {
-                .product-btn {
+                .in-cart-btn {
                   margin: 0;
                 }
               }
@@ -1376,7 +1408,7 @@ body {
 
       .recipe-popup-container {
         position: relative;
-        margin: 78px auto 0 auto;
+        margin: 80px auto 80px auto;
         width: 580px;
         padding: 70px 60px;
         border-radius: 30px;
