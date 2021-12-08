@@ -64,7 +64,7 @@ $Tenor: 'TenorSans', sans-serif;
     }
 
     &:not(:first-child) {
-      margin-left: 16px;
+      margin-left: 10px;
     }
   }
 }
@@ -210,7 +210,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 23px 0;
+    padding: 20px 0;
 
 
     #header-burger {
@@ -218,14 +218,14 @@ body {
     }
 
     #header-menu {
-      margin-left: 62px;
+      margin-left: 55px;
 
       a {
         text-decoration: none;
         font-size: 16px;
         font-family: $Lato;
         color: rgb(34, 34, 34);
-        margin: 0 25px;
+        margin: 0 20px;
       }
 
     }
@@ -252,17 +252,29 @@ body {
           font-size: 14px;
           font-family: $Lato;
           color: rgb(34, 34, 34);
+
+          #cart-count-price {
+            margin-top: 3px;
+          }
         }
       }
 
+
       #header-phone {
         @include phone;
+
+        span {
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
   }
 
   #main {
     background: url("../images/main-bg.png");
+    background-position: bottom;
 
     #main-container {
       @include container;
@@ -277,9 +289,9 @@ body {
       }
 
       #main-info {
-        width: 605px;
-        margin-top: 177px;
-        margin-bottom: 147px;
+        width: 612px;
+        margin-top: 170px;
+        margin-bottom: 145px;
 
         #main-info-title {
           font-size: 60px;
@@ -288,11 +300,13 @@ body {
           line-height: 65px;
         }
 
+
         #main-info-text {
           font-size: 18px;
           font-family: $LatoLight;
           color: rgb(34, 34, 34);
-          margin-top: 37px;
+          margin-top: 30px;
+          line-height: 25px;
         }
 
         #main-info-action {
@@ -303,10 +317,10 @@ body {
             font-size: 20px;
             font-family: $Lato;
             text-align: center;
-            padding: 20px;
+            padding: 18px 0 21px;
             border: none;
             border-radius: 40px;
-            margin-top: 60px;
+            margin-top: 55px;
 
             &:hover {
               box-shadow: 0px 2px 9px 5px rgba(110, 81, 22, 0.35);
@@ -328,7 +342,7 @@ body {
   #priority-container {
     @include container;
     position: relative;
-    padding: 120px 0;
+    padding: 115px 0;
 
     #priority-bg {
       position: absolute;
@@ -343,13 +357,13 @@ body {
     }
 
     #priority-items {
-      margin-top: 78px;
+      margin-top: 70px;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       position: relative;
 
       .priority-item {
-        width: 260px;
+        width: 271px;
 
         .priority-item-title {
           font-size: 18px;
@@ -371,7 +385,7 @@ body {
         font-size: 14px;
         font-family: $LatoLight;
         color: rgb(34, 34, 34);
-        margin-top: 20px;
+        margin-top: 15px;
         line-height: 21px;
       }
     }
@@ -380,7 +394,7 @@ body {
       background-image: url("../images/rolling-pin.png");
       background-repeat: no-repeat;
       background-position: center;
-      margin: 80px auto 0 auto;
+      margin: 75px auto 0 auto;
       width: 385px;
       height: 151px;
       padding: 25px 30px 30px 30px;
@@ -396,26 +410,31 @@ body {
   }
 
   .in-cart-btn {
-    font-size: 16px;
-    color: rgb(55, 29, 3);
+    font-size: 13px;
+    color: #371d03;
     background-color: rgb(247, 195, 94);
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
+    position: relative;
     text-align: center;
     width: 180px;
     font-family: $LatoBold;
     margin-top: 10px;
+    padding-left: 34px;
+
     &::before {
       content: '';
-      background-image: url("../images/food-basket.png");
+      background-image: url("../images/food-basket-btn.png");
       background-size: contain;
       background-repeat: no-repeat;
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: middle;
       margin-right: 10px;
-
+      position: absolute;
+      left: 40px;
+      top: 14px;
       width: 20px;
       height: 20px;
     }
@@ -428,26 +447,31 @@ body {
   }
 
   .product-btn {
-    font-size: 16px;
-    color: rgb(55, 29, 3);
+    font-size: 13px;
+    color: #371d03;
     background-color: rgb(247, 195, 94);
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     width: 180px;
     font-family: $LatoBold;
     margin-top: 10px;
+    position: relative;
+    padding-left: 34px;
+
     &::before {
       content: '';
-      background-image: url("../images/food-basket.png");
+      background-image: url("../images/food-basket-btn.png");
       background-size: contain;
       background-repeat: no-repeat;
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: middle;
       margin-right: 10px;
-
+      position: absolute;
+      left: 40px;
+      top: 14px;
       width: 20px;
       height: 20px;
     }
@@ -456,18 +480,6 @@ body {
       box-shadow: 0px 5px 9px 0px rgba(110, 81, 22, 0.35);
       cursor: pointer;
     }
-
-
-    //img {
-    //  width: 20px;
-    //  height: 20px;
-    //  margin-right: 10px;
-    //  vertical-align: middle;
-    //}
-    //
-    //span {
-    //  vertical-align: middle;
-    //}
 
   }
 
@@ -487,9 +499,8 @@ body {
       }
 
       #products-items {
-        margin: 0 auto;
         text-align: center;
-        width: 500px;
+
 
         .product-cart {
           display: flex;
@@ -578,13 +589,14 @@ body {
   button.slick-next.slick-arrow {
     position: absolute;
     bottom: -77px;
-    right: 113px;
+    right: 499px;
     background: transparent;
     width: 35px;
     height: 48px;
     border: 1px solid #cfc1b1;
     cursor: pointer;
     border-radius: 0 25px 25px 0;
+    border-left: none;
 
     &::before {
       content: url("../images/next.png");
@@ -594,7 +606,7 @@ body {
   button.slick-prev.slick-arrow {
     position: absolute;
     bottom: -77px;
-    left: 113px;
+    left: 566px;
     background: transparent;
     width: 35px;
     height: 48px;
@@ -618,7 +630,7 @@ body {
     padding: 5px;
     position: absolute;
     bottom: -91px;
-    left: 319px;
+    left: 569px;
 
   }
 
@@ -629,7 +641,7 @@ body {
     padding: 5px;
     position: absolute;
     bottom: -77px;
-    left: 147px;
+
 
   }
 
@@ -650,7 +662,7 @@ body {
   #healthy-container {
     @include container;
     position: relative;
-    padding: 120px 0;
+    padding: 110px 0;
 
     h2.block-title {
       text-align: center;
@@ -667,7 +679,7 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 103px;
+      margin-top: 95px;
 
       #healthy-container-info-left {
         #read-more {
@@ -726,7 +738,7 @@ body {
       display: flex;
       justify-content: space-evenly;
       align-items: flex-start;
-      margin-top: 87px;
+      margin-top: 110px;
 
       .healthy-container-item {
         width: 279px;
@@ -813,9 +825,6 @@ body {
         margin-top: 80px;
         position: relative;
 
-        .about-item.right {
-          margin-left: auto;
-        }
 
         .about-item {
           display: flex;
@@ -835,7 +844,19 @@ body {
             font-family: $LatoLight;
             color: rgb(34, 34, 34);
             line-height: 1.313;
-            width: 232px;
+            width: 258px;
+          }
+        }
+
+        .about-item.right {
+          margin-left: auto;
+
+          .about-item-text {
+            width: 265px;
+
+            &:last-child {
+              width: 276px;
+            }
           }
         }
       }
@@ -878,20 +899,23 @@ body {
 
     #recipe-bg2 {
       position: absolute;
-      bottom: 17px;
+      bottom: -75px;
       left: -310px;
     }
 
     h2.block-title {
       color: #af6012;
       text-align: center;
-      margin-top: 120px;
+      margin-top: 110px;
     }
 
     #recipe-items {
-      margin: 74px auto 0 auto;
+      margin: 65px auto 0 auto;
       text-align: center;
-      width: 700px;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       .recipe-block-items {
         margin-bottom: 14px;
@@ -912,7 +936,7 @@ body {
 
 
           .recipe-text {
-            padding: 25px;
+            padding: 20px;
             font-size: 18px;
             font-family: $Lato;
             color: rgb(55, 29, 3);
@@ -1014,7 +1038,7 @@ body {
             width: 100%;
             position: absolute;
             left: 28px;
-            top: 60px;
+            top: 50px;
           }
 
           #follow-items-form-input {
@@ -1037,6 +1061,7 @@ body {
               width: 250px;
               outline: none;
               background-color: transparent;
+              height: 47px;
 
               &::placeholder {
                 font-size: 15px;
@@ -1052,7 +1077,7 @@ body {
           #follow-items-form-button {
 
             button.btn {
-              padding: 18px;
+              padding: 15px;
               text-align: center;
               width: 180px;
               font-size: 16px;
@@ -1092,24 +1117,23 @@ body {
     position: relative;
 
 
-
     #footer-info {
       #footer-social {
         #footer-social-title {
           font-size: 18px;
           font-family: $Gabriela;
           color: rgb(34, 34, 34);
-          margin-top: 32px;
+          margin-top: 25px;
         }
 
         #footer-social-items {
           @include social-items;
-          margin-top: 23px;
+          margin-top: 18px;
         }
       }
 
       #rules {
-        margin-top: 40px;
+        margin-top: 30px;
         font-size: 12px;
         font-family: $Lato;
         color: rgb(111, 111, 111);
@@ -1128,7 +1152,7 @@ body {
         color: rgb(34, 34, 34);
 
         &:not(:first-child) {
-          margin-top: 27px;
+          margin-top: 18px;
         }
       }
     }
@@ -1144,14 +1168,14 @@ body {
         font-size: 18px;
         font-family: $Gabriela;
         color: rgb(34, 34, 34);
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
       .footer-contacts-item-title {
         font-size: 16px;
         font-family: $LatoLight;
         color: rgb(34, 34, 34);
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
       .footer-contacts-item-text {
@@ -1162,8 +1186,9 @@ body {
 
 
       #footer-contacts-phone {
-        margin: 40px 0;
+        margin: 30px 0;
         @include phone;
+        cursor: pointer;
       }
     }
 
@@ -2097,6 +2122,116 @@ body {
     justify-content: center;
     text-decoration: none;
 
+  }
+
+  #call {
+    background: rgba(2, 2, 2, 0.6);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+
+    #call-container {
+      font-family: $Gabriela;
+      margin: 80px auto;
+      width: 400px;
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 40px 20px;
+      position: relative;
+
+      .call-thanks {
+        text-align: center;
+        font-size: 18px;
+
+        margin: 15px;
+      }
+
+      #call-container-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 20px;
+        height: 20px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      #call-container-title {
+        text-align: center;
+        font-size: 30px;
+        color: #af6012;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+
+      #call-container-info {
+        text-align: center;
+
+        label {
+          text-align: center;
+          font-size: 20px;
+          color: #af6012;
+          margin-bottom: 10px;
+          display: inline-block;
+        }
+
+        input {
+          border: 1px solid #af6012;
+          border-radius: 25px;
+          outline: none;
+          color: #371d03;
+          background: transparent;
+          font-size: 14px;
+          padding: 10px;
+          width: 250px;
+          text-align: center;
+        }
+
+        #call-error {
+          font-size: 12px;
+          color: red;
+          margin: 10px;
+          display: none;
+        }
+      }
+
+      #call-container-action {
+        text-align: center;
+        margin-top: 40px;
+
+        button {
+          border-width: 1px;
+          border-color: rgb(247, 195, 94);
+          border-style: solid;
+          width: 178px;
+          padding: 15px;
+          text-align: center;
+          font-size: 16px;
+          font-family: $Lato;
+          color: rgb(55, 29, 3);
+          border-radius: 30px;
+          background: transparent;
+
+          &:hover {
+            cursor: pointer;
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.15s;
+            transition-timing-function: ease-out;
+            background-color: rgba(247, 195, 94, 0.35);
+            box-shadow: 0px 2px 9px 5px rgba(247, 195, 94, 0.35);
+
+          }
+        }
+      }
+
+
+    }
   }
 
 }

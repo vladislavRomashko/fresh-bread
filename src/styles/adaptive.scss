@@ -103,6 +103,18 @@
       }
     }
 
+    button.slick-prev.slick-arrow {
+      left: 551px;
+    }
+
+    ul.product-dots {
+
+    }
+
+    button.slick-next.slick-arrow {
+      right: 484px;
+    }
+
     #healthy {
       #healthy-container {
         @include container-padding;
@@ -113,8 +125,15 @@
 
           #healthy-container-production-image {
             width: 600px;
-            margin-bottom: 40px;
+            margin: 0 20px 40px;
             text-align: center;
+          }
+
+          #healthy-container-production-block {
+            width: 490px;
+            background-size: 100% 100%;
+            padding: 40px 30px;
+            margin: 0 30px;
           }
         }
       }
@@ -129,7 +148,31 @@
     #recipe {
       #recipe-container {
         @include container-padding;
+        max-width: 880px;
+
+        #recipe-items {
+          .recipe-block-items {
+            .recipe-item {
+              width: 400px;
+
+              .recipe-text {
+                height: 90px;
+              }
+
+              .recipe-image {
+                img {
+                  width: 105%;
+
+                }
+              }
+            }
+          }
+        }
       }
+    }
+
+    ul.recipe-dots {
+      left: 394px;
     }
 
     #follow {
@@ -151,20 +194,6 @@
 
   body {
 
-    #header {
-      #header-container {
-        #header-info {
-
-          #cart {
-            margin: 0;
-          }
-
-          #header-phone {
-            display: none;
-          }
-        }
-      }
-    }
 
     #main {
       #main-container {
@@ -194,6 +223,75 @@
           }
         }
       }
+    }
+
+    #products {
+      #products-container {
+        max-width: 994px;
+
+        #products-items {
+
+
+          .product-item {
+            width: 240px;
+            padding: 20px 20px 35px;
+
+            .product-item-image {
+              height: 160px;
+
+              img {
+                width: 80%;
+              }
+            }
+
+            .product-item-title {
+              font-size: 18px;
+              margin: 0;
+            }
+
+            .product-item-weight {
+              font-size: 14px;
+            }
+
+            .product-item-description {
+              font-size: 14px;
+              margin-top: 10px;
+            }
+
+            .product-item-price {
+              font-size: 20px;
+              margin-top: 15px;
+            }
+
+            .product-item-action {
+              .product-btn {
+                width: 160px;
+                font-size: 14px;
+              }
+            }
+
+            .product-item-details {
+              margin-top: 20px;
+
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    button.slick-prev.slick-arrow {
+      left: 447px;
+    }
+
+    ul.product-dots {
+
+    }
+
+    button.slick-next.slick-arrow {
+      right: 381px;
     }
 
     #about {
@@ -288,6 +386,24 @@
           }
         }
       }
+    }
+
+    #products {
+      #products-container {
+        max-width: 738px;
+      }
+    }
+
+    button.slick-prev.slick-arrow {
+      left: 319px;
+    }
+
+    ul.product-dots {
+
+    }
+
+    button.slick-next.slick-arrow {
+      right: 225px;
     }
 
     #about {
@@ -544,6 +660,74 @@
   }
 }
 
+// * 881 *
+@media screen and (max-width: 881px) {
+  body {
+    #header {
+      #header-container {
+        #header-info {
+
+          #cart {
+            margin: 0;
+          }
+
+          #header-phone {
+            display: none;
+          }
+        }
+      }
+    }
+
+
+
+    #recipe {
+      #recipe-container {
+        @include container-padding;
+        max-width: 600px;
+        h2.block-title {
+          font-size: 30px;
+        }
+        #recipe-items {
+          width: 500px;
+          margin: 45px auto 0;
+        }
+
+        #recipe-pagination {
+          width: 192px;
+        }
+      }
+    }
+
+    ul.recipe-dots {
+      left: 190px;
+    }
+    #call{
+      #call-container {
+        width: 290px;
+        .call-thanks {
+          font-size: 16px;
+        }
+        #call-container-title {
+          font-size: 25px;
+        }
+        #call-container-info {
+          label {
+            font-size: 16px;
+          }
+          input {
+            width: 200px;
+          }
+        }
+        #call-container-action {
+          button {
+            font-size: 14px;
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
 
 //  *  425 - 767  *
 
@@ -557,7 +741,7 @@
 
         #header-logo {
           order: 1;
-          margin-left: 60px;
+          margin-left: 73px;
 
         }
 
@@ -565,13 +749,13 @@
           order: 2;
           flex-grow: 0;
           justify-content: normal;
-          margin-left: 50px;
-          margin-right: 60px;
+          margin-left: 38px;
+          margin-right: 70px;
         }
 
         #header-menu {
           order: 3;
-          margin: 30px 0 0 0;
+          margin: 40px 0 0 0;
 
           a {
             margin: 0 20px;
@@ -608,69 +792,20 @@
 
     #products {
       #products-container {
-        #products-items {
-          width: 395px;
-
-          .product-item {
-            width: 240px;
-            padding: 20px 20px 35px;
-
-            .product-item-image {
-              height: 160px;
-
-              img {
-                width: 80%;
-              }
-            }
-
-            .product-item-title {
-              font-size: 18px;
-              margin: 0;
-            }
-
-            .product-item-weight {
-              font-size: 14px;
-            }
-
-            .product-item-description {
-              font-size: 14px;
-              margin-top: 10px;
-            }
-
-            .product-item-price {
-              font-size: 20px;
-              margin-top: 15px;
-            }
-
-            .product-item-action {
-              .product-btn {
-                width: 160px;
-                font-size: 14px;
-              }
-            }
-
-            .product-item-details {
-              margin-top: 20px;
-
-              span {
-                font-size: 16px;
-              }
-            }
-          }
-        }
+        max-width: 530px;
       }
     }
 
     button.slick-prev.slick-arrow {
-      left: 62px;
+      left: 159px;
     }
 
     ul.product-dots {
-      left: 97px;
+      left: 194px;
     }
 
     button.slick-next.slick-arrow {
-      right: 58px;
+      right: 150px;
     }
 
     #healthy {
@@ -748,6 +883,8 @@
 
           #healthy-container-production-image {
             max-width: 486px;
+            margin-left: 0;
+            margin-right: 0;
 
             img {
               width: 100%;
@@ -758,6 +895,8 @@
             background-size: 100% 100%;
             padding: 30px 20px;
             height: auto;
+            margin-right: 0;
+            margin-left: 0;
           }
         }
       }
@@ -873,7 +1012,7 @@
 
     ul.recipe-dots {
       bottom: -49px;
-      left: 165px;
+      left: 138px;
     }
 
     #follow {
@@ -895,8 +1034,8 @@
 
             #email-error {
               font-size: 16px;
-              left: 82px;
-              top: 59px;
+              left: 100px;
+              top: 50px;
             }
 
             #follow-items-form-input {
@@ -1339,8 +1478,8 @@
 @media screen and (max-width: 534px) {
   body {
 
-    .shopping-cart{
-      #shopping-cart-container{
+    .shopping-cart {
+      #shopping-cart-container {
         #shopping-cart-items {
           #shopping-cart-item-cover {
             .shopping-cart-item {
@@ -1353,6 +1492,100 @@
       }
     }
 
+  }
+}
+
+// * 530 *
+
+@media screen and (max-width: 530px) {
+  body {
+    #products {
+      #products-container {
+        padding-top: 60px;
+        padding-bottom: 130px;
+        max-width: 300px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 auto;
+
+        h2.block-title {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+
+        #products-items {
+          margin-left: auto;
+          margin-right: auto;
+
+          .product-item {
+            width: 140px;
+            padding: 10px 10px 35px;
+
+            .product-item-image {
+              height: 108px;
+
+              img {
+                width: 80%;
+              }
+            }
+
+            .product-item-title {
+              font-size: 16px;
+              margin: 0;
+            }
+
+            .product-item-weight {
+              font-size: 12px;
+            }
+
+            .product-item-description {
+              font-size: 12px;
+              margin-top: 10px;
+            }
+
+            .product-item-price {
+              font-size: 18px;
+              margin-top: 15px;
+            }
+
+
+            .product-btn {
+              width: 120px;
+              font-size: 12px;
+              padding: 15px 15px 15px 40px;
+
+              &::before {
+                width: 17px;
+                height: 17px;
+                left: 20px;
+                top: 14px;
+              }
+            }
+
+
+            .product-item-details {
+              margin-top: 20px;
+
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    button.slick-prev.slick-arrow {
+      left: 60px;
+    }
+
+    ul.product-dots {
+      left: 95px;
+    }
+
+    button.slick-next.slick-arrow {
+      right: 49px;
+    }
   }
 }
 
@@ -1421,9 +1654,14 @@
                   order: 3;
                   margin-left: 25px;
 
-                  .in-cart-btn{
+                  .in-cart-btn {
                     font-size: 12px;
                     width: 144px;
+                    padding: 15px 15px 15px 45px;
+                    &::before {
+                      left: 30px;
+                      top: 12px;
+                    }
                   }
                 }
               }
@@ -1642,7 +1880,6 @@
         }
 
         #priority-items {
-          align-items: flex-start;
           margin: 0;
 
           .priority-item {
@@ -1676,82 +1913,6 @@
         }
       }
     }
-
-    #products {
-      #products-container {
-        padding-top: 60px;
-        padding-bottom: 130px;
-
-        h2.block-title {
-          font-size: 24px;
-          margin-bottom: 40px;
-        }
-
-        #products-items {
-          width: 290px;
-
-          .product-item {
-            width: 142px;
-            padding: 10px 10px 35px;
-
-            .product-item-image {
-              height: 108px;
-
-              img {
-                width: 80%;
-              }
-            }
-
-            .product-item-title {
-              font-size: 16px;
-              margin: 0;
-            }
-
-            .product-item-weight {
-              font-size: 12px;
-            }
-
-            .product-item-description {
-              font-size: 12px;
-              margin-top: 10px;
-            }
-
-            .product-item-price {
-              font-size: 18px;
-              margin-top: 15px;
-            }
-
-
-            .product-btn {
-              width: 120px;
-              font-size: 12px;
-            }
-
-
-            .product-item-details {
-              margin-top: 20px;
-
-              span {
-                font-size: 14px;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    button.slick-prev.slick-arrow {
-      left: 11px;
-    }
-
-    ul.product-dots {
-      left: 46px;
-    }
-
-    button.slick-next.slick-arrow {
-      right: 4px;
-    }
-
 
     #healthy {
       #healthy-container {
@@ -1937,7 +2098,7 @@
     }
 
     ul.recipe-dots {
-      left: 128px;
+      left: 100px;
       bottom: -90px;
     }
 
@@ -1957,7 +2118,7 @@
           #follow-items-form {
             #email-error {
               left: 47px;
-              top: 58px;
+              top: 50px;
             }
 
             #follow-items-form-input {

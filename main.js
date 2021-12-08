@@ -3,17 +3,75 @@ $(document).ready(function () {
     // ------------ Slick slider ----------------
 
     $('#products-items').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
         dots: true,
         dotsClass: 'product-dots',
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    dots: true,
+                    dotsClass: 'product-dots',
+                }
+            },
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    dots: true,
+                    dotsClass: 'product-dots',
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true,
+                    dotsClass: 'product-dots',
+                }
+            },
+            {
+                breakpoint: 531,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true,
+                    dotsClass: 'product-dots',
+                }
+            },
+
+        ]
     });
-    $('.slick-next.slick-arrow').text('')
-    $('.slick-prev.slick-arrow').text('')
+
+    $('.slick-next.slick-arrow').text('');
+    $('.slick-prev.slick-arrow').text('');
 
 
     $('#recipe-items').slick({
+        slidesToShow: 2,
+        slidesToScroll: 2,
         dots: true,
-        dotsClass: 'recipe-dots',
         arrows: false,
+        dotsClass: 'recipe-dots',
+
+        responsive: [
+            {
+                breakpoint: 882,
+                settings: {
+                    width: 400,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false,
+                    dotsClass: 'recipe-dots',
+                }
+            },
+        ]
     });
 
     $('#arr-next').click(function (e) {
@@ -27,6 +85,38 @@ $(document).ready(function () {
     });
 
     new WOW().init();
+
+    $('#header-phone span, #footer-contacts-phone, #footer-contacts-action > button ').click(() => {
+        let phone = $('#phone-call');
+        let callErr = $('#call-error');
+
+
+        $('#call').show();
+
+        $('.call-container-close, .call').click((e) => {
+            if (e.target.classList.contains('krestik') || e.target.classList.contains('call')) {
+                $('#call').hide();
+            }
+        })
+
+        $('#call-container-action > button').click(() => {
+            let callContainer = $('#call-container')
+
+            if (!phone.val()) {
+                callErr.show();
+                phone.css('border-color', 'red');
+            } else {
+
+                callContainer.html('<div id="call-container-close">\n' +
+                    '            <img src="images/close.png" alt="" class="krestik">\n' +
+                    '        </div>' +
+                    '<div class="call-thanks"><p>Спасибо, что выбрали нас!</p> <p>Наш оператор свяжется с вами.</p></div>');
+
+            }
+        })
+
+
+    })
 
 
     // ------------ Recipe popup show/hide -----------
@@ -96,6 +186,8 @@ $(document).ready(function () {
             err.show();
             border.css('border-color', 'red');
         } else {
+            $('#follow-items-title').text('Круто! Теперь вы будете в курсе самых последних новостей!');
+            $('#follow-items-form').hide();
             err.hide();
             border.css('border-color', 'rgb(149, 81, 14)');
         }
@@ -136,7 +228,12 @@ $(document).ready(function () {
         $(blocks).css('display', 'none');
 
         $("#read-more span").text('Читать больше');
+
+        $('.slick-next.slick-arrow').text('');
+        $('.slick-prev.slick-arrow').text('');
     });
+
+    // --------- Shopcart ---------
 
     let shopCart = $('.shopping-cart')
 
@@ -163,9 +260,7 @@ $(document).ready(function () {
 
         }
 
-        sumMoney();
-
-        sumPieces();
+        sumCart();
 
         cartItems.innerHTML = '';
 
@@ -244,50 +339,34 @@ $(document).ready(function () {
 
     let totalSum = $('.purchases-total-num');
 
-    function sumMoney() {
+    function sumCart() {
 
-        let cost = $('#cart-count-price')
-
-        let Array = JSON.parse(localStorage.getItem('cart'));
-
-        sumCost = 0
-        for (let i = 0; i < Array.length; i++) {
-            sumCost += Array[i].productSum
-        }
-
-        cost.text(sumCost + ' руб')
-
-        if (Array.length === 0) {
-            cost.css('display', 'none')
-        } else {
-            cost.css('display', 'block')
-        }
-
-        cartSum.text(sumProd + ' шт');
-
-        cartSumCost.text(sumCost + ' руб');
-    }
-
-    function sumPieces() {
-
+        let cost = $('#cart-count-price');
         let count = $('#cart-count-item');
 
         let Array = JSON.parse(localStorage.getItem('cart'));
 
-        sumProd = 0
+        sumCost = 0;
+        sumProd = 0;
+
         for (let i = 0; i < Array.length; i++) {
-            sumProd += Array[i].productCount
+            sumCost += Array[i].productSum;
+            sumProd += Array[i].productCount;
         }
 
+        cost.text(sumCost + ' руб');
         count.text(sumProd + ' шт')
 
-        // --------- shopCart Sum counter ------------
-
         if (Array.length === 0) {
-            count.css('display', 'none')
+            cost.css('display', 'none');
+            count.css('display', 'none');
         } else {
-            count.css('display', 'block')
+            cost.css('display', 'block');
+            count.css('display', 'block');
         }
+
+        cartSum.text(sumProd + ' шт');
+        cartSumCost.text(sumCost + ' руб');
     }
 
     function totalSumItems() {
@@ -298,7 +377,7 @@ $(document).ready(function () {
         } else if (number === 1) {
             totalSum.text(sumCost + 250 + ' руб.');
         } else if (number === 1 && sumCost >= 500) {
-            delMoney.text('0 руб.')
+            delMoney.text('0 руб.');
             totalSum.text(sumCost + ' руб.');
         }
     }
@@ -318,7 +397,7 @@ $(document).ready(function () {
         number = 1;
 
         if (number === 1 && sumCost >= 500) {
-            delMoney.text('0 руб.')
+            delMoney.text('0 руб.');
             totalSum.text(sumCost + ' руб.');
 
         } else if (number === 1) {
@@ -330,7 +409,7 @@ $(document).ready(function () {
     notDelivery.click(() => {
         deliveryPrice.hide();
 
-        number = 0
+        number = 0;
 
         if (number === 0) {
             totalSum.text(sumCost + ' руб.');
@@ -348,6 +427,32 @@ $(document).ready(function () {
     let sumCost = 0;
 
     $('.product-btn ').click(function (event) {
+
+//  -----------  Animation add to shopCart -------
+
+            let that = $(this).closest('.product-item').contents('.product-item-image').find('img');
+            let bascket = $("#cart");
+            let w = that.width();
+
+            that.clone()
+                .css({
+                    'width': w,
+                    'position': 'absolute',
+                    'z-index': '9999',
+                    top: that.offset().top,
+                    left: that.offset().left
+                })
+                .appendTo("body")
+                .animate({
+                    opacity: 0.05,
+                    left: bascket.offset()['left'],
+                    top: bascket.offset()['top'],
+                    width: 20
+                }, 1000, function () {
+                    $(this).remove();
+                });
+
+// -------------------------------------------------
 
             let prPrice = $(event.target).siblings('.product-item-price').contents('span').text().trim();
 
@@ -374,9 +479,10 @@ $(document).ready(function () {
                 for (let i = 0; i < cartArray.length; i++) {
                     if (cartArray[i].productId === itemId) {
 
-                        cartArray[i].productCount += 1
-                        cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount
-                        cartPosition = true
+                        cartArray[i].productCount += 1;
+                        cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
+                        cartPosition = true;
+                        break;
 
                     }
 
@@ -385,8 +491,8 @@ $(document).ready(function () {
                     cartArray.push(product);
                     for (let i = 0; i < cartArray.length; i++) {
                         if (cartArray[i].productId === itemId) {
-                            cartArray[i].productCount += 1
-
+                            cartArray[i].productCount += 1;
+                            break;
                         }
                     }
                 }
@@ -398,20 +504,16 @@ $(document).ready(function () {
                 cartArray.push(product);
                 for (let i = 0; i < cartArray.length; i++) {
                     if (cartArray[i].productId === itemId) {
-                        cartArray[i].productCount += 1
-
+                        cartArray[i].productCount += 1;
+                        break;
                     }
                 }
 
                 localStorage.setItem('cart', JSON.stringify(cartArray));
             }
-            ;
 
 
-            sumMoney();
-
-            sumPieces();
-
+            sumCart();
             totalSumItems();
 
             // ------- Проверка клика на поле доставки ---------
@@ -436,7 +538,6 @@ $(document).ready(function () {
                 deliveryPrice.hide();
 
                 number = 0
-
 
 
                 if (number === 0) {
@@ -471,15 +572,15 @@ $(document).ready(function () {
         if (cart) {
             let cartArray = JSON.parse(cart);
 
-            let cartPosition = false
+            let cartPosition = false;
 
             for (let i = 0; i < cartArray.length; i++) {
                 if (cartArray[i].productId === itemId) {
 
-                    cartArray[i].productCount += 1
-                    cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount
-                    cartPosition = true
-
+                    cartArray[i].productCount += 1;
+                    cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
+                    cartPosition = true;
+                    break;
                 }
 
             }
@@ -487,8 +588,8 @@ $(document).ready(function () {
                 cartArray.push(product);
                 for (let i = 0; i < cartArray.length; i++) {
                     if (cartArray[i].productId === itemId) {
-                        cartArray[i].productCount += 1
-
+                        cartArray[i].productCount += 1;
+                        break;
                     }
                 }
             }
@@ -500,19 +601,17 @@ $(document).ready(function () {
             cartArray.push(product);
             for (let i = 0; i < cartArray.length; i++) {
                 if (cartArray[i].productId === itemId) {
-                    cartArray[i].productCount += 1
-
+                    cartArray[i].productCount += 1;
+                    break;
                 }
             }
 
             localStorage.setItem('cart', JSON.stringify(cartArray));
         }
-        ;
 
-        sumMoney();
 
-        sumPieces();
 
+        sumCart();
         totalSumItems();
 
         // ------- Проверка клика на поле доставки ---------
@@ -536,7 +635,7 @@ $(document).ready(function () {
         notDelivery.click(() => {
             deliveryPrice.hide();
 
-            number = 0
+            number = 0;
 
             if (number === 0) {
 
@@ -548,9 +647,7 @@ $(document).ready(function () {
     });
     // ----------------- * End Click * ----------------------
 
-    sumMoney();
-
-    sumPieces();
+    sumCart();
 
     // --------------- Form validation ---------------
 
