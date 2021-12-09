@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     new WOW().init();
 
-    $('#header-phone span, #footer-contacts-phone, #footer-contacts-action > button ').click(() => {
+    $('#header-phone span, #footer-contacts-phone, #footer-contacts-action > button, #burger-menu-call ').click(() => {
         let phone = $('#phone-call');
         let callErr = $('#call-error');
 
@@ -321,7 +321,7 @@ $(document).ready(function () {
             itemAction.className = 'shopping-cart-item-action';
 
             let itemActionImg = document.createElement('img');
-            itemActionImg.src = '/images/trash.png';
+            itemActionImg.src = '../images/trash.png';
 
             let spanDelete = document.createElement('span');
             spanDelete.innerHTML = 'Удалить';

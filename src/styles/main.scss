@@ -186,7 +186,7 @@ body {
           border-radius: 24px;
           width: 176px;
           background: transparent;
-          padding: 15px;
+          padding: 13px 0 16px;
           text-align: center;
           font-size: 16px;
           font-family: $Lato;
@@ -422,7 +422,7 @@ body {
     width: 180px;
     font-family: $LatoBold;
     margin-top: 10px;
-    padding-left: 34px;
+    padding-left: 37px;
 
     &::before {
       content: '';
@@ -459,7 +459,7 @@ body {
     font-family: $LatoBold;
     margin-top: 10px;
     position: relative;
-    padding-left: 34px;
+    padding-left: 37px;
 
     &::before {
       content: '';
@@ -544,7 +544,7 @@ body {
             font-family: $Gabriela;
             color: rgb(67, 67, 67);
             text-align: center;
-            margin-top: 10px;
+            //margin-top: 10px;
           }
 
           .product-item-description {
@@ -2210,7 +2210,7 @@ body {
           border-color: rgb(247, 195, 94);
           border-style: solid;
           width: 178px;
-          padding: 15px;
+          padding: 13px 0 16px;
           text-align: center;
           font-size: 16px;
           font-family: $Lato;
