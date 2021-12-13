@@ -74,12 +74,12 @@ $(document).ready(function () {
         ]
     });
 
-    $('#arr-next').click(function (e) {
+    $('#arr-next').click(function () {
         $('#recipe-items').slick('slickNext');
 
     });
 
-    $('#arr-prev').click(function (e) {
+    $('#arr-prev').click(function () {
         $('#recipe-items').slick('slickPrev');
 
     });
@@ -135,8 +135,10 @@ $(document).ready(function () {
 
     $('.product-item-details span, .product-item-details img ').click(function (e) {
         let prodId = $(e.target).data('id');
+
         $('#' + prodId).show();
         $('.product-popup-container-close, .products-card ').click((e) => {
+
             if (e.target.classList.contains('krestik') || e.target.classList.contains('products-card')) {
                 $('#' + prodId).hide();
             }
@@ -218,7 +220,7 @@ $(document).ready(function () {
         if (txt === 'Читать больше') {
             $("#read-more img").css('transform', 'none');
         }
-        ;
+
 
         $(this).nextAll(blocks).slideToggle(200);
     });
@@ -233,26 +235,34 @@ $(document).ready(function () {
         $('.slick-prev.slick-arrow').text('');
     });
 
+    let name = $('#name');
+    let name2 = $('#second-name');
+    let phone = $('#phone');
+    let formCong = $('#form-cong');
+    let errName = $('#form-err-name');
+    let errName2 = $('#form-err-sec-name');
+    let errPhone = $('#form-err-phone');
+    let input = $('input[type=text]');
+    let localCartStorage = JSON.parse(localStorage.getItem('cart'));
+    let comments = $('#comments');
+    let delMeth1 = $('#method1');
+    let delMeth2 = $('#method2');
+    let card = $('#card');
+    let cash = $('#cash');
+
+
     // --------- Shopcart ---------
 
     let shopCart = $('.shopping-cart')
 
-    $('#cart').click(() => {
-        shopCart.show();
-
-        $('.shopping-cart-popup-container-close img, .shopping-cart').click((e) => {
-            if (e.target.classList.contains('krestik') || e.target.classList.contains('shopping-cart')) {
-                shopCart.hide();
-            }
-        });
-
+    function createEl() {
 
         let cartArray = JSON.parse(localStorage.getItem('cart'));
 
         let cartItems = document.getElementById('shopping-cart-item-cover');
 
 
-        if (localStorage.length === 0) {
+        if (!cartArray || cartArray.length === 0) {
             $('#empty').show();
 
         } else {
@@ -260,7 +270,7 @@ $(document).ready(function () {
 
         }
 
-        sumCart();
+        //
 
         cartItems.innerHTML = '';
 
@@ -268,13 +278,13 @@ $(document).ready(function () {
 
             let cartContainer = document.createElement('div');
             cartContainer.className = 'shopping-cart-item';
+            cartContainer.setAttribute('data-id', cartArray[i].productId)
 
             let cartImage = document.createElement('div');
             cartImage.className = 'shopping-cart-item-images';
 
             let cartImg = document.createElement('img');
             cartImg.src = cartArray[i].productImage;
-
 
             cartImage.append(cartImg);
 
@@ -301,15 +311,19 @@ $(document).ready(function () {
             buttonMinus.className = 'minus-btn';
             buttonMinus.innerHTML = '-';
             buttonMinus.type = 'button';
+            buttonMinus.addEventListener('click', minusBtn);
+
 
             let input = document.createElement('input');
             input.type = 'text';
             input.value = cartArray[i].productCount;
+            input.id = 'input' + cartArray[i].productId
 
             let buttonPlus = document.createElement('button');
             buttonPlus.className = 'plus-btn';
             buttonPlus.innerHTML = '+';
             buttonPlus.type = 'button';
+            buttonPlus.addEventListener('click', plusBtn);
 
             quantity.append(buttonMinus, input, buttonPlus);
 
@@ -319,9 +333,12 @@ $(document).ready(function () {
 
             let itemAction = document.createElement('div');
             itemAction.className = 'shopping-cart-item-action';
+            itemAction.setAttribute('data-id', cartArray[i].productId)
+            itemAction.addEventListener('click', deleteItem);
 
             let itemActionImg = document.createElement('img');
             itemActionImg.src = 'images/trash.png';
+
 
             let spanDelete = document.createElement('span');
             spanDelete.innerHTML = 'Удалить';
@@ -334,8 +351,75 @@ $(document).ready(function () {
 
             cartItems.append(cartContainer);
         }
+        sumCart();
+    }
+
+    $('#cart').click(() => {
+
+
+        // --------------- Form validation ---------------
+
+
+        $('#purchases-action > button').click(() => {
+
+            if (name.val() && name2.val() && phone.val()) {
+                form.hide();
+                formCong.show();
+
+                // $.ajax({
+                //     type: 'post',
+                //     url: 'mail.php',
+                //     data: 'name=' + name.val() + '&name2=' + name2.val() + '&phone=' + phone.val() + '&localCartStorage=' + localCartStorage + '&comments=' + comments.val() + '&delMeth1=' + delMeth1.val().prop('checked') + '&delMeth2=' + delMeth2.val().prop('checked') + '&card=' + card.val().prop('checked') + '&cash=' + cash.val().prop('checked') + '&cartSum' + cartSum.val(),
+                //     success: () => {
+                //         form.hide();
+                //         formCong.show();
+                //     },
+                //     error: () => {
+                //         form.hide();
+                //         alert('Ошибка заказа. Свяжитесь пожалуйста по номеру телефона.')
+                //     }
+                // })
+            }
+
+            if (!name.val()) {
+                errName.show();
+                name.css('border-color', 'red');
+            } else {
+                errName.hide();
+                name.css('border-color', '#95510e');
+            }
+
+            if (!name2.val()) {
+                errName2.show();
+                name2.css('border-color', 'red');
+            } else {
+                errName2.hide();
+                name2.css('border-color', '#95510e');
+            }
+
+            if (!phone.val()) {
+                errPhone.show();
+                phone.css('border-color', 'red');
+            } else {
+                errPhone.hide();
+                phone.css('border-color', '#95510e');
+            }
+
+        });
+
+        shopCart.show();
+
+        $('.shopping-cart-popup-container-close img, .shopping-cart').click((e) => {
+
+            if (e.target.classList.contains('krestik') || e.target.classList.contains('shopping-cart')) {
+                shopCart.hide();
+            }
+        });
+
+        createEl();
 
     });
+
 
     let totalSum = $('.purchases-total-num');
 
@@ -422,7 +506,7 @@ $(document).ready(function () {
 
     let cartSum = $('.purchases-items-num');
     let cartSumCost = $('.purchases-sum-num');
-    let number = 0
+    let number = 0;
     let sumProd = 0;
     let sumCost = 0;
 
@@ -430,143 +514,47 @@ $(document).ready(function () {
 
 //  -----------  Animation add to shopCart -------
 
-            let that = $(this).closest('.product-item').contents('.product-item-image').find('img');
-            let bascket = $("#cart");
-            let w = that.width();
+        let that = $(this).closest('.product-item').contents('.product-item-image').find('img');
+        let bascket = $("#cart");
+        let w = that.width();
 
-            that.clone()
-                .css({
-                    'width': w,
-                    'position': 'absolute',
-                    'z-index': '9999',
-                    top: that.offset().top,
-                    left: that.offset().left
-                })
-                .appendTo("body")
-                .animate({
-                    opacity: 0.05,
-                    left: bascket.offset()['left'],
-                    top: bascket.offset()['top'],
-                    width: 20
-                }, 1000, function () {
-                    $(this).remove();
-                });
+        that.clone()
+            .css({
+                'width': w,
+                'position': 'absolute',
+                'z-index': '9999',
+                top: that.offset().top,
+                left: that.offset().left
+            })
+            .appendTo("body")
+            .animate({
+                opacity: 0.05,
+                left: bascket.offset()['left'],
+                top: bascket.offset()['top'],
+                width: 20
+            }, 1000, function () {
+                $(this).remove();
+            });
 
 // -------------------------------------------------
-
-            let prPrice = $(event.target).siblings('.product-item-price').contents('span').text().trim();
-
-            let product = {
-                productImage: $(event.target).siblings('.product-item-image ').contents('img').attr('src'),
-                productTitle: $(event.target).siblings('.product-item-title').text().trim(),
-                productCount: 0,
-                productPrice: prPrice,
-                productSum: Number(prPrice),
-                productId: $(event.target).attr('data-id'),
-                productWight: $(event.target).siblings('.product-item-weight').text().trim(),
-            };
-
-
-            let cart = localStorage.getItem('cart');
-            let itemId = $(event.target).attr('data-id');
-
-
-            if (cart) {
-                let cartArray = JSON.parse(cart);
-
-                let cartPosition = false
-
-                for (let i = 0; i < cartArray.length; i++) {
-                    if (cartArray[i].productId === itemId) {
-
-                        cartArray[i].productCount += 1;
-                        cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
-                        cartPosition = true;
-                        break;
-
-                    }
-
-                }
-                if (cartPosition === false) {
-                    cartArray.push(product);
-                    for (let i = 0; i < cartArray.length; i++) {
-                        if (cartArray[i].productId === itemId) {
-                            cartArray[i].productCount += 1;
-                            break;
-                        }
-                    }
-                }
-
-                localStorage.setItem('cart', JSON.stringify(cartArray));
-
-            } else {
-                let cartArray = []
-                cartArray.push(product);
-                for (let i = 0; i < cartArray.length; i++) {
-                    if (cartArray[i].productId === itemId) {
-                        cartArray[i].productCount += 1;
-                        break;
-                    }
-                }
-
-                localStorage.setItem('cart', JSON.stringify(cartArray));
-            }
-
-
-            sumCart();
-            totalSumItems();
-
-            // ------- Проверка клика на поле доставки ---------
-
-            deliveryRadio.click(() => {
-                deliveryPrice.show();
-
-                number = 1;
-
-                if (number === 1 && sumCost >= 500) {
-                    delMoney.text('0 руб.')
-                    totalSum.text(sumCost + ' руб.');
-
-                } else if (number === 1) {
-
-                    totalSum.text(sumCost + 250 + ' руб.');
-                }
-
-            });
-
-            notDelivery.click(() => {
-                deliveryPrice.hide();
-
-                number = 0
-
-
-                if (number === 0) {
-
-                    totalSum.text(sumCost + ' руб.');
-                }
-            });
-
-        }
-    )
-    ;
-
-    $('.in-cart-btn').click(function (event) {
-
-        let prPrice = $(event.target).closest('.product-card-info-actions-btn').siblings('.product-card-info-actions-price').contents('span').text().trim();
+        let btn = $(event.target)
+        let prPrice = $(event.target).siblings('.product-item-price').contents('span').text().trim();
 
         let product = {
-            productImage: $(event.target).closest('.product-card-info').siblings('.product-card-image').contents('img').attr('src'),
-            productTitle: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').contents('.title-card').text().trim(),
+            productImage: $(event.target).siblings('.product-item-image ').contents('img').attr('src'),
+            productTitle: $(event.target).siblings('.product-item-title').text().trim(),
             productCount: 0,
             productPrice: prPrice,
             productSum: Number(prPrice),
             productId: $(event.target).attr('data-id'),
-            productWight: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').contents('.weight-card').text().trim(),
+            productWight: $(event.target).siblings('.product-item-weight').text().trim(),
         };
 
 
         let cart = localStorage.getItem('cart');
         let itemId = $(event.target).attr('data-id');
+        btn.css('background', 'pink');
+        btn.text('В корзине');
 
 
         if (cart) {
@@ -581,6 +569,7 @@ $(document).ready(function () {
                     cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
                     cartPosition = true;
                     break;
+
                 }
 
             }
@@ -610,7 +599,6 @@ $(document).ready(function () {
         }
 
 
-
         sumCart();
         totalSumItems();
 
@@ -635,6 +623,103 @@ $(document).ready(function () {
         notDelivery.click(() => {
             deliveryPrice.hide();
 
+            number = 0
+
+
+            if (number === 0) {
+
+                totalSum.text(sumCost + ' руб.');
+            }
+        });
+
+    });
+
+    $('.in-cart-btn').click(function (event) {
+        let btn = $(event.target)
+        let prPrice = $(event.target).closest('.product-card-info-actions-btn').siblings('.product-card-info-actions-price').contents('span').text().trim();
+        let prCount = $(event.target).closest('.product-card-info-actions-btn').siblings('.product-card-info-actions-count').contents('.product-card-info-actions-count-menu').text().trim();
+
+        btn.css('background', 'pink');
+        btn.text('В корзине');
+
+        let product = {
+            productImage: $(event.target).closest('.product-card-info').siblings('.product-card-image').contents('img').attr('src'),
+            productTitle: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').contents('.title-card').text().trim(),
+            productCount: 0 + Number(prCount),
+            productPrice: prPrice,
+            productSum: Number(prPrice),
+            productId: $(event.target).attr('data-id'),
+            productWight: $(event.target).closest('.product-card-info-actions').siblings('.product-card-info-title').contents('.weight-card').text().trim(),
+        };
+
+
+        let cart = localStorage.getItem('cart');
+        let itemId = $(event.target).attr('data-id');
+        let cartPosition = false;
+
+        if (cart) {
+            let cartArray = JSON.parse(cart);
+
+            for (let i = 0; i < cartArray.length; i++) {
+                if (cartArray[i].productId === itemId) {
+
+                    cartArray[i].productCount += product.productCount;
+                    cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
+                    cartPosition = true;
+                    break;
+                }
+
+            }
+            if (cartPosition === false) {
+                cartArray.push(product);
+                for (let i = 0; i < cartArray.length; i++) {
+                    if (cartArray[i].productId === itemId) {
+                        cartArray[i].productCount += product.productCount;
+                        cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
+                        break;
+                    }
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+
+        } else {
+            let cartArray = []
+            cartArray.push(product);
+            for (let i = 0; i < cartArray.length; i++) {
+                cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
+                cartPosition = true;
+                break;
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+        }
+
+
+        sumCart();
+        totalSumItems();
+
+        // ------- Проверка клика на поле доставки ---------
+
+        deliveryRadio.click(() => {
+            deliveryPrice.show();
+
+            number = 1;
+
+            if (number === 1 && sumCost >= 500) {
+                delMoney.text('0 руб.');
+                totalSum.text(sumCost + ' руб.');
+
+            } else if (number === 1) {
+
+                totalSum.text(sumCost + 250 + ' руб.');
+            }
+
+        });
+
+        notDelivery.click(() => {
+            deliveryPrice.hide();
+
             number = 0;
 
             if (number === 0) {
@@ -647,71 +732,6 @@ $(document).ready(function () {
     });
     // ----------------- * End Click * ----------------------
 
-    sumCart();
-
-    // --------------- Form validation ---------------
-
-    let name = $('#name');
-    let name2 = $('#second-name');
-    let phone = $('#phone');
-    let formCong = $('#form-cong');
-    let errName = $('#form-err-name');
-    let errName2 = $('#form-err-sec-name');
-    let errPhone = $('#form-err-phone');
-    let input = $('input[type=text]');
-    let localCartStorage = JSON.parse(localStorage.getItem('cart'));
-    let comments = $('#comments');
-    let delMeth1 = $('#method1');
-    let delMeth2 = $('#method2');
-    let card = $('#card');
-    let cash = $('#cash');
-
-    $('#purchases-action > button').click(() => {
-
-        if (name.val() && name2.val() && phone.val()) {
-            form.hide();
-            formCong.show();
-
-            // $.ajax({
-            //     type: 'post',
-            //     url: 'mail.php',
-            //     data: 'name=' + name.val() + '&name2=' + name2.val() + '&phone=' + phone.val() + '&localCartStorage=' + localCartStorage + '&comments=' + comments.val() + '&delMeth1=' + delMeth1.val().prop('checked') + '&delMeth2=' + delMeth2.val().prop('checked') + '&card=' + card.val().prop('checked') + '&cash=' + cash.val().prop('checked') + '&cartSum' + cartSum.val(),
-            //     success: () => {
-            //         form.hide();
-            //         formCong.show();
-            //     },
-            //     error: () => {
-            //         form.hide();
-            //         alert('Ошибка заказа. Свяжитесь пожалуйста по номеру телефона.')
-            //     }
-            // })
-        }
-
-        if (!name.val()) {
-            errName.show();
-            name.css('border-color', 'red');
-        } else {
-            errName.hide();
-            name.css('border-color', '#95510e');
-        }
-
-        if (!name2.val()) {
-            errName2.show();
-            name2.css('border-color', 'red');
-        } else {
-            errName2.hide();
-            name2.css('border-color', '#95510e');
-        }
-
-        if (!phone.val()) {
-            errPhone.show();
-            phone.css('border-color', 'red');
-        } else {
-            errPhone.hide();
-            phone.css('border-color', '#95510e');
-        }
-
-    });
 
 // ---------- Added sum and count to cart and form
 
@@ -720,8 +740,99 @@ $(document).ready(function () {
 
 // ---------- Total sum -----------
 
+
+    function plusBtn() {
+
+        let basket = JSON.parse(localStorage.getItem('cart'));
+        let basketItem = $(this).parents('.shopping-cart-item').data('id');
+
+
+        for (let i = 0; i < basket.length; i++) {
+            if (basketItem === Number(basket[i].productId)) {
+
+                basket[i].productCount += 1;
+                basket[i].productSum = basket[i].productPrice * basket[i].productCount;
+                let input = '#input' + basket[i].productId;
+                let elInput = $(input);
+                elInput.val(basket[i].productCount);
+            }
+            localStorage.setItem('cart', JSON.stringify(basket));
+            sumCart();
+            totalSumItems();
+
+        }
+
+
+    }
+
+    function minusBtn() {
+
+        let basket = JSON.parse(localStorage.getItem('cart'));
+        let basketItem = $(this).parents('.shopping-cart-item').data('id');
+        let basketEl = $(this).parents('.shopping-cart-item');
+        // let basketContainer = $('#shopping-cart-items');
+        // let empt = $('#empty');
+
+
+        for (let i = 0; i < basket.length; i++) {
+            if (basketItem === Number(basket[i].productId)) {
+                basket[i].productCount -= 1;
+                basket[i].productSum = basket[i].productPrice * basket[i].productCount;
+                let input = '#input' + basket[i].productId;
+                let elInput = $(input);
+                elInput.val(basket[i].productCount);
+            }
+            if (basket[i].productCount === 0) {
+                basket.splice(i, 1);
+                basketEl.attr('data', i).html('');
+            }
+        }
+
+        localStorage.setItem('cart', JSON.stringify(basket));
+        sumCart();
+        totalSumItems();
+        createEl();
+
+    }
+
+    function deleteItem() {
+
+        let basket = JSON.parse(localStorage.getItem('cart'));
+        let basketItem = $(this).parents('.shopping-cart-item').data('id');
+        let basketEl = $(this).parents('.shopping-cart-item');
+
+        for (let i = 0; i < basket.length; i++) {
+            if (basketItem === Number(basket[i].productId)) {
+                basket.splice(i, 1);
+                basketEl.attr('data', i).html('');
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(basket));
+        sumCart();
+        totalSumItems();
+        createEl();
+    }
+
+    $('.product-card-info-actions-count-min').click((e) => {
+        let count = Number($(e.target).siblings('.product-card-info-actions-count-menu').text().trim());
+        let item = $(e.target).siblings('.product-card-info-actions-count-menu');
+        let sum;
+
+        if (count > 1) {
+            sum = count - 1;
+            item.text(sum);
+        }
+
+    })
+
+    $('.product-card-info-actions-count-pl').click((e) => {
+        let count = Number($(e.target).siblings('.product-card-info-actions-count-menu').text().trim());
+        let item = $(e.target).siblings('.product-card-info-actions-count-menu');
+        let sum = count + 1;
+        item.text(sum);
+    })
+
+    sumCart();
     totalSumItems();
-
-
 })
 ;
