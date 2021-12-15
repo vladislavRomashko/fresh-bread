@@ -161,7 +161,10 @@ $(document).ready(function () {
 
     let form = $('#forma');
 
+
     $('#shopping-cart-action-btn').click(() => {
+
+
         shopCart.hide();
         form.show();
         $('.forma-popup-container-close img, #forma').click((e) => {
@@ -354,6 +357,7 @@ $(document).ready(function () {
         sumCart();
     }
 
+
     $('#cart').click(() => {
 
 
@@ -417,6 +421,7 @@ $(document).ready(function () {
         });
 
         createEl();
+
 
     });
 
@@ -537,7 +542,7 @@ $(document).ready(function () {
             });
 
 // -------------------------------------------------
-        let btn = $(event.target)
+
         let prPrice = $(event.target).siblings('.product-item-price').contents('span').text().trim();
 
         let product = {
@@ -553,9 +558,12 @@ $(document).ready(function () {
 
         let cart = localStorage.getItem('cart');
         let itemId = $(event.target).attr('data-id');
-        btn.css('background', 'pink');
-        btn.text('В корзине');
 
+        let btn = $(event.target);
+
+        btn.text('Уже в корзине');
+        btn.attr('disabled', 'true');
+        $(this).addClass("active");
 
         if (cart) {
             let cartArray = JSON.parse(cart);
@@ -639,8 +647,9 @@ $(document).ready(function () {
         let prPrice = $(event.target).closest('.product-card-info-actions-btn').siblings('.product-card-info-actions-price').contents('span').text().trim();
         let prCount = $(event.target).closest('.product-card-info-actions-btn').siblings('.product-card-info-actions-count').contents('.product-card-info-actions-count-menu').text().trim();
 
-        btn.css('background', 'pink');
-        btn.text('В корзине');
+        btn.text('Уже в корзине');
+        btn.attr('disabled', 'true');
+        $(this).addClass("active");
 
         let product = {
             productImage: $(event.target).closest('.product-card-info').siblings('.product-card-image').contents('img').attr('src'),

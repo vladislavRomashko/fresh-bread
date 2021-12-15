@@ -1564,6 +1564,9 @@
               }
             }
 
+            .product-btn.active {
+              padding: 15px;
+            }
 
             .product-item-details {
               margin-top: 20px;
@@ -1664,6 +1667,12 @@
                       left: 30px;
                       top: 12px;
                     }
+                  }
+
+                  .in-cart-btn.active {
+                    font-size: 12px;
+                    width: 144px;
+                    padding: 15px;
                   }
                 }
               }
@@ -2155,6 +2164,19 @@
         }
       }
     }
+
+    .ymaps-2-1-79-balloon__close + .ymaps-2-1-79-balloon__content{
+      padding: 12px;
+     }
+
+    #map {
+      height: 270px;
+    }
+
+    .ymaps-2-1-79-events-pane.ymaps-2-1-79-user-selection-none {
+      background: none;
+    }
+
   }
 }
 
