@@ -15,7 +15,7 @@ function init() {
 
         // // Зададим содержимое основной части балуна.
         balloonContentBody:
-            '<div class="map-item"><div class="balon-img"><img src="images/pin.png" ></div>  <span id="address">г. Запорожье,Соборный, д. 147</span></div>' +
+            '<div class="map-item"><div class="balon-img"><img src="images/pin.png" ></div>  <span id="address">г. Запорожье, просп. Соборный, д. 147</span></div>' +
             '<div class="map-item"><div class="balon-img"><img src="images/telephoneSmall.png"></div>  <span class="map-text">+7 (526) 987 00 88</span> </div> ' +
             '<div class="map-item"><div class="balon-img"><img src="images/clock.png"></div> <span class="map-text">Пн-Пт: с 8:00 до 20:00</span>  </div>'
 
