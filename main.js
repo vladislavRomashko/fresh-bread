@@ -332,7 +332,7 @@ $(document).ready(function () {
 
             let itemPrice = document.createElement('div');
             itemPrice.className = 'shopping-cart-item-price';
-            itemPrice.innerHTML = cartArray[i].productPrice + ' руб';
+            itemPrice.innerHTML = cartArray[i].productPrice + ' грн';
 
             let itemAction = document.createElement('div');
             itemAction.className = 'shopping-cart-item-action';
@@ -443,7 +443,7 @@ $(document).ready(function () {
             sumProd += Array[i].productCount;
         }
 
-        cost.text(sumCost + ' руб');
+        cost.text(sumCost + ' грн');
         count.text(sumProd + ' шт')
 
         if (Array.length === 0) {
@@ -455,19 +455,19 @@ $(document).ready(function () {
         }
 
         cartSum.text(sumProd + ' шт');
-        cartSumCost.text(sumCost + ' руб');
+        cartSumCost.text(sumCost + ' грн');
     }
 
     function totalSumItems() {
 
 
         if (number === 0) {
-            totalSum.text(sumCost + ' руб.');
+            totalSum.text(sumCost + ' грн.');
         } else if (number === 1) {
-            totalSum.text(sumCost + 250 + ' руб.');
-        } else if (number === 1 && sumCost >= 500) {
-            delMoney.text('0 руб.');
-            totalSum.text(sumCost + ' руб.');
+            totalSum.text(sumCost + 100 + ' грн.');
+        } else if (number === 1 && sumCost >= 250) {
+            delMoney.text('0 грн.');
+            totalSum.text(sumCost + ' грн.');
         }
     }
 
@@ -485,12 +485,12 @@ $(document).ready(function () {
 
         number = 1;
 
-        if (number === 1 && sumCost >= 500) {
-            delMoney.text('0 руб.');
-            totalSum.text(sumCost + ' руб.');
+        if (number === 1 && sumCost >= 250) {
+            delMoney.text('0 грн.');
+            totalSum.text(sumCost + ' грн.');
 
         } else if (number === 1) {
-            totalSum.text(sumCost + 250 + ' руб.');
+            totalSum.text(sumCost + 100 + ' грн.');
         }
 
     });
@@ -501,7 +501,7 @@ $(document).ready(function () {
         number = 0;
 
         if (number === 0) {
-            totalSum.text(sumCost + ' руб.');
+            totalSum.text(sumCost + ' грн.');
         }
     });
 
@@ -617,13 +617,13 @@ $(document).ready(function () {
 
             number = 1;
 
-            if (number === 1 && sumCost >= 500) {
-                delMoney.text('0 руб.')
-                totalSum.text(sumCost + ' руб.');
+            if (number === 1 && sumCost >= 250) {
+                delMoney.text('0 грн.')
+                totalSum.text(sumCost + ' грн.');
 
             } else if (number === 1) {
 
-                totalSum.text(sumCost + 250 + ' руб.');
+                totalSum.text(sumCost + 100 + ' грн.');
             }
 
         });
@@ -636,7 +636,7 @@ $(document).ready(function () {
 
             if (number === 0) {
 
-                totalSum.text(sumCost + ' руб.');
+                totalSum.text(sumCost + ' грн.');
             }
         });
 
@@ -704,42 +704,6 @@ $(document).ready(function () {
             localStorage.setItem('cart', JSON.stringify(cartArray));
         }
 
-
-        // let cart = localStorage.getItem('cart');
-        // let itemId = $(event.target).attr('data-id');
-        // let cartPosition = -1;
-        //
-        // if(cart) {
-        //     let cartArray = JSON.parse(cart);
-        // } else {
-        //     let cart = [];
-        // }
-        //
-        //
-        // if (cart) {
-        //     for (let i = 0; i < cartArray.length; i++) {
-        //         if (cartArray[i].productId === itemId) {
-        //             cartArray[i].productCount += product.productCount;
-        //             cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
-        //             cartPosition = i;
-        //             break;
-        //         }
-        //
-        //     }
-        //     if (cartPosition === -1) {
-        //         cartArray.push(product);
-        //         for (let i = 0; i < cartArray.length; i++) {
-        //             if (cartArray[i].productId === itemId) {
-        //                 cartArray[i].productCount += product.productCount;
-        //                 cartArray[i].productSum = cartArray[i].productPrice * cartArray[i].productCount;
-        //                 break;
-        //             }
-        //         }
-        //     }
-        //
-        //     localStorage.setItem('cart', JSON.stringify(cartArray));
-        // }
-
         sumCart();
         totalSumItems();
 
@@ -750,13 +714,13 @@ $(document).ready(function () {
 
             number = 1;
 
-            if (number === 1 && sumCost >= 500) {
-                delMoney.text('0 руб.');
-                totalSum.text(sumCost + ' руб.');
+            if (number === 1 && sumCost >= 250) {
+                delMoney.text('0 грн.');
+                totalSum.text(sumCost + ' грн.');
 
             } else if (number === 1) {
 
-                totalSum.text(sumCost + 250 + ' руб.');
+                totalSum.text(sumCost + 100 + ' грн.');
             }
 
         });
@@ -768,7 +732,7 @@ $(document).ready(function () {
 
             if (number === 0) {
 
-                totalSum.text(sumCost + ' руб.');
+                totalSum.text(sumCost + ' грн.');
             }
         });
 
@@ -780,7 +744,7 @@ $(document).ready(function () {
 // ---------- Added sum and count to cart and form
 
     cartSum.text(sumProd + ' шт');
-    cartSumCost.text(sumCost + ' руб');
+    cartSumCost.text(sumCost + ' грн');
 
 // ---------- Total sum -----------
 
